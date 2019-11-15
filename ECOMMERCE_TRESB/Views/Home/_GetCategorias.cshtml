@@ -1,0 +1,6 @@
+﻿@model List<ECOMMERCE_TRESB.Models.Categoria>
+
+@foreach (var item in Model)
+{
+    <a href="/Home/Productos?Categoria=@item.Id" id="CategoriaIdClic">@item.Nombre</a>
+}

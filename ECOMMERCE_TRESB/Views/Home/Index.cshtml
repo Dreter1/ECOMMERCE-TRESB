@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+}
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="4" class=""></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h3>The Biggest <span>Sale</span></h3>
+                    <p>Special for today</p>
+                    <a class="hvr-outline-out button2" href="@Url.Action("Index", "Producto")" id="ComprarProd1Clic">Comprarlo Ahora </a>
+                </div>
+            </div>
+        </div>
+        <div class="item item2">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h3>Summer <span>Collection</span></h3>
+                    <p>New Arrivals On Sale</p>
+                    <a class="hvr-outline-out button2" href="@Url.Action("Index", "Producto")" id="ComprarProd2Clic">Comprarlo Ahora </a>
+                </div>
+            </div>
+        </div>
+        <div class="item item3">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h3>The Biggest <span>Sale</span></h3>
+                    <p>Special for today</p>
+                    <a class="hvr-outline-out button2" href="@Url.Action("Index", "Producto")" id="ComprarProd3Clic">Comprarlo Ahora </a>
+                </div>
+            </div>
+        </div>
+        <div class="item item4">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h3>Summer <span>Collection</span></h3>
+                    <p>New Arrivals On Sale</p>
+                    <a class="hvr-outline-out button2" href="@Url.Action("Index", "Producto")" id="ComprarProd4Clic">Comprarlo Ahora </a>
+                </div>
+            </div>
+        </div>
+        <div class="item item5">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h3>The Biggest <span>Sale</span></h3>
+                    <p>Special for today</p>
+                    <a class="hvr-outline-out button2" href="@Url.Action("Index", "Producto")" id="ComprarProd5Clic">Comprarlo Ahora </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Anterrior</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+    </a>
+    <!-- The Modal -->
+</div>
+<!-- /new_arrivals -->
+
+<div class="new_arrivals_agile_w3ls_info">
+    <div class="container">
+        <h3 class="wthree_text_info">Los Productos <span>Top</span></h3>
+        <div id="horizontalTab">
+            <ul class="resp-tabs-list">
+                <li>Los Mas Vendidos</li>
+                <li>Los Mas Nuevos</li>
+            </ul>
+            <div class="resp-tabs-container">
+                <!--/tab_one-->
+                <div class="tab1">
+                    @Html.Action("_GetProductosAsView", "Producto", new { IdCategoria = 1, index = 1, NumItems = 6 })
+                    <div class="clearfix"></div>
+                </div>
+                <div class="tab2">
+                    @Html.Action("_GetProductosAsView", "Producto", new { IdCategoria = 2, index = 1, NumItems = 6 })
+                    <div class="clearfix"></div>
+                </div>
+                <!--//tab_one-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //new_arrivals -->
+
+

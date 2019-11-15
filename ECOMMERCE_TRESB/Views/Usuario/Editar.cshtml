@@ -1,0 +1,97 @@
+﻿@model ECOMMERCE_TRESB.ModelViews.UsuarioEditarView
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+<span id="VerificacionEditarUsuarioTag"></span>
+<h2>Editar Empleado @Model.Nombres @Model.Apellidos</h2>
+<form action="@Url.Action("Editar","Usuario", new { IdUsuario = Model.Id})" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="page-header">
+                <h1>Informacion Personal</h1>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label" for="Nombres">Nombres: </label>
+                <input type="text" name="Nombres" id="NombresClic" value="@Model.Nombres" class="form-control" maxlength="100" onkeypress="return validarLetras(event)" />
+                @Html.ValidationMessage("Nombres")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Apellidos">Apellidos: </label>
+                <input type="text" name="Apellidos" id="ApellidosClic" value="@Model.Apellidos" class="form-control" maxlength="100" onkeypress="return validarLetras(event)" />
+                @Html.ValidationMessage("Apellidos")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Sexo">Sexo: </label>
+                <select id="SexoClic" name="Sexo" class="form-control">
+                    @if (!Model.Sexo)
+                    {
+                        <option id="FemeninoClic" selected value="False">Femenino</option>
+                        <option id="MasculinoClic" value="True">Masculino</option>
+                    }
+                    else
+                    {
+                        <option id="MasculinoClic" selected value="True">Masculino</option>
+                        <option id="FemeninoClic" value="False">Femenino</option>
+                    }
+                </select>
+                @Html.ValidationMessage("Sexo")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Celular">Celular: </label>
+                <input type="text" name="Celular" id="CelularClic" value="@Model.Celular" class="form-control positive" maxlength="11" />
+                @Html.ValidationMessage("Celular")
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="page-header">
+                <h1>Empleado</h1>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label" for="TipoUsuario">Cargo: </label>
+                <select id="TipoUsuarioClic" name="TipoUsuario" class="form-control">
+                    @if (Model.TipoUsuario == 1)
+                    {
+                        <option id="VendedorClic" selected value="1">Vendedor</option>
+                        <option id="AdministradorClic" value="2">Administrador</option>
+                    }
+                    else
+                    {
+                        <option id="VendedorClic" value="1">Vendedor</option>
+                        <option id="AdministradorClic" selected value="2">Administrador</option>
+                    }
+                </select>
+                @Html.ValidationMessage("TipoUsuario")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="IsActive">Cuenta: </label>
+                <select id="IsActiveClic" name="IsActive" class="form-control">
+                    @if (!Model.IsActive)
+                    {
+                        <option id="InactivaClic" selected value="False">Inactiva</option>
+                        <option id="IActivaClic" value="True">Activa</option>
+                    }
+                    else
+                    {
+                        <option id="InactivaClic" value="False">Inactiva</option>
+                        <option id="ActivaClic" selected value="True">Activa</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary" id="ActualizarUsuarioClic">Actualizar</button>
+    </div>
+</form>
+<hr />
+<br />
+<a href="@Url.Action("Listar","Usuario")" id="RegresarListarUsuarioClic" class="btn btn-lg btn-warning pull-left">Regresar</a>
+
+@section scripts{
+    <script src="~/Scripts/Validaciones.js"></script>
+}
+

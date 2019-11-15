@@ -1,0 +1,77 @@
+﻿@model ECOMMERCE_TRESB.Models.Usuario
+@{
+    ViewBag.Title = "Detalle";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+<span id="VerificacionDetalleUsuarioTag"></span>
+<h2>Detalles</h2>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <div class="page-header">
+            <h1>Información Personal</h1>
+        </div>
+        <div>
+            <dl class="dl-horizontal">
+                <dt>Email</dt>
+                <dd>@Model.Email</dd>
+
+                <dt>Contraseña</dt>
+                <dd> ******** </dd>
+
+                <dt>Nombres</dt>
+                <dd>@Model.Nombres</dd>
+
+                <dt>Apellidos</dt>
+                <dd>@Model.Apellidos</dd>
+
+                <dt>Sexo</dt>
+                @if (!Model.Sexo)
+                {
+                    <dd>Femenino</dd>
+                }
+                else
+                {
+                    <dd>Masculino</dd>
+                }
+                <dt>Celular</dt>
+                <dd>@Model.Celular</dd>
+
+                <dt>Fecha de nacimiento</dt>
+                <dd>@Model.FechaNacimiento</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="page-header">
+            <h1>Información Laboral</h1>
+        </div>
+        <div>
+            <dl class="dl-horizontal">
+                <dt>Cargo</dt>
+                @if (@Model.TipoUsuario == 1)
+                {
+                    <dd>Vendedor</dd>
+                }
+                else
+                {
+                    <dd>Administrador</dd>
+                }
+                <dt>Cuenta</dt>
+                @if (!Model.IsActive)
+                {
+                    <dd>Inactivo</dd>
+                }
+                else
+                {
+                    <dd>Activo</dd>
+                }
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="text-center">
+    <a href="@Url.Action("Listar","Usuario")" id="RegresarListarUsuarioClic" class="btn btn-lg btn-warning">Regresar</a>
+</div>
+

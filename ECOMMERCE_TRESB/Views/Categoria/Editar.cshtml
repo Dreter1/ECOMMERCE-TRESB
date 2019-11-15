@@ -1,0 +1,35 @@
+﻿@model ECOMMERCE_TRESB.ModelViews.CategoriaView
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+<span id="VerificacionEditarCategoriasTag"></span>
+<h2>Editar categoria: @Model.Nombre</h2>
+<hr />
+@if (ViewBag.ExisteCategoria != null)
+{
+    <div class="col-md-12">
+        <div class="alert alert-danger alert-dismissable">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button" id="CerrarAlertaClic"> × </button>
+            @ViewBag.ExisteCategoria
+        </div>
+    </div>
+}
+<form action="@Url.Action("Editar","Categoria", new { IdCategoria = Model.Id})" method="post">
+    <div class="form-group">
+        <label for="Nombre" class="control-label">Nombre: </label>
+        <input type="text" name="Nombre" id="NombreClic" value="@Model.Nombre" class="form-control" maxlength="100" onkeypress="return validarLetras(event)" />
+        @Html.ValidationMessage("Nombre")
+    </div>
+    <div class="text-center">
+        <button type="submit" id="ActualizarCateogiraClic" class="btn btn-primary">Actualizar</button>
+    </div>
+</form>
+<hr />
+<br />
+<a href="@Url.Action("Listar","Categoria")" id="RegresarListarClic" class="btn btn-lg btn-warning">Regresar</a>
+
+@section scripts{
+    <script src="~/Scripts/Validaciones.js"></script>
+}
+

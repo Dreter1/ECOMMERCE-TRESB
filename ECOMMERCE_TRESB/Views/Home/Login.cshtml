@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-head_agile_info_w3l">
+    <div class="container">
+        <h3>Iniciar <span>Sesion</span></h3>
+    </div>
+</div>
+<span id="HomeLoginClic"></span>
+<!-- /banner_bottom_agile_info -->
+<div class="banner_bottom_agile_info">
+    <div class="container">
+        <div class="agile_ab_w3ls_info">
+            <div class="row">
+                <div class="col-md-6">
+                    @if (ViewBag.UsuarioOClaveIncorrecta != null)
+                    {
+                        <div class="col-md-12">
+                            <div class="alert alert-danger alert-dismissable">
+                                <button aria-hidden="true" id="CerrarAlertaClic" data-dismiss="alert" class="close" type="button"> × </button>
+                                @ViewBag.UsuarioOClaveIncorrecta
+                            </div>
+                        </div>
+                    }
+                    <form action="@Url.Action("Login", "Home")" method="post">
+                        <div class="form-group">
+                            <label class="control-label" for="usuario">Email: </label>
+                            <input type="text" id="EmailClic" name="Correo" class="form-control" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="clave">Contraseña: </label>
+                            <input type="password" id="ClaveClic" name="Clave" class="form-control" />
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-default" id="IngresarLoginClic"> Ingresar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-center">
+                        <h1>¿Aun no estas Registrado?!</h1>
+                        <p>Registrate</p><a href="@Url.Action("Registrarse", "Home")" id="RegistrarseLoginClic"><u>AQUI</u></a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+
+

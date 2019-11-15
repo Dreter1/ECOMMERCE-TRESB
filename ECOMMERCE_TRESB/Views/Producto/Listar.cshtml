@@ -1,0 +1,73 @@
+﻿@model List<ECOMMERCE_TRESB.Models.Producto>
+@{
+    ViewBag.Title = "Listar";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+<span id="VerificacionListarProductosTag"></span>
+<h2>Productos</h2>
+<hr />
+<a href="@Url.Action("Crear", "Producto")" id="AgregarProductoClic" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Agregar</a>
+<br />
+<hr />
+<table class="table table-dark" id="tablaProd">
+    <thead>
+        <tr>
+            <th>Orden</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Stock</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+            <th>Activo</th>
+            <th>Categoria</th>
+            @if (Session["Cargo"].Equals("2"))
+            {
+                <th>Opciones</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prod in Model)
+            {
+            <tr>
+                <td>@prod.Id</td>
+                <td>@prod.Nombre</td>
+                <td>@prod.Descripcion</td>
+                <td>@prod.Stock</td>
+                <td>@prod.PrecioUnitario</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(prod.RutaImagen))
+                    {
+                        <img src="@Url.Content(prod.RutaImagen)" alt="Image" style="width:120px;height:120px;" />
+                    }
+                </td>
+                <td>
+                    @if (!prod.IsActive)
+                    {
+                        <p>Desactivo</p>
+                    }
+                    else
+                    {
+                        <p>Activo</p>
+                    }
+                </td>
+                <td>@prod.Categoria.Nombre</td>
+                @if (Session["Cargo"].Equals("2"))
+                {
+                    <td>
+                        <a href="@Url.Action("Editar", "Producto", new { IdProducto = prod.Id })" id="EditarProductoClic_@prod.Id" class="btn btn-warning"><i class="fa fa-edit"></i> Editar</a>
+                        <a href="@Url.Action("Eliminar", "Producto", new { IdProducto = prod.Id })" id="EliminarProductoClic_@prod.Id" class="btn btn-danger"><i class="fa fa-trash"></i> Eliminar</a>
+                    </td>
+                }
+
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#tablaProd').DataTable();
+        });
+    </script>
+}

@@ -1,0 +1,71 @@
+﻿@model List<ECOMMERCE_TRESB.Models.ListaFavoritos>
+@{
+    ViewBag.Title = "ListaFavoritos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-head_agile_info_w3l">
+    <div class="container">
+        <h3>TU <span>LISTA DE FAVORITOS</span></h3>
+        <div class="services-breadcrumb">
+            <div class="agile_inner_breadcrumb">
+                <ul class="w3_short">
+                    <li><a href="@Url.Action("Index", "Home")" id="IndexHomeClic">Inicio</a><i>|</i></li>
+                    <li>Lista De Favoritos</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="banner_bottom_agile_info" style="padding: 10px;">
+    <div class="container">
+        <div class="agile_ab_w3ls_info">
+            @if (Model.Count == 0)
+            {
+                <div class="container">
+                    <h2 class="text-center">Su lista de deseos esta vacia</h2>
+                    <div class="text-center"><a class="btn btn-info" href="@Url.Action("Index", "Producto")">Ir a productos</a></div>
+                </div>
+            }
+            else
+            {
+                <table class="table table-dark" id="tablaProd">
+                    <thead>
+                        <tr>
+                            <th>Orden</th>
+                            <th></th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{int contador = 1; }
+                        @foreach (var ListaDeProductos in Model)
+                        {
+                            <tr>
+                                <td>@contador</td>
+                                <td><img src="@Url.Content(ListaDeProductos.Productos.RutaImagen)" alt="Image" style="width:120px;height:120px;" /></td>
+                                <td>
+                                    <a href="@Url.Action("Detalle","Producto", new { IdProducto = ListaDeProductos.Productos.Id })" id="@ListaDeProductos.Productos.Id DetalleProductoClic">@ListaDeProductos.Productos.Nombre</a>
+                                </td>
+                                <td>S/. @ListaDeProductos.Productos.PrecioUnitario</td>
+                                <td class="btn-group">
+                                    <button type="button" class="btn btn-primary" title="Agregar al carrito" id="@ListaDeProductos.Productos.Id AgregarCarritoProductoClic" data-id="@ListaDeProductos.Productos.Id" onclick="AgregarACarritoCompras(this)"><i class="fa fa-cart-plus"></i></button>
+                                    <button type="button" class="btn btn-danger" title="Eliminar de lista" id="@ListaDeProductos.Productos.Id EliminarListaDeDeseosClic" role="link" onclick="location.href = '@Url.Action("EliminarProductoDeLista", "Venta", new { IdUsuario = Convert.ToInt32(Session["UsuarioId"]), IdProducto = ListaDeProductos.Productos.Id })'"><i class="fa fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            contador++;
+                        }
+                    </tbody>
+                </table>
+           }
+        </div>
+    </div>
+</div>
+@if (Session["UsuarioId"] != null)
+{
+    <input type="hidden" id="idUsuario" value="@Session["UsuarioId"]" />
+}
+@Scripts.Render("~/Scripts/Carrito.js")
+
+

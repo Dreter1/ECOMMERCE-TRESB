@@ -1,0 +1,75 @@
+﻿@model List<ECOMMERCE_TRESB.Models.Usuario>
+@{
+    ViewBag.Title = "Listar";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+<span id="UsuarioListarClic"></span>
+<h2>Lista del Personal</h2>
+<hr />
+<br />
+<a href="@Url.Action("Crear", "Usuario")" id="AgregarPersonalClic" class="btn btn-primary pull-right">Agregar Personal</a>
+<br />
+<hr />
+<table class="table table-dark" id="TablaEmpleado">
+    <thead>
+        <tr>
+            <th>Orden</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Sexo</th>
+            <th>Cargo</th>
+            <th>Estado</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{int contador = 1; }
+        @foreach (var usuarios in Model)
+        {
+            <tr>
+                <td>@contador</td>
+                <td>@usuarios.Nombres</td>
+                <td>@usuarios.Apellidos</td>
+                @if (!usuarios.Sexo)
+                {
+                    <td>Mujer</td>
+                }
+                else
+                {
+                    <td>Hombre</td>
+                }
+                @if (usuarios.TipoUsuario == 1)
+                {
+                    <td>Vendedor</td>
+                }
+                else
+                {
+                    <td>Administrador</td>
+                }
+                @if (!usuarios.IsActive)
+                {
+                    <td>C. Desactivada</td>
+                }
+                else
+                {
+                    <td>C. Activada</td>
+                }
+                <td>
+                    <a href="@Url.Action("Detalle","Usuario", new { IdUsuario = usuarios.Id})" id="DetallePersonalClic_@usuarios.Id" class="btn btn-sm btn-info"><i class="fa fa-info"></i> Informacion</a>
+                    <a href="@Url.Action("Editar","Usuario", new { IdUsuario = usuarios.Id})" id="EditarPersonalClic_@usuarios.Id" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Editar</a>
+                    <a href="@Url.Action("Eliminar","Usuario", new { IdUsuario = usuarios.Id})" id="EliminarPersonalClic_@usuarios.Id" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Eliminar</a>
+                </td>
+            </tr>
+            contador ++;
+        }
+    </tbody>
+</table>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#TablaEmpleado').DataTable();
+        });
+    </script>
+}
+

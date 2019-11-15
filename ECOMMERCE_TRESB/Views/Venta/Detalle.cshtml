@@ -1,0 +1,66 @@
+﻿@model ECOMMERCE_TRESB.Models.Venta
+@{
+    ViewBag.Title = "Detalle";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+<span id="VerificacionDetalleVentaTag"></span>
+<h2>Detalle de Pedido Nº @Model.Id</h2>
+<hr />
+<div>
+    @foreach (var cliente in ViewBag.ListaUsuarios)
+    {
+        if (cliente.Id == Model.IdUsuario)
+        {
+            <label class="control-label">Nombre de Cliente: @cliente.Nombres @cliente.Apellidos |</label>
+        }
+    }
+    <label>Fecha de Compra: @Model.Fecha</label>
+</div>
+<hr />
+<table id="tablaDetalleVenta">
+    <thead>
+        <tr>
+            <td></td>
+            <td>Producto</td>
+            <td>Cantidad</td>
+            <td>Precio</td>
+            <td>SubTotal</td>
+        </tr>
+    </thead>
+    <tbody>
+        @{decimal total = 0;}
+        @foreach (var detalleVentas in ViewBag.ListaDetalleVentas)
+        {
+            if (detalleVentas.IdVenta == Model.Id)
+            {
+                total += (Decimal)(detalleVentas.Subtotal);
+                <tr>
+                    <td>
+                        <img src="@Url.Content(detalleVentas.Producto.RutaImagen)" alt="imagenDetalle" style="width:100px;height:150px;max-width: 100%; height: auto;" />
+                    </td>
+                    <td>@detalleVentas.Producto.Nombre</td>
+                    <td>@detalleVentas.Cantidad</td>
+                    <td>S/. @detalleVentas.PrecioUnitario</td>
+                    <td>S/. @detalleVentas.Subtotal</td>
+                </tr>
+            }
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="4">Total</th>
+            <th>S/. @total</th>
+        </tr>
+    </tfoot>
+</table>
+<br />
+<hr />
+<a href="@Url.Action("Index","Venta")" id="RegresarVentaClic" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Regresar</a>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#tablaDetalleVenta').DataTable();
+        });
+    </script>
+}
+

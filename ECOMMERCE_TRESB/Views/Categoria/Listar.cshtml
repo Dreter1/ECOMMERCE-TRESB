@@ -1,0 +1,53 @@
+﻿@model List<ECOMMERCE_TRESB.Models.Categoria>
+@{
+    ViewBag.Title = "Listar";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+<span id="VerificacionListarCategoriasTag"></span>
+<h2>Categorias</h2>
+<hr />
+@if (ViewBag.NoSePuedeEliminarCategoria != null)
+{
+    <div class="col-md-12">
+        <div class="alert alert-danger alert-dismissable">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button" id="CerrarAlertaClic"> × </button>
+            @ViewBag.NoSePuedeEliminarCategoria
+        </div>
+    </div>
+}
+<a href="@Url.Action("Crear","Categoria")" id="AgregarCategoriaClic" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Crear Categoria</a>
+<br />
+<hr />
+<table class="table table-dark" id="tablaCate">
+    <thead>
+        <tr>
+            <th>Orden</th>
+            <th>Nombre</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categorias in Model)
+        {
+            <tr>
+                <td>@categorias.Id</td>
+                <td>@categorias.Nombre</td>
+                <td>
+                    <a href="@Url.Action("Editar","Categoria", new { IdCategoria = categorias.Id})" id="EditarCategoriaClic_@categorias.Id" class="btn btn-warning"><i class="fa fa-edit"></i> Editar</a>
+                    <a href="@Url.Action("Eliminar","Categoria", new { IdCategoria = categorias.Id})" id="EliminarCategoriaClic_@categorias.Id" class="btn btn-danger"><i class="fa fa-trash"></i> Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#tablaCate').DataTable();
+        });
+    </script>
+}
+
+
+
+

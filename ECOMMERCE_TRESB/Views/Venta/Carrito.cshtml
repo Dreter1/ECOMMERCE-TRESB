@@ -1,0 +1,117 @@
+﻿@model List<ECOMMERCE_TRESB.Models.CarritoCompras>
+@{
+    ViewBag.Title = "Carrito";
+}
+<div class="page-head_agile_info_w3l">
+    <div class="container">
+        <h3>TU <span>CARRITO</span></h3>
+        <div class="services-breadcrumb">
+            <div class="agile_inner_breadcrumb">
+                <ul class="w3_short">
+                    <li><a href="@Url.Action("Index", "Home")" id="IndexHomeClic">Inicio</a><i>|</i></li>
+                    <li>Carrito</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="banner_bottom_agile_info" style="padding: 10px;">
+    <div class="container">
+        <div class="agile_ab_w3ls_info">
+            @{var carritoList = Session["carritoCompras"] as List<ECOMMERCE_TRESB.Models.CarritoCompras>; }
+            @if (carritoList.Count == 0)
+            {
+                <div class="container">
+                    <h2 class="text-center">Su carrito está vacio</h2>
+                    <div class="text-center"><a class="btn btn-info" href="@Url.Action("Index", "Producto")">Ir a productos</a></div>
+                </div>
+            }
+            else
+            {
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th>Descripción</th>
+                                        <th></th>
+                                        <th>Cantidad</th>
+                                        <th></th>
+                                        <th>P. Unitario</th>
+                                        <th>Subtotal</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @{int contador = 1; decimal total = 0;}
+                                    @foreach (var carrito in Model)
+                                    {
+                                        total += (Decimal)(carrito.Cantidad * carrito.Productos.PrecioUnitario);
+                                        <tr>
+                                            @{Session["CantidadNueva"] = carrito.Productos.Id;}
+
+                                            <td>@contador</td>
+                                            <td>
+                                                <img src="@Url.Content(carrito.Productos.RutaImagen)" alt="Image" style="width:60px;height:60px;" />
+                                            </td>
+                                            <td>@carrito.Productos.Nombre</td>
+                                            @if (carrito.Productos.Stock > 0)
+                                            {
+                                                <td>
+                                                    <button class="btn btn-success btn-xs">Disponible : @carrito.Productos.Stock</button>
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    <button class="btn btn-danger btn-xs">No Disponible : @carrito.Productos.Stock</button>
+                                                </td>
+
+                                            }
+
+                                            <td>
+                                                <input type="number" min="1" max="30" value="@carrito.Cantidad" onchange="CambiandoCantidad(this.value,@carrito.Productos.Id)" />
+                                                <span id='@Session["CantidadNueva"]NuevaCantidad'></span>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-warning" title="Actualizar Cantidad" id="@carrito.Productos.Id ActualizarCantidadClic" role="link" data-id="@carrito.Productos.Id" onclick="ActualizandoCantidad(this)"><i class="fa fa-refresh"></i></button>
+                                            </td>
+                                            <td>S/. @carrito.Productos.PrecioUnitario</td>
+                                            <td>S/. @(carrito.Productos.PrecioUnitario * carrito.Cantidad)</td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger" title="Eliminar de carrito" id="@carrito.Productos.Id EliminarCarritoClic" role="link" onclick="location.href = '@Url.Action("EliminarProductoDeCarrito", "Venta", new { IdUsuario = Convert.ToInt32(Session["UsuarioId"]), IdProducto = carrito.Productos.Id })'"><i class="fa fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                                    contador++;
+
+                                                }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row" style="border-top: 1px solid gray; padding: 5px;">
+                        <div class="col">
+                            <h3 class="pull-right">TOTAL: S/ <span id="precioTotal">@total</span></h3>
+                        </div>
+                    </div>
+                    <div class="row" style="border-top: 1px solid gray; padding-top: 10px;">
+                        <div class="col">
+                            <button class="pull-right btn btn-success" onclick="CompletarOrden()">Continuar</button>
+                        </div>
+                    </div>
+                </div>
+                                                }
+        </div>
+    </div>
+</div>
+@if (Session["UsuarioId"] != null)
+{
+    <input type="hidden" id="idUsuario" value="@Session["UsuarioId"]" />
+}
+
+@Scripts.Render("~/Scripts/Carrito.js")
+

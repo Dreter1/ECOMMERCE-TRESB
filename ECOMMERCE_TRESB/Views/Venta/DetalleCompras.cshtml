@@ -1,0 +1,75 @@
+﻿@model ECOMMERCE_TRESB.Models.Venta
+@{
+    ViewBag.Title = "DetalleCompras";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<span id="VerificacionDetalleComprasTag"></span>
+<div class="page-head_agile_info_w3l">
+    <div class="container">
+        @{ var IdUsuario = Convert.ToInt32(Session["UsuarioId"]);}
+        @if (Session["UsuarioId"] != null)
+        {
+            foreach (var usuario in ViewBag.ListaUsuarios)
+            {
+                if (IdUsuario == usuario.Id)
+                {
+                    <h3>@usuario.Nombres @usuario.Apellidos, su lista de compras</h3>
+                }
+            }
+        }
+        <div class="services-breadcrumb">
+            <div class="agile_inner_breadcrumb">
+
+                <ul class="w3_short">
+                    <li><a href="@Url.Action("Index", "Home")" id="IndexHomeClic">Inicio</a><i>|</i></li>
+                    <li>Lista de Compras Hechas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="banner-bootom-w3-agileits">
+    <div class="container">
+        <table class="table table-responsive table-bordered table-hover">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>Descripcion</td>
+                    <td>Cantidad</td>
+                    <td>Precio</td>
+                    <td>SubTotal</td>
+                </tr>
+            </thead>
+            <tbody>
+                @{decimal total = 0;}
+                @foreach (var detalleVentas in ViewBag.ListaDetalleVentas)
+                {
+                    if (detalleVentas.IdVenta == Model.Id)
+                    {
+                        total += (Decimal)(detalleVentas.Subtotal);
+                        <tr>
+                            <td>
+                                <img src="@Url.Content(detalleVentas.Producto.RutaImagen)" alt="imagenDetalle" style="width:100px;height:150px;max-width: 100%; height: auto;" />
+                            </td>
+                            <td>@detalleVentas.Producto.Nombre</td>
+                            <td>@detalleVentas.Cantidad</td>
+                            <td>S/. @detalleVentas.PrecioUnitario</td>
+                            <td>S/. @detalleVentas.Subtotal</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4">Total</th>
+                    <th>S/. @total</th>
+                </tr>
+            </tfoot>
+        </table>
+        <br />
+        <hr />
+        <a href="@Url.Action("Compras","Venta", new { IdUsuario = Model.IdUsuario })" id="RegresarComprasClic" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Regresar</a>
+    </div>
+</div>
+
+

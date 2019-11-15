@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio :: TresB</title>
+    <link rel="icon" href="~/favicon3BShop.png">
+
+    <!--/tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--//tags -->
+    <link href="~/Content/plantillaTienda/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/plantillaTienda/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/plantillaTienda/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Content/plantillaTienda/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
+    <link href="~/Content/Estilitos.css" rel="stylesheet" type="text/css" />
+    <!-- //for bootstrap working -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+    <!--Validacion de numeros-->
+    <script src="~/Scripts/jqueryNumeric/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jqueryNumeric/jquery.numeric.js"></script>
+
+    <!--Data Tables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.18/af-2.3.3/b-1.5.6/b-colvis-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.18/af-2.3.3/b-1.5.6/b-colvis-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.js"></script>
+
+
+    <!-- js -->
+    <script src="~/Content/plantillaTienda/js/easy-responsive-tabs.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true,   // 100% fit in a container
+                closed: 'accordion', // Start closed if in accordion view
+                activate: function (event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#tabInfo');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
+            });
+            $('#verticalTab').easyResponsiveTabs({
+                type: 'vertical',
+                width: 'auto',
+                fit: true
+            });
+        });
+    </script>
+    <!-- //script for responsive tabs -->
+    <!-- stats -->
+    <script src="~/Content/plantillaTienda/js/jquery.waypoints.min.js"></script>
+    <script src="~/Content/plantillaTienda/js/jquery.countup.js"></script>
+    <script>
+        $('.counter').countUp();
+    </script>
+    <!-- //stats -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/Content/plantillaTienda/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Content/plantillaTienda/js/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			});
+    </script>
+    <!-- //here ends scrolling icon -->
+    <!-- for bootstrap working -->
+    <script type="text/javascript" src="~/Content/plantillaTienda/js/bootstrap.js"></script>
+
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <!-- header -->
+    <div class="header" id="home">
+        <div class="container">
+            <ul>
+                @{ var IdUsuario = Convert.ToInt32(Session["UsuarioId"]);}
+                @if (Session["UsuarioId"] != null && Session["Cargo"].Equals("0"))
+                {
+                    foreach (var usuario in ViewBag.ListaUsuarios)
+                    {
+                        if (IdUsuario == usuario.Id)
+                        {
+                            <li><i class="fa fa-user" aria-hidden="true"></i> Hola! @usuario.Nombres @usuario.Apellidos</li>
+                        }
+                    }
+                    <li> <a href="@Url.Action("Compras", "Venta", new { IdUsuario })" id="ComprasMenuClic"><i class="fa fa-book" aria-hidden="true"></i>Compras</a> | <a href="@Url.Action("ListaFavoritos", "Venta", new { IdUsuario })" id="DeseosMenuClic"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Lista de Deseos</a></li>
+                    <li> <a href="@Url.Action("Perfil", "Usuario", new { IdUsuario })" id="PerfilMenuClic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Perfil </a></li>
+                    <li> <a href="@Url.Action("LogOut", "Home")" id="LogOutMenuClic"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Cerrar Sesion</a></li>
+                }
+                else if (Session["UsuarioId"] != null && (Session["Cargo"].Equals("1") || Session["Cargo"].Equals("2")))
+                {
+                    foreach (var usuario in ViewBag.ListaUsuarios)
+                    {
+                        if (IdUsuario == usuario.Id)
+                        {
+                            <li><i class="fa fa-user" aria-hidden="true"></i> Hola! @usuario.Nombres @usuario.Apellidos</li>
+                        }
+                    }
+                    <li> <a href="@Url.Action("Perfil", "Usuario", new { IdUsuario })" id="PerfilMenuClic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Perfil </a></li>
+                    <li> <a href="@Url.Action("Index", "Usuario")" id="PanelMenuClic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Panel</a></li>
+                    <li> <a href="@Url.Action("LogOut", "Home")" id="LogOutMenuClic"><i class="fa fa-unlock-alt" aria-hidden="true"></i> CerrarSesion </a></li>
+                }
+                else
+                {
+                    <li><a href="@Url.Action("Login", "Home")" id="LogInMenuClic"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Iniciar Sesion </a></li>
+                    <li><a href="@Url.Action("Registrarse", "Home")" id="RegisterMenuClic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Registrarse </a></li>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i> Celulares : 983265964</li>
+                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:contacto.tresb.peru@gmail.com">contacto.tresb.peru@gmail.com</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+    <!-- //header -->
+    <!-- header-bot -->
+    <div class="header-bot">
+        <div class="header-bot_inner_wthreeinfo_header_mid">
+            <div class="col-md-4 header-middle">
+                <form action="#" method="post">
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <!-- header-bot -->
+            <div class="col-md-4 logo_agile">
+                <h1><a href="@Url.Action("Index", "Home")" id="IndexHomeClic"><span>T</span>resB <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
+            </div>
+            <!-- header-bot -->
+            <div class="col-md-4 agileits-social top_content">
+                <ul class="social-nav model-3d-0 footer-social w3_agile_social">
+                    <li class="share">Compartir : </li>
+                    <li>
+                        <a href="#" class="facebook">
+                            <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="twitter">
+                            <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="instagram">
+                            <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //header-bot -->
+    <!-- banner -->
+    <div class="ban-top">
+        <div class="container">
+            <div class="top_nav_left">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav menu__list">
+                                <li class="active menu__item menu__item--current"><a class="menu__link" href="@Url.Action("Index", "Home")" id="HomeMenuClic">Incio <span class="sr-only">(current)</span></a></li>
+                                <li class="menu__item"><a class="menu__link" href="@Url.Action("Nosotros", "Home")" id="NosotrosMenuClic">Empresa</a></li>
+                                <li class="menu__item"><a class="menu__link" href="@Url.Action("Index", "Producto")" id="ProductosMenuClic">Productos</a></li>
+                                <li class="menu__item"><a class="menu__link" href="@Url.Action("Contacto", "Home")" id="ContactoMenuClic">Contacto</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="top_nav_right">
+                <div class="wthreecartaits wthreecartaits2 cart cart box_1">
+                    <div class="last">
+                        <button class="w3view-cart" id="CarritoComprasClic" type="button" role="link" onclick="location.href = '@Url.Action("Carrito", "Venta", new { IdUsuario = Convert.ToInt32(Session["UsuarioId"]) })'"><i class="fa fa-cart-arrow-down"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    @RenderBody()
+    <!-- Pie de Pagina -->
+    <div class="footer">
+        <div class="footer_agile_inner_info_w3l">
+            <div class="col-md-3 footer-left">
+                <h2><a href="@Url.Action("Index", "Home")" id="IndexHomeMenuClic"><span>T</span>resB </a></h2>
+                <p>
+                    TresB es una empresa
+                    que brinda a los peruanos productos a los mejores
+                    precios al alcande de sus manos.
+                </p>
+                <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
+                    <li>
+                        <a href="#" class="facebook">
+                            <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="twitter">
+                            <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="instagram">
+                            <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9 footer-right">
+                <div class="sign-grds">
+                    <div class="col-md-4 sign-gd">
+                        <h4><span>Navegación</span> </h4>
+                        <ul>
+                            <li><a href="@Url.Action("Index", "Home")" id="IndexMenuDownClic">Inicio</a></li>
+                            <li><a href="@Url.Action("Nosotros", "Home")" id="NosotrosMenuDownClic">Empresa</a></li>
+                            <li><a href="@Url.Action("Index", "Producto")" id="ProductoMenuDownClic">Productos</a></li>
+                            <li><a href="@Url.Action("Contacto", "Home")" id="ContactoMenuDownClic">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5 sign-gd-two">
+                        <h4><span>Información</span></h4>
+                        <div class="w3-address">
+                            <div class="w3-address-grid">
+                                <div class="w3-address-left">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                </div>
+                                <div class="w3-address-right">
+                                    <h6>Números Celular</h6>
+                                    <ul>
+                                        <li>983265964</li>
+                                        <li>947550099</li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="w3-address-grid">
+                                <div class="w3-address-left">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <div class="w3-address-right">
+                                    <h6>Correo Electronico</h6>
+                                    <p>Email :<a href="mailto:contacto.tresb.peru@gmail.com"> contacto.tresb.peru@gmail.com</a></p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="w3-address-grid">
+                                <div class="w3-address-left">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </div>
+                                <div class="w3-address-right">
+                                    <h6>Ubicacion</h6>
+                                    <p>Ciudad de Cajamarca, Perú.</p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <p class="copy-right">&copy 2019 TresB. Todos los derechos reservados</p>
+        </div>
+    </div>
+
+    
+    <!-- //Pie de Pagina -->
+    <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+</body>
+</html>
+<script>
+    function LimpiarCarrito() {
+        localStorage.setItem("Carrito", "[]");
+    }
+</script>

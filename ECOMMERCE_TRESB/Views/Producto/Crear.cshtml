@@ -1,0 +1,76 @@
+﻿@model  ECOMMERCE_TRESB.ModelViews.ProductoView
+@{
+    ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+<span id="VerificacionCrearProductosTag"></span>
+<h2>Agregar Producto</h2>
+<hr />
+@if (ViewBag.StockPrecio != null)
+{
+    <div class="col-md-12">
+        <div class="alert alert-danger alert-dismissable">
+            <button aria-hidden="true" data-dismiss="alert" id="ErrorClic" class="close" type="button"> × </button>
+            @ViewBag.StockPrecio
+        </div>
+    </div>
+}
+<form action="@Url.Action("Crear", "Producto")" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="Nombre" class="control-label">Nombre: </label>
+        <input type="text" name="Nombre" id="NombreClic" placeholder="Nombre del Producto" class="form-control" value="@Model.Nombre" maxlength="50">
+        @Html.ValidationMessage("Nombre")
+    </div>
+    <div class="form-group">
+        <label for="Descripcion" class="control-label">Descripcion: </label>
+        @Html.TextAreaFor(m => m.Descripcion, new { @cols = "40", @rows = "7", @id = "DescripcionClic", @class = "form-control", @placeholder = "Ingrese la descripcion... maximo 1000 caracteres", @maxlength = "1000" })
+        @Html.ValidationMessage("Descripcion")
+    </div>
+    <div class="form-group">
+        <label for="Stock" class="control-label">Stock: </label>
+        <input type="text" maxlength="10" name="Stock" id="StockClic" placeholder="Stock" class="form-control positive" value="@Model.Stock">
+        @Html.ValidationMessage("Stock")
+    </div>
+    <div class="form-group">
+        <label for="PrecioUnitario" class="control-label">Precio: </label>
+        <input type="text" maxlength="6" id="PrecioClic" name="PrecioUnitario" placeholder="PrecioUnitario" class="form-control positive" value="@Model.PrecioUnitario">
+        @Html.ValidationMessage("PrecioUnitario")
+    </div>
+    <div class="form-group">
+        <label for="RutaImagen" class="control-label">Imagen: </label>
+        <input type="file" id="fichero" name="Imagen" class="form-control-file btn btn-file">
+        <p id="texto"> </p>
+        <img id="img" width="150" height="150" />
+    </div>
+    <div class="form-group">
+        <label for="IsActive" class="control-label">Activo: </label>
+        <select id="IsActiveClic" name="IsActive" class="form-control">
+            <option id="ActivoClic"  selected value="True">Activo</option>
+            <option id="DesactivoClic" value="False">Desactivo</option>
+            @Html.ValidationMessage("IsActive")
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="IdCategoria" class="control-label">Categoria: </label>
+        <select id="CategoriaClic" name="IdCategoria" class="form-control">
+            @foreach (var categoria in ViewBag.ListaCategoria)
+            {
+                <option id="Clic_@categoria.Nombre" value="@categoria.Id">@categoria.Nombre</option>
+            }
+
+        </select>
+        @Html.ValidationMessage("IdCategoria")
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-lg btn-primary" id="AgregarProductoClic">Agregar</button>
+    </div>
+
+</form>
+<hr />
+<a href="@Url.Action("Listar", "Producto")" id="RegresarListarClic" class="btn btn-lg btn-warning pull-left">Regresar</a>
+
+@section scripts{
+    <script src="~/Scripts/Imagenes.js"></script>
+    <script src="~/Scripts/Validaciones.js"></script>
+}
+

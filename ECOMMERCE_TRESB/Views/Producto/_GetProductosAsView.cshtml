@@ -1,0 +1,38 @@
+﻿@model List<ECOMMERCE_TRESB.Models.Producto>
+
+@{
+    Layout = null;
+}
+@if (Session["UsuarioId"] != null)
+{
+    <input type="hidden" id="idUsuario" value="@Session["UsuarioId"]" />
+}
+@foreach (var producto in Model)
+{
+    if (producto.Stock > 0 && producto.IsActive == true)
+    {
+        <div class="col-md-4 product-men">
+            <div class="men-pro-item simpleCart_shelfItem">
+                <div class="men-thumb-item">
+                    <img src="@Url.Content(producto.RutaImagen)" alt="Image" class="pro-image-front" style="width:220px;height:200px;" />
+                    <img src="@Url.Content(producto.RutaImagen)" alt="Image" class="pro-image-back" style="width:220px;height:200px;" />
+                </div>
+                <div class="item-info-product ">
+                    <h4><a href="@Url.Action("Detalle","Producto", new { IdProducto = producto.Id })" id="DetalleProductoClic_@producto.Id">@producto.Nombre</a></h4>
+                    <div class="info-product-price">
+                        <span class="item_price">S/ @producto.PrecioUnitario</span>
+                    </div>
+                    <div id="AgregarCarritoProductoClic_@producto.Id" class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2" data-id="@producto.Id" onclick="AgregarACarritoCompras(this)" >
+                        <button type="button" class="button" style="background: none; border: none; color: white; padding: 5px 10px;">Agregar al carrito</button>
+                    </div>
+                    <div id="AgregarListaDeseosClic_@producto.Id" class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2" data-id="@producto.Id" onclick="AgregarAListaDeDeseos(this)">
+                        <button type="button" class="button" style="background: none; border: none; color: white; padding: 5px 10px;">Agregar a la Lista de Favoritos</button>
+                        <input type="hidden" id="@producto.Id idProducto" value="@producto.Id" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+@Scripts.Render("~/Scripts/Carrito.js")
+

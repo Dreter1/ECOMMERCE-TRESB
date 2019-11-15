@@ -1,0 +1,12 @@
+﻿.field-validation-error{
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+    color: white; 
+    font-size: 12px; 
+    font-weight: 100; 
+    text-align: center; 
+    background-color: red; 
+    margin: 0 0 20px; 
+    overflow: hidden; 
+    padding: 3px; 
+    border: 1px solid red;
+}

@@ -1,0 +1,159 @@
+﻿@model ECOMMERCE_TRESB.Models.Producto
+@{
+    ViewBag.Title = "Detalle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-head_agile_info_w3l">
+    <div class="container">
+        <h3>Producto <span>@Model.Nombre</span></h3>
+        <div class="services-breadcrumb">
+            <div class="agile_inner_breadcrumb">
+                <ul class="w3_short">
+                    <li><a href="@Url.Action("Index", "Home")" id="IndexHomeClic">Inicio</a><i>|</i></li>
+                    <li>Producto: @Model.Nombre</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<span id="ProductoDetalleClic"></span>
+<div class="banner-bootom-w3-agileits">
+    <div class="container">
+        <div class="col-md-4 single-right-left ">
+            <div class="grid images_3_of_2">
+                <img src="@Url.Content(Model.RutaImagen)" alt="Image" style="width:400px;height:400px;max-width: 100%; height: auto;" />
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="col-md-8 single-right-left simpleCart_shelfItem">
+            <h3><u>@Model.Nombre</u></h3>
+            <br>
+            <h2><span class="item_price">S/. @Model.PrecioUnitario</span></h2>
+            <hr />
+            <div class="description">
+                <h4><u>Descripcion:</u></h4>
+                @Model.Descripcion
+                <hr />
+                <h4><u>Stock Disponible</u>: @Model.Stock</h4>
+            </div>
+
+            <div class="occasion-cart">
+                <div class="occasion-cart">
+                    <div id="AgregarProductoCarritoClic" class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2" style="width: 200px" data-id="@Model.Id" onclick="AgregarACarritoCompras(this)">
+                        <button class="button" style="background: none; border: none; color: white; padding: 5px 10px;">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div id="AgregarListaDeseosClic" class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2" data-id="@Model.Id" onclick="AgregarAListaDeDeseos(this)">
+                    <button type="button" class="button" style="background: none; border: none; color: white; padding: 5px 10px;">Agregar a la Lista de Favoritos</button>
+                    <input type="hidden" id="@Model.Id idProducto" value="@Model.Id" />
+                </div>
+            </div>
+            <ul class="social-nav model-3d-0 footer-social w3_agile_social single_page_w3ls">
+                <li class="share">Comparte el producto en redes! : </li>
+                <li>
+                    <a href="#" class="facebook">
+                        <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                        <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="twitter">
+                        <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                        <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="instagram">
+                        <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                        <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="pinterest">
+                        <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                        <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                    </a>
+                </li>
+            </ul>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="responsive_tabs_agileits">
+            <div id="horizontalTab">
+                <ul class="resp-tabs-list">
+                    <li>Comentarios</li>
+                </ul>
+                @{ List<ECOMMERCE_TRESB.Models.Comentarios> comentarios = ViewBag.ComentariosUsuarios;}
+                @if (comentarios.Count == 0)
+                {
+                    <div class="resp-tabs-container">
+                        <div class="tab1">
+                            <div class="single_page_agile_its_w3ls">
+                                <div class="bootstrap-tab-text-grids">
+                                    <div class="text-center">
+                                        <p>No hay comentarios de este producto</p>
+                                    </div>
+                                    <div class="add-review">
+                                        <h4>Agrega un comentario</h4>
+                                        <label class="control-label">Comentario:</label>
+                                        <textarea name="Texto" id="TextoClic" class="form-control" required></textarea>
+                                        <button type="button" class="btn btn-success pull-right" onclick="AgregarComentario()">Agregar</button>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="resp-tabs-container">
+                        <div class="tab1">
+                            <div class="single_page_agile_its_w3ls">
+                                @foreach (var comentario in comentarios)
+                                {
+                                <div class="bootstrap-tab-text-grids">
+                                    <div class="bootstrap-tab-text-grid">
+                                        <div class="bootstrap-tab-text-grid-left">
+                                            <img src="~/Imagenes/Usuarios/avatar5.png" alt="Imagen Usuario" class="img-responsive">
+                                        </div>
+                                        <div class="bootstrap-tab-text-grid-right">
+                                            <ul>
+                                                <li>@comentario.Usuario.Nombres @comentario.Usuario.Apellidos</li>
+                                                <li>@comentario.Fecha.ToString("dd/MM/yyyy")</li>
+                                            </ul>
+                                            <p>@comentario.Texto</p>
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </div>
+                                }
+                                <div class="add-review">
+                                    <h4>Agrega un comentario</h4>
+                                    <label class="control-label">Comentario:</label>
+                                    <textarea name="Texto" id="TextoClic" class="form-control" required></textarea>
+                                    <button type="button" class="btn btn-success pull-right" onclick="AgregarComentario()">Agregar</button>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w3_agile_latest_arrivals">
+    <h3 class="wthree_text_info">Productos <span>Relacionados</span></h3>
+    @Html.Action("_GetProductosAsView", "Producto", new { IdCategoria = Model.IdCategoria, index = 3, NumItems = 3 })
+    <div class="clearfix"> </div>
+    <br />
+</div>
+
+@if (Session["UsuarioId"] != null)
+{
+    <input type="hidden" id="idUsuario" value="@Session["UsuarioId"]" />
+    <input type="hidden" id="idProducto" value="@Model.Id" />
+}
+
+@Scripts.Render("~/Scripts/Carrito.js")

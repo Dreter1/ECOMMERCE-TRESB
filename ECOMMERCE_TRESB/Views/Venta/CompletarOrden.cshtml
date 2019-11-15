@@ -1,0 +1,169 @@
+﻿@model List<ECOMMERCE_TRESB.Models.CarritoCompras>
+@{
+    ViewBag.Title = "CompletarOrden";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-head_agile_info_w3l">
+    <div class="container">
+        <h3>Completa Tu <span>Orden</span></h3>
+        <div class="services-breadcrumb">
+            <div class="agile_inner_breadcrumb">
+                <ul class="w3_short">
+                    <li><a href="@Url.Action("Index", "Home")" id="IndexHomeClic">Inicio</a><i>|</i></li>
+                    <li>Completar Orden</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+@{ var IdUsuario = Convert.ToInt32(Session["UsuarioId"]);}
+<div class="banner_bottom_agile_info" style="padding: 10px;">
+    <div class="container">
+        <div class="agile_ab_w3ls_info">
+            <div>
+                <h2><u>Datos del Cliente</u></h2>
+                <hr />
+                @foreach (var usuario in ViewBag.ListaUsuarios)
+                {
+                    if (IdUsuario == usuario.Id)
+                    {
+                        <div class="form-group">
+                            <label class="control-label" for="Nombres">Nombres: </label>
+
+                            <input type="text" readonly name="Nombres" id="NombresClic" value="@usuario.Nombres" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="Apellidos">Apellidos: </label>
+                            <input type="text" readonly name="Apellidos" id="ApellidosClic" value="@usuario.Apellidos" class="form-control" />
+                        </div>
+                    }
+                }
+                <div class="form-group">
+                    <button class="btn btn-primary pull-right" id="AgregarDireccionClic" data-toggle="modal" data-target="#modalAgregarDireccion" title="Agregar Direccion"><i class="fa fa-plus"></i> <i class="fa fa-address-card"></i></button>
+                    <br />
+                    <label class="control-label" for="TipoPago">Escoga Su Direccion: </label>
+                    <select id="TipoPagoClic" name="TipoPago" onchange="SeleccionDireccion(this.value)" class="form-control">
+                        <option selectd>---SELECCIONE SU DIRECCION -----</option>
+                        @foreach (var direccion in ViewBag.ListaDireccionUsuario)
+                        {
+                            <option value="@direccion.Id">@direccion.Calle, @direccion.Ciudad, @direccion.Region, @direccion.Pais, @direccion.CodigoPostal</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="TipoPago">Tipo De Pago: </label>
+                    <select id="TipoPagoClic" name="TipoPago" onchange="SeleccionTipoPago(this.value)" class="form-control">
+                        <option selectd>---SELECION SU PAGO -----</option>
+                        <option value="1">Tarjeta De Credito</option>
+                        <option value="2">Tarjeta De Debito</option>
+                    </select>
+                </div>
+            </div>
+            <hr />
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="text-center">Productos a Comprar</h2>
+                        <hr />
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Descripción</th>
+                                    <th>Cantidad</th>
+                                    <th>P. Unitario</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{int contador = 1; decimal total = 0;}
+                                @foreach (var carrito in Model)
+                                {
+                                    total += (Decimal)(carrito.Cantidad * carrito.Productos.PrecioUnitario);
+                                    <tr>
+                                        <td>@contador</td>
+                                        <td>
+                                            <img src="@Url.Content(carrito.Productos.RutaImagen)" alt="Image" style="width:60px;height:60px;" />
+                                        </td>
+                                        <td>@carrito.Productos.Nombre</td>
+                                        <td>
+                                            @carrito.Cantidad
+                                        </td>
+                                        <td>S/. @carrito.Productos.PrecioUnitario</td>
+                                        <td>S/. @(carrito.Productos.PrecioUnitario * carrito.Cantidad)</td>
+                                    </tr>
+                                    contador++;
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row" style="border-top: 1px solid gray; padding: 5px;">
+                    <div class="col">
+                        <h3 class="pull-right">TOTAL: S/ <span id="precioTotal">@total</span></h3>
+                    </div>
+                </div>
+                <div class="row" style="border-top: 1px solid gray; padding-top: 10px;">
+                    <div class="col">
+                        <button class="pull-left btn btn-warning" onclick="RegresarACarrito()">Regresar</button>
+                    </div>
+                    <div class="col">
+                        <button class="pull-right btn btn-success" onclick="realizarCompra()">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@if (Session["UsuarioId"] != null)
+{
+    <input type="hidden" id="idUsuario" value="@Session["UsuarioId"]" />
+    <input type="hidden" id="IdCambiandoTipoPago" value="0" />
+    <input type="hidden" id="IdCambiandoDireccion" value="0" />
+    <input type="hidden" id="MensajeNoHayStock" value="@ViewBag.NoHayStockDisponible" />
+}
+<div class="modal fade" id="modalAgregarDireccion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" id="CerrarModal" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Agregar Nueva Direccion</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="Pais" class="col-form-label">Pais: </label>
+                    <select id="PaisClic" name="Pais" class="form-control">
+                        <option selected value="Peru">Peru</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Region" class="col-form-label">Estado/Provincia/Region:</label>
+                    <input type="text" placeholder="Estado/Provincia/Region" class="form-control" name="Region" id="RegionTextClic">
+                </div>
+                <div class="form-group">
+                    <label for="Ciudad" class="col-form-label">Ciudad:</label>
+                    <input type="text" placeholder="Ciudad" class="form-control" name="Ciudad" id="CiudadTextClic">
+                </div>
+                <div class="form-group">
+                    <label for="Calle" class="col-form-label">Direccion:</label>
+                    <input type="text" class="form-control" name="Calle" id="CalleTextClic">
+                </div>
+                <div class="form-group">
+                    <label for="CodigoPostal" class="col-form-label">Codigo Postal:</label>
+                    <input type="text" class="form-control positive" maxlength="15" name="CodigoPostal" id="CodigoPostalTextClic">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-success pull-right" onclick="AgregarDireccion()">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Scripts/Carrito.js")
+

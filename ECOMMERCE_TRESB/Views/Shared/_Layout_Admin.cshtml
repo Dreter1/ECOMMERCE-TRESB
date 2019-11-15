@@ -1,0 +1,251 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Dashboard :: TresB</title>
+    <link rel="icon" href="~/Favicon3BDashboard.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <link href="/Content/plantillaAdmin/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <!-- Custom Theme files -->
+    <link href="~/Content/plantillaAdmin/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/Estilitos.css" rel="stylesheet" type="text/css" />
+    <!--js-->
+    <script src="~/Content/plantillaAdmin/js/jquery-2.1.1.min.js"></script>
+    <script src="~/Content/plantillaAdmin/js/plantilla.js"></script>
+    <!--Validacion de numeros-->
+    <script src="~/Scripts/jqueryNumeric/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jqueryNumeric/jquery.numeric.js"></script>
+    <!--Data Tables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.18/af-2.3.3/b-1.5.6/b-colvis-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.18/af-2.3.3/b-1.5.6/b-colvis-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.js"></script>
+    <!--icons-css-->
+    <link href="~/Content/plantillaAdmin/css/font-awesome.css" rel="stylesheet">
+    <!--Google Fonts-->
+    <link href='//fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
+    <!--static chart-->
+    <script src="~/Content/plantillaAdmin/js/Chart.min.js"></script>
+    <!--//charts-->
+    <!-- geo chart -->
+    <script src="//cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+    <script>window.modernizr || document.write('<script src="lib/modernizr/modernizr-custom.js"><\/script>')</script>
+    <!--<script src="lib/html5shiv/html5shiv.js"></script>-->
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Chartinator  -->
+    <script src="~/Content/plantillaAdmin/js/chartinator.js"></script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+
+            var chart3 = $('#geoChart').chartinator({
+                tableSel: '.geoChart',
+
+                columns: [{ role: 'tooltip', type: 'string' }],
+
+                colIndexes: [2],
+
+                rows: [
+                    ['China - 2015'],
+                    ['Colombia - 2015'],
+                    ['France - 2015'],
+                    ['Italy - 2015'],
+                    ['Japan - 2015'],
+                    ['Kazakhstan - 2015'],
+                    ['Mexico - 2015'],
+                    ['Poland - 2015'],
+                    ['Russia - 2015'],
+                    ['Spain - 2015'],
+                    ['Tanzania - 2015'],
+                    ['Turkey - 2015']],
+
+                ignoreCol: [2],
+
+                chartType: 'GeoChart',
+
+                chartAspectRatio: 1.5,
+
+                chartZoom: 1.75,
+
+                chartOffset: [-12, 0],
+
+                chartOptions: {
+
+                    width: null,
+
+                    backgroundColor: '#fff',
+
+                    datalessRegionColor: '#F5F5F5',
+
+                    region: 'world',
+
+                    resolution: 'countries',
+
+                    legend: 'none',
+
+                    colorAxis: {
+
+                        colors: ['#679CCA', '#337AB7']
+                    },
+                    tooltip: {
+
+                        trigger: 'focus',
+
+                        isHtml: true
+                    }
+                }
+            });
+        });
+    </script>
+    <!--geo chart-->
+    <!--skycons-icons-->
+    <script src="~/Content/plantillaAdmin/js/skycons.js"></script>
+    <!--//skycons-icons-->
+</head>
+<body>
+    <div class="page-container">
+        <div class="left-content">
+            <div class="mother-grid-inner">
+                <!--header start here-->
+                <div class="header-main">
+                    <div class="header-left">
+                        <div class="logo-name">
+                            <a href="@Url.Action("Index","Usuario")" id="IndexUsuarioClic">
+                                <h1>TresB</h1>
+                                <!--<img id="logo" src="" alt="Logo"/>-->
+                            </a>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="header-right">
+                        <div class="profile_details_left">
+                            <!--notifications of menu start -->
+                            <div class="clearfix"> </div>
+                        </div>
+                        <!--notification menu end -->
+                        <div class="profile_details">
+                            <ul>
+                                <li class="dropdown profile_details_drop">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="ClicGeneralLogOutUser">
+                                        <div class="profile_img">
+                                            <span class="prfil-img"><img src="~/Content/plantillaAdmin/images/p1.png" alt=""> </span>
+                                            <div class="user-name">
+                                                <p>@Session["Nombres"]</p>
+                                                @if (Session["Cargo"].Equals("1"))
+                                                {
+                                                    <span>Vendedor</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>Administrador</span>
+                                                }                                               
+                                            </div>
+                                            <i class="fa fa-angle-down lnr" id="ClicParaLogOut"></i>
+                                            <i class="fa fa-angle-up lnr" id="DesClicParaLogOut"></i>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu drp-mnu">
+                                        <li> <a href="@Url.Action("LogOut","Home")" id="LogOutUsuarioClic"><i class="fa fa-sign-out"></i> Cerrar Sesion</a> </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <!--heder end here-->
+                <!-- script-for sticky-nav -->
+                <script>
+                    $(document).ready(function () {
+                        var navoffeset = $(".header-main").offset().top;
+                        $(window).scroll(function () {
+                            var scrollpos = $(window).scrollTop();
+                            if (scrollpos >= navoffeset) {
+                                $(".header-main").addClass("fixed");
+                            } else {
+                                $(".header-main").removeClass("fixed");
+                            }
+                        });
+
+                    });
+                </script>
+                <!-- /script-for sticky-nav -->
+                <div class="inner-block">
+                    <div class="blank">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+            <!--copy rights start here-->
+            <div class="copyrights footer-bottom">
+                <p>© 2019 TresB. Todos los derechos reservados</p>
+            </div>
+            <!--COPY rights end here-->
+        </div>
+        <!--slider menu-->
+        <div class="sidebar-menu">
+            <div class="logo">
+                <a href="#" class="sidebar-icon" id="MenuDesplegableClic"> <span class="fa fa-bars"></span> </a> <a href="#">
+                    <span id="logo"></span>
+                </a>
+            </div>
+            <div class="menu">
+                <ul id="menu">
+                    <li id="menu-home"><a href="@Url.Action("Index","Usuario")" id="ListarUsuariosClic"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
+                    @if (Session["Cargo"].Equals("2"))
+                    {
+                        <li>
+                            <a href="@Url.Action("Listar","Producto")" id="ListarProductosClic"><i class="fa fa-shopping-cart"></i><span>Productos</span></a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Listar","Categoria")" id="ListarCaegoriasClic"><i class="fa fa-shopping-bag"></i><span>Categorias</span></a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li id="ListarProductosClic"><a href="@Url.Action("Listar","Producto")"><i class="fa fa-shopping-cart"></i><span>Productos</span></a></li>
+                    }
+                    @if (Session["Cargo"].Equals("2"))
+                    {
+                        <li>
+                            <a href="@Url.Action("Listar","Usuario")"><i class="fa fa-users"></i><span id="ListarUsuariosClic">Empleados</span></a>
+                        </li>
+                    }
+                    <li>
+                        <a href="@Url.Action("Index","Venta")" id="ListarVentasClic"><i class="fa fa-book nav_icon"></i><span>Ventas</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!--slide bar menu end here-->
+    <script>
+        var toggle = true;
+        $(".sidebar-icon").click(function () {
+            if (toggle) {
+                $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                $("#menu span").css({ "position": "absolute" });
+            }
+            else {
+                $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                setTimeout(function () {
+                    $("#menu span").css({ "position": "relative" });
+                }, 400);
+            }
+            toggle = !toggle;
+        });
+    </script>
+    <!--scrolling js-->
+    <script src="~/Content/plantillaAdmin/js/jquery.nicescroll.js"></script>
+    <script src="~/Content/plantillaAdmin/js/scripts.js"></script>
+    <!--//scrolling js-->
+    <script src="~/Content/plantillaAdmin/js/bootstrap.js"> </script>
+    <!-- mother grid end here-->
+    @RenderSection("scripts", required: false)
+</body>
+</html>  

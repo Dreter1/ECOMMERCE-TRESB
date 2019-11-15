@@ -1,0 +1,70 @@
+﻿@model ECOMMERCE_TRESB.ModelViews.UsuarioPerfilEditView
+@{
+    ViewBag.Title = "Perfil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-head_agile_info_w3l">
+    <div class="container">
+        <h3>Perfil de @Model.Nombres @Model.Apellidos</h3>
+        <div class="services-breadcrumb">
+            <div class="agile_inner_breadcrumb">
+
+                <ul class="w3_short">
+                    <li><a href="@Url.Action("Index", "Home")" id="IndexHomeClic">Inicio</a><i>|</i></li>
+                    <li>Editar Perfil</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<form action="@Url.Action("Perfil","Usuario", new { IdUsuario = Model.Id})" method="post">
+    <div class="banner-bootom-w3-agileits">
+        <div class="container">
+            <div class="page-header">
+                <h1>Informacion Personal</h1>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Nombres">Nombres: </label>
+                <input type="text" name="Nombres" id="NombresClic" value="@Model.Nombres" class="form-control" maxlength="100" onkeypress="return validarLetras(event)" />
+                @Html.ValidationMessage("Nombres")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Apellidos">Apellidos: </label>
+                <input type="text" name="Apellidos" id="ApellidosClic" value="@Model.Apellidos" class="form-control" maxlength="100" onkeypress="return validarLetras(event)" />
+                @Html.ValidationMessage("Apellidos")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Sexo">Sexo: </label>
+                <select name="Sexo" class="form-control">
+                    @if (!Model.Sexo)
+                    {
+                        <option id="FemeninoClic" selected value="False">Femenino</option>
+                        <option id="MasculinoClic" value="True">Masculino</option>
+                    }
+                    else
+                    {
+                        <option id="MasculinoClic" selected value="True">Masculino</option>
+                        <option id="FemeninoClic" value="False">Femenino</option>
+                    }
+                </select>
+                @Html.ValidationMessage("Sexo")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Celular">Celular: </label>
+                <input type="text" name="Celular" id="CelularClic" value="@Model.Celular" class="form-control positive" maxlength="11" />
+                @Html.ValidationMessage("Celular")
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary" id="ActualizarUsuarioPerfilClic">Actualizar</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section scripts{
+    <script src="~/Scripts/Validaciones.js"></script>
+}
+
+
+

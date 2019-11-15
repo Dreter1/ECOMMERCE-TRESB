@@ -1,0 +1,66 @@
+﻿@model List<ECOMMERCE_TRESB.Models.Venta>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+<span id="VerificacionIndexVentasTag"></span>
+<h2>Lista de Ventas</h2>
+<hr />
+<br />
+<table id="tablaVenta">
+    <thead>
+        <tr>
+            <td>N° Pedido</td>
+            <td>Cliente</td>
+            <td>Fecha de Compra</td>
+            <td>Direccion</td>
+            <td>Tipo de Pago</td>
+            <td>Monto de Compra</td>
+            <td>Ver Detalles</td>
+        </tr>
+    </thead>
+    <tbody>
+        @{int contador = 1; }
+        @foreach (var venta in Model)
+        {
+            <tr>
+                <td>@contador</td>
+                @foreach (var cliente in ViewBag.ListaUsuarios)
+                {
+                    if (cliente.Id == venta.IdUsuario)
+                    {
+                        <td>@cliente.Nombres @cliente.Apellidos</td>
+                    }
+                }
+
+                <td>@venta.Fecha</td>
+                @foreach (var direccion in ViewBag.ListaDireccionUsuario)
+                {
+                    if (direccion.Id == venta.IdDireccion)
+                    {
+                        <td>@direccion.Calle</td>
+                    }
+                }
+                @if (venta.TipoPago == 1)
+                {
+                    <td>Tarjeta De Credito</td>
+                }
+                else
+                {
+                    <td>Tarjeta De Debito</td>
+                }
+                <td>S/. @venta.MontoTotal</td>
+                <td><a href="@Url.Action("Detalle", "Venta", new { IdVenta = venta.Id })" id="DetalleVentaClic_@venta.Id" class="btn btn-warning"><i class="fa fa-info"></i> Detalles</a></td>
+            </tr>
+            contador++;
+        }
+    </tbody>
+</table>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#tablaVenta').DataTable();
+        });
+    </script>
+}
+

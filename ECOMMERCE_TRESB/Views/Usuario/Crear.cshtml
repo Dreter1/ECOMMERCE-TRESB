@@ -1,0 +1,97 @@
+﻿@model ECOMMERCE_TRESB.ModelViews.UsuarioView
+@{
+    ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+<span id="VerificacionCrearUsuarioTag"></span>
+<h2>Agregar empleado</h2>
+@if (ViewBag.CorreoExistente != null)
+{
+    <div class="col-md-12">
+        <div class="alert alert-danger alert-dismissable">
+            <button aria-hidden="true" data-dismiss="alert" id="ErrorClic" class="close" type="button"> × </button>
+            @ViewBag.CorreoExistente
+        </div>
+    </div>
+}
+<form action="@Url.Action("Crear","Usuario")" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="page-header">
+                <h1>Usuario</h1>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label" for="Email">Usuario: </label>
+                <input type="text" name="Email" id="EmailClic" value="@Model.Email" class="form-control" maxlength="100" />
+                @Html.ValidationMessage("Email")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Clave">Contraseña: </label>
+                <input type="password" name="Clave" id="ClaveClic" value="@Model.Clave" class="form-control" maxlength="30" />
+                @Html.ValidationMessage("Clave")
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="page-header">
+                <h1>Empleado</h1>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label" for="Nombres">Nombres: </label>
+                <input type="text" name="Nombres" id="NombresClic" value="@Model.Nombres" class="form-control" maxlength="100" onkeypress="return validarLetras(event)"/>
+                @Html.ValidationMessage("Nombres")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Apellidos">Apellidos: </label>
+                <input type="text" name="Apellidos" id="ApellidosClic" value="@Model.Apellidos" class="form-control" maxlength="100" onkeypress="return validarLetras(event)" />
+                @Html.ValidationMessage("Apellidos")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Sexo">Sexo: </label>
+                <select id="SexoClic" name="Sexo" class="form-control">
+                    <option id="MasculinoClic" selectd value="True">Masculino</option>
+                    <option id="FemeninoClic" value="False">Femenino</option>
+                </select>
+                @Html.ValidationMessage("Sexo")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Celular">Celular: </label>
+                <input type="text" name="Celular" id="CelularClic" value="@Model.Celular" class="form-control positive" maxlength="11" />
+                @Html.ValidationMessage("Celular")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="FechaNacimiento">Fecha de Nacimiento: </label>
+                @Html.EditorFor(model => model.FechaNacimiento, new { htmlAttributes = new { @class = "form-control", @id = "FechaNacimientoClic", @type = "date" } })
+                @Html.ValidationMessage("FechaNacimiento")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="TipoUsuario">Cargo: </label>
+                <select id="TipoUsuarioClic" name="TipoUsuario" class="form-control">
+                    <option id="VendedorClic" selectd value="1">Vendedor</option>
+                    <option id="AdministradorClic" value="2">Administrador</option>
+                </select>
+                @Html.ValidationMessage("TipoUsuario")
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="IsActive">Cuenta: </label>
+                <select id="IsActiveClic" name="IsActive" class="form-control">
+                    <option id="ActivoClic" selectd value="True">Activo</option>
+                    <option id="InactivoClic" value="False">Inactivo</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary" id="RegistrarEmpleadoClic">Registrar Empleado</button>
+    </div>
+</form>
+<hr />
+<br />
+<a href="@Url.Action("Listar","Usuario")" id="RegresarListarUsuarioClic" class="btn btn-lg btn-warning pull-left">Regresar</a>
+
+@section scripts{
+    <script src="~/Scripts/Validaciones.js"></script>
+}
+

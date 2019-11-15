@@ -1,0 +1,99 @@
+﻿@model ECOMMERCE_TRESB.ModelViews.ProductoView
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+<span id="VerificacionEditarProductosTag"></span>
+<h2>Editar Producto</h2>
+<hr />
+@if (ViewBag.StockPrecio != null)
+{
+    <div class="col-md-12">
+        <div class="alert alert-danger alert-dismissable">
+            <button aria-hidden="true" data-dismiss="alert" id="ErrorClic" class="close" type="button"> × </button>
+            @ViewBag.StockPrecio
+        </div>
+    </div>
+}
+<form action="@Url.Action("Editar", "Producto", new { IdProducto = Model.Id })" method="post" enctype="multipart/form-data">
+
+    @if (!string.IsNullOrEmpty(Model.RutaImagen))
+    {
+        <img src="@Url.Content(Model.RutaImagen)" alt="Image" style="width:200px;height:200px;max-width: 100%; height: auto;" />
+    }
+    @Html.HiddenFor(model => model.RutaImagen)
+
+    <div class="form-group">
+        <label for="Nombre" class="control-label">Nombre: </label>
+        <input type="text" name="Nombre" id="NombreClic" placeholder="Nombre" class="form-control" value="@Model.Nombre" maxlength="50">
+        @Html.ValidationMessage("Nombre")   
+    </div>
+    <div class="form-group">
+        <label for="Descripcion" class="control-label">Descripcion: </label>
+        @Html.TextAreaFor(m => m.Descripcion, new { @cols = "40", @rows = "7", @id = "DescripcionClic", @class = "form-control", @placeholder = "Ingrese la descripcion... maximo 1000 caracteres", @maxlength = "1000" })
+        @Html.ValidationMessage("Descripcion")
+    </div>
+    <div class="form-group">
+        <label for="Stock" class="control-label">Stock: </label>
+        <input type="text" maxlength="10" name="Stock" id="StockClic" placeholder="Stock" class="form-control positive" value="@Model.Stock">
+        @Html.ValidationMessage("Stock")
+    </div>
+    <div class="form-group">
+        <label for="PrecioUnitario" class="control-label">Precio: </label>
+        <input type="text" maxlength="10" id="PrecioClic" name="PrecioUnitario" placeholder="PrecioUnitario" class="form-control positive" value="@Model.PrecioUnitario">
+        @Html.ValidationMessage("PrecioUnitario")
+    </div>
+    <div class="form-group">
+        <label for="imagen" class="control-label">Imagen: </label>
+        <input type="file" id="fichero" name="Imagen" class="form-control-file btn btn-file">
+        <p id="texto"> </p>
+        <img id="img" width="150" height="150" />
+    </div>
+
+    <div class="form-group">
+        <label for="IsActive" class="control-label">Activo: </label>
+        <select id="IsActiveClic" name="IsActive" class="form-control">
+            @if (!Model.IsActive)
+            {
+                <option id="DesactivoClic" selected value="False">Desactivo</option>
+                <option id="ActivoClic" value="True">Activo</option>
+            }
+            else
+            {
+                <option id="ActivoClic" selected value="True">Activo</option>
+                <option id="DesactivoClic" value="False">Desactivo</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="stock" class="control-label">Categoria: </label>
+        <select id="IdCategoriaClic" name="IdCategoria" class="form-control">
+            @foreach (var categoria in ViewBag.ListaCategoria)
+            {
+                if (categoria.Id == Model.IdCategoria)
+                {
+                    <option id="Clic_@categoria.Nombre" selected value="@categoria.Id">@categoria.Nombre</option>
+                }
+                else
+                {
+                    <option id="Clic_@categoria.Nombre" value="@categoria.Id">@categoria.Nombre</option>
+                }
+
+            }
+
+        </select>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-lg btn-primary" id="ActualizarProductoClic">Actualizar</button>
+    </div>
+</form>
+<hr />
+<a href="@Url.Action("Listar", "Producto")" id="RegresarListarClic" class="btn btn-lg btn-warning pull-left">Regresar</a>
+
+@section scripts{
+    <script src="~/Scripts/Imagenes.js"></script>
+    <script src="~/Scripts/Validaciones.js"></script>
+}
+
+
+
