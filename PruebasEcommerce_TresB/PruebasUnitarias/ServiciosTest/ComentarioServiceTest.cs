@@ -103,9 +103,7 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias.ServiciosTest
             dbSet.As<IQueryable<Comentarios>>().Setup(m => m.Expression).Returns(datos.Expression);
             dbSet.As<IQueryable<Comentarios>>().Setup(m => m.ElementType).Returns(datos.ElementType);
             dbSet.As<IQueryable<Comentarios>>().Setup(m => m.GetEnumerator()).Returns(datos.GetEnumerator());
-            //dbSet.Setup(m => m.Include(It.IsAny<string>())).Returns(dbSetIncludeUser.Object);
-
-            
+            dbSet.Setup(o => o.Include(It.IsAny<string>())).Returns(dbSet.Object);
 
             var contex = new Mock<DbConexion>();
             contex.Setup(o => o.Comentario).Returns(dbSet.Object);
@@ -118,10 +116,12 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias.ServiciosTest
         [Ignore("Ignorar no sale Include")]
         public void TestServiceComentarioGetComentariosAsListByProductId()
         {
+            var usuario = new Usuario { Id = 1 };
+
             var datos = new List<Comentarios> {
-                new Comentarios { Id = 1, Texto = "Holita",Fecha = new DateTime(1996,05,01),IdProducto = 1 , IdUsuario = 1},
-                new Comentarios { Id = 2, Texto = "Holita",Fecha = new DateTime(1996,05,01),IdProducto = 1 , IdUsuario = 2},
-                new Comentarios { Id = 3, Texto = "Holita",Fecha = new DateTime(1996,05,01),IdProducto = 1 , IdUsuario = 3}
+                new Comentarios { Id = 1, Texto = "Holita",Fecha = new DateTime(1996,05,01),IdProducto = 1 , IdUsuario = usuario.Id},
+                new Comentarios { Id = 2, Texto = "Holita",Fecha = new DateTime(1996,05,01),IdProducto = 1 , IdUsuario = usuario.Id},
+                new Comentarios { Id = 3, Texto = "Holita",Fecha = new DateTime(1996,05,01),IdProducto = 1 , IdUsuario = usuario.Id}
             }.AsQueryable();
 
             var dbSet = new Mock<IDbSet<Comentarios>>();
@@ -129,6 +129,7 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias.ServiciosTest
             dbSet.As<IQueryable<Comentarios>>().Setup(m => m.Expression).Returns(datos.Expression);
             dbSet.As<IQueryable<Comentarios>>().Setup(m => m.ElementType).Returns(datos.ElementType);
             dbSet.As<IQueryable<Comentarios>>().Setup(m => m.GetEnumerator()).Returns(datos.GetEnumerator());
+            dbSet.Setup(o => o.Include(It.IsAny<string>())).Returns(dbSet.Object);
 
             var contex = new Mock<DbConexion>();
             contex.Setup(o => o.Comentario).Returns(dbSet.Object);

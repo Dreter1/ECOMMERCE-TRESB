@@ -116,6 +116,7 @@
     <Compile Include="PruebasUnitarias\ServiciosTest\DetalleServiceTest.cs" />
     <Compile Include="PruebasUnitarias\ServiciosTest\DireccionServiceTest.cs" />
     <Compile Include="PruebasUnitarias\ServiciosTest\UsuarioServiceTest.cs" />
+    <Compile Include="PruebasUnitarias\ServiciosTest\VentaServiceTest.cs" />
     <Compile Include="PruebasUnitarias\UsuarioControllerTest.cs" />
     <Compile Include="PruebasUnitarias\VentaControllerTest.cs" />
     <Compile Include="Selenium\TresBTests.cs" />
