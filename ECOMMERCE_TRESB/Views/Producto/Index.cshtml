@@ -49,6 +49,8 @@
         <div class="col-md-8 products-right">
             <h2>@ViewBag.Categoria</h2>
             <div class="buscar">
+		<input type="text" id="filtro" placeholder="Buscar">
+
                 @Html.Action("_GetProductosAsView", "Producto", new { IdCategoria = @ViewBag.IdCategoria, index = ViewBag.Page, NumItems = 12 })
 
 

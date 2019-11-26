@@ -7,7 +7,6 @@
 {
     <input type="hidden" id="idUsuario" value="@Session["UsuarioId"]" />
 }
-<input type="text" id="filtro" placeholder="Buscar">
 
 @foreach (var producto in Model)
 {
@@ -66,13 +65,5 @@
     });
 </script>
 
-@*<script>
-    const buscado = document.querySelector("#search");
-        const boton = document.querySelector("#buscar");
-        const filtrar = () => {
-            
-            const texto = buscado.value.toLowerCase;
-        }
-        boton.addEventListener('click',filtrar);
-</script>*@
+
 
