@@ -22,7 +22,9 @@
 <div class="banner-bootom-w3-agileits">
     <div class="container">
         <div class="col-md-4 products-left">
+            
             <div class="css-treeview">
+
                 <h4>Categorias</h4>
                 <ul class="tree-list-pad">
                     @foreach (var categoria in ViewBag.ListaCategoria)
@@ -46,7 +48,11 @@
         </div>
         <div class="col-md-8 products-right">
             <h2>@ViewBag.Categoria</h2>
-            @Html.Action("_GetProductosAsView", "Producto", new { IdCategoria = @ViewBag.IdCategoria, index = ViewBag.Page, NumItems = 12 })
+            <div class="buscar">
+                @Html.Action("_GetProductosAsView", "Producto", new { IdCategoria = @ViewBag.IdCategoria, index = ViewBag.Page, NumItems = 12 })
+
+
+            </div>
             <div class="clearfix"></div>
         </div>
     </div>
