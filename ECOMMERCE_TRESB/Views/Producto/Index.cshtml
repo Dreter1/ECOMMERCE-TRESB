@@ -79,3 +79,24 @@
         </ul>
     </nav>
 </div>
+<script>
+    $(document).ready(function () {
+
+        (function ($) {
+
+            $('#filtro').keyup(function () {
+
+                var rex = new RegExp($(this).val(), 'i');
+
+                $('.itemsFiltrar').hide();
+
+                $('.itemsFiltrar').filter(function () {
+                    return rex.test($(this).text());
+                }).show();
+
+            })
+
+        }(jQuery));
+
+    });
+</script>
