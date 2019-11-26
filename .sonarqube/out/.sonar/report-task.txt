@@ -1,0 +1,6 @@
+projectKey=Ecommerce_TresB
+serverUrl=https://sonar.sky4dev.com
+serverVersion=6.7.6.38781
+dashboardUrl=https://sonar.sky4dev.com/dashboard/index/Ecommerce_TresB
+ceTaskId=AW6pvdMOjkZ1ZOhZ5hMD
+ceTaskUrl=https://sonar.sky4dev.com/api/ce/task?id=AW6pvdMOjkZ1ZOhZ5hMD

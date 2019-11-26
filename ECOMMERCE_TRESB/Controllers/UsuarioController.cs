@@ -58,7 +58,7 @@ namespace ECOMMERCE_TRESB.Controllers
 
                 if (servicio.ExisteElCorreo(UsuarioView.Email))
                 {
-                    ViewBag.CorreoExistente = InfoAtributos.ERROR.CORREO_REGISTRADO;
+                    ViewBag.CorreoExistente = InfoAtributos.Error.CORREO_REGISTRADO;
                     ViewBag.ListaUsuarios = servicio.GetUsuariosAsList();
                     return View(UsuarioView);
                 }
@@ -161,7 +161,7 @@ namespace ECOMMERCE_TRESB.Controllers
                 if (usuario == null)
                     return RedirectToAction("Index", "Error");
 
-                if (!session.ValidarPerfil(IdUsuario))
+                if (!session.EsSuSession(IdUsuario))
                     return RedirectToAction("Index", "Error");
 
                 UsuarioPerfilEditView usuarioPerfilEditView = servicio.UsuarioToUsuarioPerfilEditView(usuario);
@@ -218,9 +218,9 @@ namespace ECOMMERCE_TRESB.Controllers
         }
 
 
-        string LetrasRegex = @"^[a-zA-Z\s]+$";
-        string NumerosRegex = @"^(0|[1-9]\d*)$";
-        string EmailRegex = @"^(('[\w-\s]+')|([\w-]+(?:\.[\w-]+)*)|('[\w-\s]+')([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)";
+        readonly string LetrasRegex = @"^[a-zA-Z\s]+$";
+        readonly string NumerosRegex = @"^(0|[1-9]\d*)$";
+        readonly string EmailRegex = @"^(('[\w-\s]+')|([\w-]+(?:\.[\w-]+)*)|('[\w-\s]+')([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)";
 
         private void ValidarUsuario(UsuarioView usuarioView)
         {
@@ -257,7 +257,7 @@ namespace ECOMMERCE_TRESB.Controllers
             if (!isApellidosValid)
                 ModelState.AddModelError("Apellidos", "Solo se aceptan letras");
 
-            if (usuarioView.FechaNacimiento == null)
+            if (string.IsNullOrEmpty(usuarioView.FechaNacimiento.ToString()))
                 ModelState.AddModelError("FechaNacimiento", "Campo Obligatorio");
 
             if (string.IsNullOrEmpty(usuarioView.Celular))
@@ -293,7 +293,7 @@ namespace ECOMMERCE_TRESB.Controllers
             if (!isApellidosValid)
                 ModelState.AddModelError("Apellidos", "Solo se aceptan letras");
 
-            if (usuarioEditarView.FechaNacimiento == null)
+            if (string.IsNullOrEmpty(usuarioEditarView.FechaNacimiento.ToString()))
                 ModelState.AddModelError("FechaNacimiento", "Campo Obligatorio");
 
             if (string.IsNullOrEmpty(usuarioEditarView.Celular))

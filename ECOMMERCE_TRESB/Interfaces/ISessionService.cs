@@ -14,9 +14,7 @@ namespace ECOMMERCE_TRESB.Interfaces
         bool IsLogged();
         bool EsAdministrativo();
         bool EsPersonalDeLaTienda();
-        bool ValidarPerfil(int? IdUsuario);
-        bool EsSuListaDeFavoritos(int? IdUsuario);
-        bool EsSuCarritoDeCompras(int? IdUsuario);
+        bool EsSuSession(int? IdUsuario);
         int ConvertirSessionIdAIntId();
         void GuardarCarritoEnSession(List<CarritoCompras> carritoCompras);
         List<CarritoCompras> RetornarProductosDelCarritoSession();

@@ -434,7 +434,7 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(true);
-            serviceSessionServiceMock.Setup(o => o.ValidarPerfil(1)).Returns(false);
+            serviceSessionServiceMock.Setup(o => o.EsSuSession(1)).Returns(false);
 
             var controladorUsuario = new UsuarioController(serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
 
@@ -452,7 +452,7 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(true);
 
             serviceUsuarioMock.Setup(o => o.GetUsuarioById(1)).Returns(new Usuario());
-            serviceSessionServiceMock.Setup(o => o.ValidarPerfil(1)).Returns(true);
+            serviceSessionServiceMock.Setup(o => o.EsSuSession(1)).Returns(true);
 
             var controladorUsuario = new UsuarioController(serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
 

@@ -35,12 +35,12 @@ namespace ECOMMERCE_TRESB.Services
 
         public List<Usuario> GetClienteAsList()
         {
-            return conexion.Usuarios.Where(u => u.TipoUsuario == InfoAtributos.TIPO_USUARIO.CLIENTE).ToList();
+            return conexion.Usuarios.Where(u => u.TipoUsuario == InfoAtributos.TipoUsuario.CLIENTE).ToList();
         }
 
         public List<Usuario> GetUsuariosVendedorYAdminAsList()
         {
-            return conexion.Usuarios.Where(u => u.TipoUsuario != InfoAtributos.TIPO_USUARIO.CLIENTE).ToList();
+            return conexion.Usuarios.Where(u => u.TipoUsuario != InfoAtributos.TipoUsuario.CLIENTE).ToList();
         }
 
         public Usuario UsuarioViewToUsuario(UsuarioView UsuarioView)
@@ -89,7 +89,7 @@ namespace ECOMMERCE_TRESB.Services
             Usuario.Salt = cryptoService.GenerateSalt();
             Usuario.Clave = cryptoService.Compute(Usuario.Clave);
 
-            Usuario.TipoUsuario = InfoAtributos.TIPO_USUARIO.CLIENTE;
+            Usuario.TipoUsuario = InfoAtributos.TipoUsuario.CLIENTE;
             Usuario.IsActive = true;
 
             conexion.Usuarios.Add(Usuario);

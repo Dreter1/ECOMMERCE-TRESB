@@ -50,15 +50,6 @@ namespace ECOMMERCE_TRESB.Services
             return producto;
         }
 
-        public Producto GetProductoByIdIncludeCategorias(int? IdProducto)
-        {
-            if (IdProducto == null)
-                return null;
-
-            Producto producto = conexion.Productos.Where(o => o.Id == IdProducto).Include(c => c.Categoria).FirstOrDefault();
-            return producto;
-        }
-
         public List<Producto> GetProductosAsList()
         {
             return conexion.Productos.Include(c => c.Categoria).ToList();
@@ -120,7 +111,7 @@ namespace ECOMMERCE_TRESB.Services
 
         public void EditarProducto(int? IdProducto, Producto Producto)
         {
-            var productoDB = GetProductoByIdIncludeCategorias(IdProducto);
+            var productoDB = GetProductoById(IdProducto);
             productoDB.Nombre = Producto.Nombre;
             productoDB.Descripcion = Producto.Descripcion;
             productoDB.Stock = Producto.Stock;
@@ -133,7 +124,7 @@ namespace ECOMMERCE_TRESB.Services
 
         public void EliminarProducto(int? IdProducto)
         {
-            var producto = GetProductoByIdIncludeCategorias(IdProducto);
+            var producto = GetProductoById(IdProducto);
             conexion.Productos.Remove(producto);
             conexion.SaveChanges();
         }

@@ -246,7 +246,7 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsPersonalDeLaTienda()).Returns(true);
 
-            serviceSessionServiceMock.Setup(o => o.EsSuCarritoDeCompras(1)).Returns(false);
+            serviceSessionServiceMock.Setup(o => o.EsSuSession(1)).Returns(false);
 
             var controladorVenta = new VentaController(serviceUsuarioMock.Object, serviceDireccionMock.Object,
                 serviceProductoMock.Object, serviceVentanMock.Object, serviceSessionServiceMock.Object);
@@ -268,7 +268,7 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
             serviceSessionServiceMock.Setup(o => o.EsPersonalDeLaTienda()).Returns(true);
 
             serviceSessionServiceMock.Setup(o => o.ConvertirSessionIdAIntId()).Returns(1);
-            serviceSessionServiceMock.Setup(o => o.EsSuCarritoDeCompras(1)).Returns(true);
+            serviceSessionServiceMock.Setup(o => o.EsSuSession(1)).Returns(true);
             serviceSessionServiceMock.Setup(o => o.GuardarCarritoEnSession(new List<CarritoCompras>()));
 
             var controladorVenta = new VentaController(serviceUsuarioMock.Object, serviceDireccionMock.Object,
@@ -799,7 +799,7 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
 
-            serviceSessionServiceMock.Setup(o => o.EsSuListaDeFavoritos(1)).Returns(false);
+            serviceSessionServiceMock.Setup(o => o.EsSuSession(1)).Returns(false);
 
             var controladorVenta = new VentaController(serviceUsuarioMock.Object, serviceDireccionMock.Object,
                 serviceProductoMock.Object, serviceVentanMock.Object, serviceSessionServiceMock.Object);
@@ -819,7 +819,7 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
 
-            serviceSessionServiceMock.Setup(o => o.EsSuListaDeFavoritos(1)).Returns(true);
+            serviceSessionServiceMock.Setup(o => o.EsSuSession(1)).Returns(true);
 
             serviceVentanMock.Setup(o => o.GetListaFavoritosByUserAsList(1));
 

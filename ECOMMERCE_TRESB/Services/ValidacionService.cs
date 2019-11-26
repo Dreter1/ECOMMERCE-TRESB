@@ -11,10 +11,10 @@ namespace ECOMMERCE_TRESB.Services
 {
     public class ValidacionService : IValidacionService
     {
-        string LetrasRegex = @"^[a-zA-Z\s]+$";
-        string NumerosRegex = @"^(0|[1-9]\d*)$";
-        string NumeroDecimalRegex = @"^[0-9]+([.])?([0-9]+)?$";
-        string EmailRegex = @"^(('[\w-\s]+')|([\w-]+(?:\.[\w-]+)*)|('[\w-\s]+')([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)";
+        readonly string LetrasRegex = @"^[a-zA-Z\s]+$";
+        readonly string NumerosRegex = @"^(0|[1-9]\d*)$";
+        readonly string NumeroDecimalRegex = @"^[0-9]+([.])?([0-9]+)?$";
+        readonly string EmailRegex = @"^(('[\w-\s]+')|([\w-]+(?:\.[\w-]+)*)|('[\w-\s]+')([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)";
         public void Categoria(CategoriaView categoriaView, ModelStateDictionary ModelState)
         {
             if (string.IsNullOrEmpty(categoriaView.Nombre))

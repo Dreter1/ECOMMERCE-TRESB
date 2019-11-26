@@ -93,7 +93,7 @@ namespace ECOMMERCE_TRESB.Controllers
                 if (IdUsuario == null)
                     return RedirectToAction("Index", "Error");
 
-                if (!session.EsSuCarritoDeCompras(IdUsuario))
+                if (!session.EsSuSession(IdUsuario))
                     return RedirectToAction("Index", "Error");
 
                 var CarritoCompras = servicio.GetCarritoComprasByUserAsList(IdUsuario);
@@ -255,7 +255,7 @@ namespace ECOMMERCE_TRESB.Controllers
                 if (IdUsuario == null)
                     return RedirectToAction("Index", "Error");
 
-                if (!session.EsSuListaDeFavoritos(IdUsuario))
+                if (!session.EsSuSession(IdUsuario))
                     return RedirectToAction("Index", "Error");
 
                 var lista = servicio.GetListaFavoritosByUserAsList(IdUsuario);

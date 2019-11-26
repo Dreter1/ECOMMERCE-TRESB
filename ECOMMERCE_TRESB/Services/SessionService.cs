@@ -46,7 +46,7 @@ namespace ECOMMERCE_TRESB.Services
             {
                 int UsuarioId = Convert.ToInt32(contexto.Session["UsuarioId"]);
                 Usuario usuario = usuarioService.GetUsuarioById(UsuarioId);
-                if (usuario.TipoUsuario == InfoAtributos.TIPO_USUARIO.ADMINISTRADOR)
+                if (usuario.TipoUsuario == InfoAtributos.TipoUsuario.ADMINISTRADOR)
                     return true;
             }
 
@@ -59,37 +59,14 @@ namespace ECOMMERCE_TRESB.Services
             {
                 int UsuarioId = Convert.ToInt32(contexto.Session["UsuarioId"]);
                 Usuario usuario = usuarioService.GetUsuarioById(UsuarioId);
-                if (usuario.TipoUsuario == InfoAtributos.TIPO_USUARIO.VENDEDOR || usuario.TipoUsuario == InfoAtributos.TIPO_USUARIO.ADMINISTRADOR)
+                if (usuario.TipoUsuario == InfoAtributos.TipoUsuario.VENDEDOR || usuario.TipoUsuario == InfoAtributos.TipoUsuario.ADMINISTRADOR)
                     return true;
             }
 
             return false;
         }
 
-        public bool ValidarPerfil(int? IdUsuario)
-        {
-            if (IsLogged())
-            {
-                int UsuarioId = Convert.ToInt32(contexto.Session["UsuarioId"]);
-                if (UsuarioId != IdUsuario)
-                    return false;
-            }
-
-            return true;
-        }
-
-        public bool EsSuListaDeFavoritos(int? IdUsuario)
-        {
-            if (IsLogged())
-            {
-                int UsuarioId = Convert.ToInt32(contexto.Session["UsuarioId"]);
-                if (UsuarioId != IdUsuario)
-                    return false;
-            }
-            return true;
-        }
-
-        public bool EsSuCarritoDeCompras(int? IdUsuario)
+        public bool EsSuSession(int? IdUsuario)
         {
             if (IsLogged())
             {

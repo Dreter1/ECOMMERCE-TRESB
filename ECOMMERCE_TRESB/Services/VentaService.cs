@@ -132,7 +132,7 @@ namespace ECOMMERCE_TRESB.Services
             return conexion.CarritoDeCompras.Where(lf => lf.IdUsuario == IdUsuario).Include(u => u.Usuario).Include(p => p.Productos).ToList();
         }
 
-        public CarritoCompras GetCarritoComprasByProductIdAndUserId(int? IdProducto, int? IdUsuario)
+        public CarritoCompras GetCarritoComprasByProductIdAndUserId(int? IdUsuario, int? IdProducto)
         {
             if (IdProducto == null && IdUsuario == null)
                 return null;
@@ -166,14 +166,14 @@ namespace ECOMMERCE_TRESB.Services
 
         public void ActualizarCantidadByIdProductoCarrito(int? IdProducto, int? IdUsuario,int NuevaCantidad)
         {
-            var CarritoComprasDB = GetCarritoComprasByProductIdAndUserId(IdProducto, IdUsuario);
+            var CarritoComprasDB = GetCarritoComprasByProductIdAndUserId(IdUsuario, IdProducto);
             CarritoComprasDB.Cantidad = NuevaCantidad;
             conexion.SaveChanges();
         }
 
         public void EliminarProductoDeCarritoCompras(int? IdProducto, int? IdUsuario)
         {
-            var CarritoComprasDB = GetCarritoComprasByProductIdAndUserId(IdProducto, IdUsuario);
+            var CarritoComprasDB = GetCarritoComprasByProductIdAndUserId(IdUsuario, IdProducto);
             conexion.CarritoDeCompras.Remove(CarritoComprasDB);
             conexion.SaveChanges();
         }

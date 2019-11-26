@@ -32,7 +32,7 @@ namespace ECOMMERCE_TRESB.Controllers
         [HttpGet]
         public ActionResult Index(int? IdCategoria, int? page)
         {
-            
+
             if (IdCategoria == null)
                 IdCategoria = 1;
             if (page == null)
@@ -178,15 +178,12 @@ namespace ECOMMERCE_TRESB.Controllers
                     return RedirectToAction("Index", "Error");
 
                 validarProducto(productoView);
-                if (ModelState.IsValid)
+                if (ModelState.IsValid && productoView.Stock > 0 && productoView.PrecioUnitario > 0)
                 {
-                    if (productoView.Stock > 0 && productoView.PrecioUnitario > 0)
-                    {
-                        Producto producto = servicio.ProductViewToProducto(productoView);
-                        servicio.AsignarRutaDeImagen(productoView, producto);
-                        servicio.EditarProducto(IdProducto, producto);
-                        return RedirectToAction("Listar", "Producto");
-                    }
+                    Producto producto = servicio.ProductViewToProducto(productoView);
+                    servicio.AsignarRutaDeImagen(productoView, producto);
+                    servicio.EditarProducto(IdProducto, producto);
+                    return RedirectToAction("Listar", "Producto");
                 }
                 ViewBag.StockPrecio = "El precio o stock no puede ser 0, intentelo de nuevo";
                 ViewBag.ListaCategoria = categoriaService.GetCategoriasAsList();

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>PruebasEcommerce_TresB</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Test</ProjectType>
+  <ProjectGuid>a38a6b82-4dc6-44b5-b0d7-3c664084a1d5</ProjectGuid>
+  <FullPath>C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\PruebasEcommerce_TresB\PruebasEcommerce_TresB.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\.sonarqube\out\1\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePath">C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\PruebasEcommerce_TresB\bin\Debug\PruebasEcommerce_TresB.dll.RoslynCA.json|C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\PruebasEcommerce_TresB\bin\Debug\PruebasEcommerce_TresB.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPath">C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\.sonarqube\out\1</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+</ProjectInfo>

@@ -35,12 +35,14 @@ namespace ECOMMERCE_TRESB.Controllers
 
         public ActionResult Nosotros()
         {
+            ViewBag.Nosotros = "Nosotros";
             ViewBag.ListaUsuarios = servicio.GetUsuariosAsList();
             return View();
         }
 
         public ActionResult Contacto()
         {
+            ViewBag.Contacto = "Contacto";
             ViewBag.ListaUsuarios = servicio.GetUsuariosAsList();
             return View();
         }
@@ -60,7 +62,7 @@ namespace ECOMMERCE_TRESB.Controllers
 
             if (servicio.ExisteElCorreo(usuarioView.Email))
             {
-                ViewBag.CorreoExistente = InfoAtributos.ERROR.CORREO_REGISTRADO;
+                ViewBag.CorreoExistente = InfoAtributos.Error.CORREO_REGISTRADO;
                 ViewBag.ListaUsuarios = servicio.GetUsuariosAsList();
                 return View(usuarioView);
             }
@@ -172,7 +174,7 @@ namespace ECOMMERCE_TRESB.Controllers
             if (!isApellidosValid)
                 ModelState.AddModelError("Apellidos", "Solo se aceptan letras");
 
-            if (usuarioView.FechaNacimiento == null)
+            if (string.IsNullOrEmpty(usuarioView.FechaNacimiento.ToString()))
                 ModelState.AddModelError("FechaNacimiento", "Campo Obligatorio");
 
             if (string.IsNullOrEmpty(usuarioView.Celular))

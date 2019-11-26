@@ -14,7 +14,6 @@ namespace ECOMMERCE_TRESB.Interfaces
         int CountProductosByCategoriaId(int? IdCategoria);
         int GetTotalPages(int? IdCategoria);
         Producto GetProductoById(int? IdProducto);
-        Producto GetProductoByIdIncludeCategorias(int? IdProducto);
         List<Producto> GetProductosAsList();
         Producto ProductViewToProducto(ProductoView ProductoView);
         ProductoView ProductoToProductView(Producto Producto);

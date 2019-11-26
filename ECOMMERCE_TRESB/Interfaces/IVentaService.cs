@@ -16,15 +16,15 @@ namespace ECOMMERCE_TRESB.Interfaces
         List<Venta> GetVentasDeUsuarioById(int? IdUsuario);
         List<DetalleVenta> GetDetalleVentasAsList();
         void GuardarVenta(Usuario usuario, List<CarritoCompras> productos, Direccion direccion, byte TipoDePago);
-        List<ListaFavoritos> GetListaFavoritosByUserAsList(int? UsuarioId);
-        bool ExisteProductIdAndUserIdEnListaFavoritos(int? IdProducto, int? IdUsuario);
+        List<ListaFavoritos> GetListaFavoritosByUserAsList(int? IdUsuario);
+        bool ExisteProductIdAndUserIdEnListaFavoritos(int? IdUsuario, int? IdProducto);
         void AgregarProductoALista(Usuario usuario, Producto producto);
         void EliminarProductoDeLista(int? IdProducto, int? IdUsuario);
         List<CarritoCompras> GetCarritoComprasByUserAsList(int? IdUsuario);
-        CarritoCompras GetCarritoComprasByProductIdAndUserId(int? IdProducto, int? IdUsuario);
+        CarritoCompras GetCarritoComprasByProductIdAndUserId(int? IdUsuario, int? IdProducto);
         bool ExisteProductIdAndUserIdEnCarritoCompras(int? IdUsuario, int? IdProducto);
         void AgregarProductoACarritoCompras(Usuario usuario, Producto producto, int cantidad);
-        void ActualizarCantidadByIdProductoCarrito(int? IdProducto, int? IdUsuario, int cantidad);
+        void ActualizarCantidadByIdProductoCarrito(int? IdProducto, int? IdUsuario, int NuevaCantidad);
         void EliminarProductoDeCarritoCompras(int? IdProducto, int? IdUsuario);
     }
 }

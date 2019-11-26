@@ -49,7 +49,7 @@ namespace ECOMMERCE_TRESB.Services
         public void EditarComentario(int? IdComentario, Comentarios Comentario)
         {
             var ComentarioDB = GetComentarioById(IdComentario);
-            Comentario.Texto = Comentario.Texto;
+            ComentarioDB.Texto = Comentario.Texto;
             conexion.SaveChanges();
         }
         public void EliminarComentario(int? IdComentario)
