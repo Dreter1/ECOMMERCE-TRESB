@@ -22,7 +22,15 @@
 <div class="banner-bootom-w3-agileits">
     <div class="container">
         <div class="col-md-4 products-left">
+            <div class="filter-price">
+                <h3>Buscador</h3>
+                <hr />
+                <input  type="text" class="form-control" id="filtro" placeholder="Buscar">
+
+            </div>
+            <br />
             <div class="css-treeview">
+                
                 <h4>Categorias</h4>
                 <ul class="tree-list-pad">
                     @foreach (var categoria in ViewBag.ListaCategoria)
@@ -46,7 +54,13 @@
         </div>
         <div class="col-md-8 products-right">
             <h2>@ViewBag.Categoria</h2>
-            @Html.Action("_GetProductosAsView", "Producto", new { IdCategoria = @ViewBag.IdCategoria, index = ViewBag.Page, NumItems = 12 })
+            <div class="buscar">
+		
+
+                @Html.Action("_GetProductosAsView", "Producto", new { IdCategoria = @ViewBag.IdCategoria, index = ViewBag.Page, NumItems = 12 })
+
+
+            </div>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -71,3 +85,24 @@
         </ul>
     </nav>
 </div>
+<script>
+    $(document).ready(function () {
+
+        (function ($) {
+
+            $('#filtro').keyup(function () {
+
+                var rex = new RegExp($(this).val(), 'i');
+
+                $('.itemsFiltrar').hide();
+
+                $('.itemsFiltrar').filter(function () {
+                    return rex.test($(this).text());
+                }).show();
+
+            })
+
+        }(jQuery));
+
+    });
+</script>
