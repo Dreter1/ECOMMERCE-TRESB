@@ -58,7 +58,7 @@ namespace ECOMMERCE_TRESB.Controllers
 
                 if (servicio.ExisteElCorreo(UsuarioView.Email))
                 {
-                    ViewBag.CorreoExistente = InfoAtributos.Error.CORREO_REGISTRADO;
+                    ViewBag.ExisteCorreo = InfoAtributos.Error.CORREO_REGISTRADO;
                     ViewBag.ListaUsuarios = servicio.GetUsuariosAsList();
                     return View(UsuarioView);
                 }

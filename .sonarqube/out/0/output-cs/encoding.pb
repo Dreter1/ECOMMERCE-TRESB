@@ -30,8 +30,7 @@ nC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB
 |C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IInfoAtributos.csutf-8á
 ~C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IProductoService.csutf-8Ü
 }C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\ISessionService.csutf-8Ü
-}C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IUsuarioService.csutf-8ä
-ÄC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IValidacionService.csutf-8Ñ
+}C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IUsuarioService.csutf-8Ñ
 {C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IVentaService.csutf-8~
 uC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Manager\AutManager.csutf-8
 vC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Manager\IAutManager.csutf-8Å
@@ -61,6 +60,5 @@ yC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB
 yC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\InfoAtributos.csutf-8Ñ
 {C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\ProductoService.csutf-8É
 zC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\SessionService.csutf-8É
-zC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\UsuarioService.csutf-8Ü
-}C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\ValidacionService.csutf-8Å
+zC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\UsuarioService.csutf-8Å
 xC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\VentaService.csutf-8

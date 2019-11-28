@@ -22,12 +22,11 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaListarViewLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Listar();
             Assert.IsInstanceOf<ViewResult>(resultado);
         }
@@ -36,12 +35,11 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaListarViewSinLogear()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(false);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(false);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Listar();
             Assert.IsInstanceOf<RedirectToRouteResult>(resultado);
         }
@@ -50,12 +48,11 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaCrearViewSinLogear()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(false);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(false);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Crear();
             Assert.IsInstanceOf<RedirectToRouteResult>(resultado);
         }
@@ -64,12 +61,11 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaCrearViewLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Crear();
             Assert.IsInstanceOf<ViewResult>(resultado);
         }
@@ -78,12 +74,11 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaCrearFormFailLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(false);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Crear(new CategoriaView
             {
                 Nombre = "Moqueando"
@@ -95,13 +90,12 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaCrearFormEmptyLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Crear(new CategoriaView
             {
                 Nombre = ""
@@ -113,7 +107,6 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaCrearFormNombreExisteLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
@@ -121,7 +114,7 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
 
             serviceCategoriaMock.Setup(o => o.ExisteCategoria("Lala")).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Crear(new CategoriaView
             {
                 Nombre = "Lala"
@@ -133,13 +126,12 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaCrearFormLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Crear(new CategoriaView
             {
                 Nombre = "Moqueando"
@@ -151,7 +143,6 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaEditarNoLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(false);
@@ -159,7 +150,7 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
 
             serviceCategoriaMock.Setup(o => o.GetCategoriaById(1)).Returns(new Categoria() { Nombre = "mock" });
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Editar(1);
             Assert.IsInstanceOf<RedirectToRouteResult>(resultado);
         }
@@ -168,7 +159,6 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaEditarLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
@@ -176,7 +166,7 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
 
             serviceCategoriaMock.Setup(o => o.GetCategoriaById(1)).Returns(new Categoria() { Nombre = "mock" });
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Editar(1);
             Assert.IsInstanceOf<ViewResult>(resultado);
         }
@@ -185,13 +175,12 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaEditarCategoriaNullLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Editar(1);
             Assert.IsInstanceOf<RedirectToRouteResult>(resultado);
         }
@@ -200,12 +189,11 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaEditarFormFailIdLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Editar(null, new CategoriaView
             {
                 Nombre = "Moqueando"
@@ -217,12 +205,11 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaEditarFormFailLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Editar(1,new CategoriaView
             {
                 Nombre = "Moqueando"
@@ -234,13 +221,12 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaEditarFormEmptyLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Editar(1, new CategoriaView
             {
                 Nombre = ""
@@ -252,7 +238,6 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaEditarFormNombreExisteLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
@@ -260,7 +245,7 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
 
             serviceCategoriaMock.Setup(o => o.ExisteCategoria("Lala")).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Editar(1,new CategoriaView
             {
                 Nombre = "Lala"
@@ -272,13 +257,12 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaEditarFormLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Editar(1,new CategoriaView
             {
                 Nombre = "Moqueando"
@@ -290,12 +274,11 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaEliminarFailIdLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Eliminar(null);
             Assert.IsInstanceOf<RedirectToRouteResult>(resultado);
         }
@@ -304,7 +287,6 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaEliminarCategoriaTieneProductosLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
@@ -312,7 +294,7 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
 
             serviceCategoriaMock.Setup(o => o.CategoriaTieneProducto(1)).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Eliminar(1);
             Assert.IsInstanceOf<RedirectToRouteResult>(resultado);
         }
@@ -321,13 +303,12 @@ namespace PruebasEcommerce_TresB.PruebasUnitarias
         public void TestCategoriaEliminarLogeado()
         {
             var serviceCategoriaMock = new Mock<ICategoriaService>();
-            var serviceUsuarioMock = new Mock<IUsuarioService>();
             var serviceSessionServiceMock = new Mock<ISessionService>();
 
             serviceSessionServiceMock.Setup(o => o.IsLogged()).Returns(true);
             serviceSessionServiceMock.Setup(o => o.EsAdministrativo()).Returns(true);
 
-            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceUsuarioMock.Object, serviceSessionServiceMock.Object);
+            var controladorCategoria = new CategoriaController(serviceCategoriaMock.Object, serviceSessionServiceMock.Object);
             var resultado = controladorCategoria.Eliminar(1);
             Assert.IsInstanceOf<RedirectToRouteResult>(resultado);
         }

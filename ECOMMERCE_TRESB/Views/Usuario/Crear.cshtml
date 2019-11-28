@@ -5,12 +5,12 @@
 }
 <span id="VerificacionCrearUsuarioTag"></span>
 <h2>Agregar empleado</h2>
-@if (ViewBag.CorreoExistente != null)
+@if (ViewBag.ExisteCorreo != null)
 {
     <div class="col-md-12">
         <div class="alert alert-danger alert-dismissable">
             <button aria-hidden="true" data-dismiss="alert" id="ErrorClic" class="close" type="button"> × </button>
-            @ViewBag.CorreoExistente
+            @ViewBag.ExisteCorreo
         </div>
     </div>
 }

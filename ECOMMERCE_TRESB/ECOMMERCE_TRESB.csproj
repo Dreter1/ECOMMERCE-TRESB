@@ -215,7 +215,6 @@
     <Compile Include="Interfaces\IProductoService.cs" />
     <Compile Include="Interfaces\ISessionService.cs" />
     <Compile Include="Interfaces\IUsuarioService.cs" />
-    <Compile Include="Interfaces\IValidacionService.cs" />
     <Compile Include="Interfaces\IVentaService.cs" />
     <Compile Include="Manager\AutManager.cs" />
     <Compile Include="Manager\IAutManager.cs" />
@@ -246,7 +245,6 @@
     <Compile Include="Services\ProductoService.cs" />
     <Compile Include="Services\SessionService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
-    <Compile Include="Services\ValidacionService.cs" />
     <Compile Include="Services\VentaService.cs" />
   </ItemGroup>
   <ItemGroup>

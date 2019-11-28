@@ -4,15 +4,15 @@ yC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB
 yC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\App_Start\FilterConfig.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=1;2=0;4=0;6=0;8=0;10=0;12=0r	
 ‚
 xC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\App_Start\RouteConfig.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=1;2=0;4=0;6=0;8=0;10=0;12=0r	
-É
-xC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\App_Start\UnityConfig.cs (8@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=0;6=0;8=0;10=0;12=0j
- !"#$%&'*+,./r!	()0123456789:;<=Û
+Ç
+xC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\App_Start\UnityConfig.cs (8@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=0;6=0;8=0;10=0;12=0j
+ !"#$%&'*+,./r 	()0123456789:;<Û
 ~C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\App_Start\UnityMvcActivator.cs (8@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=0;6=0;8=0;10=0;12=0j r	
 !"#$%&ÿ
 ÄC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Controllers\BaseAutController.cs(0R 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0r	
-Ë
-ÇC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Controllers\CategoriaController.cs< (08@HR 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=1;2=2;4=4;6=0;8=1;10=0;12=0rç	
-!"$%&'(*+-./012346789:<=?@BCEFGHIJKMOPRTUWXZ[\]^_`bcdfghijlmoprsuvwxyz{}~ÄÅÇÑÖáàâãåçéèêëíìîïñx„
+‰
+ÇC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Controllers\CategoriaController.cs; (08@HR 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=1;2=2;4=4;6=0;8=1;10=0;12=0râ	
+ "#$%&()+,-./01245678:;=>@ACDEFGHIKMNPRSUVXYZ[\]^`abdefghjkmnpqstuvwxy{|~ÄÇÉÖÜáâäãåçéèêëíìîx„
 ~C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Controllers\ErrorController.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=1;2=0;4=0;6=0;8=0;10=0;12=0r	
 ≠
 }C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Controllers\HomeController.cs] (083@3H3R 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=7;2=3;4=1;6=0;8=0;10=0;12=1rÿ	
@@ -59,11 +59,9 @@ nC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB
 ~C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IProductoService.cs(0R 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0r	
 ›
 }C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\ISessionService.cs(0R 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0r	
-Ê
-}C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IUsuarioService.cs(0R 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0r	
-ﬁ
-ÄC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IValidacionService.cs(0R 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0r	
-„
+Á
+}C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IUsuarioService.cs(0R 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0r	
+ „
 {C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IVentaService.cs(0R 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0r	
 ‰
 uC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Manager\AutManager.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=3;2=0;4=0;6=0;8=0;10=0;12=0r	
@@ -138,11 +136,9 @@ yC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB
 yC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\InfoAtributos.cs(0R 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0r*	
  !"$%&'(*+,-./0î
 {C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\ProductoService.cs: (08@HR 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=7;2=7;4=1;6=0;8=0;10=0;12=0r¡
- !"$&')*,-./1235678:;<=>?@ABCDEFGIJKLMNOPQRSTUVXYZ[]^`abcdfghjklmnpqrstuvwxyz{}~ÄÅÇÑÖáàâäãåéèëíìîïóòöõúûü†°¢£•¶®©™¨≠ÆØ∞±≤≥¥x¶
+ !"$&')*,-./1235678:;<=>?@ABCDEFGIJKLMNOPQRSTUVXYZ[]^`abcdfghjklmnpqrstuvwxyz{}~ÄÅÇÑÖáàâäãåéèëíìîïóòöõúûü†°¢£•¶®©™¨≠ÆØ∞±≤≥¥x•
 zC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\SessionService.cs" 
-(08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=6;2=3;4=1;6=0;8=0;10=0;12=0rU	
- !#$%&()+,-./01235689:;<=>?@BCEFGHIJKLMNPQRSTVWXY[\]^`abx·
-zC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\UsuarioService.cs3 (08@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=15;2=3;4=0;6=0;8=0;10=0;12=0ré	 !"$%&')*+,./0123456789:;<=>?ABCDEFGHIJKLMNOPQRTUVWYZ\]_`acdefghijklmnoprstuvwxyz{|}~ÅÇÉÑÖÜáàâäåçéèêëìîïñóòöõùü†¢§•ß®´¨≠ÆØ∞±≤≥¥µ∑∏π∫ªºΩæø¿¡√ƒ≈∆«»… ÀÕŒœ–—“”‘’÷◊ÿŸ⁄‹›x™
-}C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\ValidacionService.csÇ (08k@kHkR 0=0;5=0;10=0;20=0;30=0;60=0;90=1Z1=0;2=0;4=0;6=0;8=1;10=0;12=4r‘
- !"#$%&'()+,./012345689:;<=>?@BCEFGHIJKLMNPQRSTUVWXYZ\]^_`abcdfgijklmnopqrtuvwxyz{|}~ÄÅÇÉÑÖÜáàäãåçéèêëíìïñóòôöõúùûü°¢£§•¶®©™´¨ÆØ∞±≤≥¥µxdú
+(08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=6;2=3;4=1;6=0;8=0;10=0;12=0rT	
+ !#$%&()+,-./01235689:;<=>?@BCEFGHIJKLMNPQRSTVWXY[\]^`abxˆ
+zC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\UsuarioService.cs9 (08@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=16;2=3;4=0;6=0;8=0;10=0;12=0r£	 !"$%&')*+,./0123456789:;<=>?ABCDEFGHIJKLMNOPQRTUVWYZ\]_`acdefhiklmopqrstuvwxyz{|~ÄÅÇÉÑÖÜáàâäãçéèêëíìîïñòôöõúùü†°¢£§¶ß©´¨Æ∞±≥¥∑∏π∫ªºΩæø¿¡√ƒ≈∆«»… ÀÃÕœ–—“”‘’÷◊Ÿ⁄€‹›ﬁﬂ‡·‚„‰ÂÊËÈxú
 xC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\VentaService.cs9 (08@HR 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=12;2=4;4=2;6=0;8=0;10=0;12=0rÀ	!"#$&'()+,-./02345789:;<=>?@ACDEFGHIJKLMOPRSTUWXYZ\]^_abcefghijklmnpqrstuvwxy{|}~ÄÇÉÑÖáàâäåçéêëíìîïñóòôõúùûü†°¢£§•ß®©™´¨ÆØ∞±≤≥µ∂x

@@ -53,7 +53,6 @@ namespace ECOMMERCE_TRESB
             container.RegisterType<IUsuarioService, UsuarioService>();
             container.RegisterType<IVentaService, VentaService>();
             container.RegisterType<IAutManager, AutManager>();
-            container.RegisterType<IValidacionService, ValidacionService>();
             container.RegisterType<IComentariosSerivce, ComentariosSerivce>();
             container.RegisterType<ISessionService, SessionService>();
         }

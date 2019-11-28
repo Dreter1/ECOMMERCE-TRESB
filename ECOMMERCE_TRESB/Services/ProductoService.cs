@@ -25,7 +25,7 @@ namespace ECOMMERCE_TRESB.Services
             if (IdCategoria == null)
                 return 0;
 
-            return conexion.Productos.Where(o => o.IdCategoria == IdCategoria && o.Stock > 0 && o.IsActive == true).Count();
+            return conexion.Productos.Where(o => o.IdCategoria == IdCategoria && o.Stock > 0 && o.IsActive).Count();
         }
 
         public int GetTotalPages(int? IdCategoria)
@@ -133,7 +133,7 @@ namespace ECOMMERCE_TRESB.Services
         {
 
             List<Producto> productos  = conexion.Productos.
-                                            Where(o => o.IdCategoria == IdCategoria && o.Stock > 0 && o.IsActive == true).
+                                            Where(o => o.IdCategoria == IdCategoria && o.Stock > 0 && o.IsActive).
                                             OrderBy(o => o.Id).
                                             Skip((Page - 1) * NumItems).
                                             Take(NumItems).

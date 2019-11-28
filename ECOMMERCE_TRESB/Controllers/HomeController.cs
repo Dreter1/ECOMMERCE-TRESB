@@ -35,7 +35,7 @@ namespace ECOMMERCE_TRESB.Controllers
 
         public ActionResult Nosotros()
         {
-            ViewBag.Nosotros = "Nosotros";
+            ViewBag.AcercaDeNosotros = "Inicio TresB - Nosotros";
             ViewBag.ListaUsuarios = servicio.GetUsuariosAsList();
             return View();
         }

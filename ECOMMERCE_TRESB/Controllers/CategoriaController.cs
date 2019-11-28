@@ -14,13 +14,11 @@ namespace ECOMMERCE_TRESB.Controllers
     public class CategoriaController : BaseAutController
     {
         private readonly ICategoriaService servicio;
-        private readonly IUsuarioService UsarioSession;
         private readonly ISessionService session;
 
-        public CategoriaController(ICategoriaService servicio, IUsuarioService UsuarioSession, ISessionService session)
+        public CategoriaController(ICategoriaService servicio, ISessionService session)
         {
             this.servicio = servicio;
-            this.UsarioSession = UsuarioSession;
             this.session = session;
         }
 

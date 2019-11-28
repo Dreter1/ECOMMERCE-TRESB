@@ -226,7 +226,7 @@ controller  *
 ; 
 } 	
 } 
-} Û
+} ö
 xC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\App_Start\UnityConfig.cs
 	namespace 	
 ECOMMERCE_TRESB
@@ -388,39 +388,28 @@ AutManager770 :
 	container88 
 .88 
 RegisterType88 "
-<88" #
-IValidacionService88# 5
-,885 6
-ValidacionService887 H
->88H I
-(88I J
-)88J K
-;88K L
+<88" #
+IComentariosSerivce88# 6
+,886 7
+ComentariosSerivce888 J
+>88J K
+(88K L
+)88L M
+;88M N
 	container99 
 .99 
 RegisterType99 "
-<99" #
-IComentariosSerivce99# 6
-,996 7
-ComentariosSerivce998 J
->99J K
-(99K L
-)99L M
-;99M N
-	container:: 
-.:: 
-RegisterType:: "
-<::" #
-ISessionService::# 2
-,::2 3
-SessionService::4 B
->::B C
-(::C D
-)::D E
-;::E F
-};; 	
-}<< 
-}== ê
+<99" #
+ISessionService99# 2
+,992 3
+SessionService994 B
+>99B C
+(99C D
+)99D E
+;99E F
+}:: 	
+};; 
+}<< ê
 ~C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\App_Start\UnityMvcActivator.cs
 [ 
 assembly 	
@@ -602,7 +591,7 @@ Controller
 . 8
 { 
 } 
-} ˆ_
+} ®]
 ÇC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Controllers\CategoriaController.cs
 	namespace 	
 ECOMMERCE_TRESB
@@ -624,548 +613,560 @@ Controller
 ;3 4
 private 
 readonly 
-IUsuarioService (
-UsarioSession) 6
-;6 7
-private 
-readonly 
-ISessionService (
-session) 0
-;0 1
-public 
-CategoriaController "
-(" #
-ICategoriaService# 4
-servicio5 =
-,= >
-IUsuarioService? N
-UsuarioSessionO ]
-,] ^
-ISessionService_ n
-sessiono v
-)v w
-{ 	
+ISessionService (
+session) 0
+;0 1
+public 
+CategoriaController "
+(" #
+ICategoriaService# 4
+servicio5 =
+,= >
+ISessionService? N
+sessionO V
+)V W
+{ 	
+this 
+. 
+servicio 
+= 
+servicio $
+;$ %
 this 
-. 
-servicio 
-= 
-servicio $
-;$ %
-this 
-. 
-UsarioSession 
-=  
-UsuarioSession! /
-;/ 0
-this 
-. 
-session 
-= 
-session "
-;" #
-} 	
-[ 	
-HttpGet	 
-] 
-public 
-ActionResult 
-Listar "
-(" #
-)# $
-{ 	
-if 
-( 
-session 
-. 
-EsAdministrativo (
-(( )
-)) *
-)* +
-return 
-View 
-( 
-servicio $
-.$ %
-GetCategoriasAsList% 8
-(8 9
-)9 :
-): ;
-;; <
-return!! 
-RedirectToAction!! #
-(!!# $
-$str!!$ +
-,!!+ ,
-$str!!, 3
-)!!3 4
-;!!4 5
-}"" 	
-[$$ 	
-HttpGet$$	 
-]$$ 
-public%% 
-ActionResult%% 
-Crear%% !
-(%%! "
-)%%" #
-{&& 	
-if'' 
-('' 
-session'' 
-.'' 
-EsAdministrativo'' (
-(''( )
-)'') *
-)''* +
-return(( 
-View(( 
-((( 
-new(( 
-CategoriaView((  -
-(((- .
-)((. /
-)((/ 0
-;((0 1
-return** 
-RedirectToAction** #
-(**# $
-$str**$ +
-,**+ ,
-$str**- 4
-)**4 5
-;**5 6
-}++ 	
-[-- 	
-HttpPost--	 
-]-- 
-public.. 
-ActionResult.. 
-Crear.. !
-(..! "
-CategoriaView.." /
-categoriaView..0 =
-)..= >
-{// 	
-if00 
-(00 
-session00 
-.00 
-EsAdministrativo00 (
-(00( )
-)00) *
-)00* +
-{11 
-ValidarCategoria22  
-(22  !
-categoriaView22! .
-)22. /
-;22/ 0
-if33 
-(33 
-!33 
+. 
+session 
+= 
+session "
+;" #
+} 	
+[ 	
+HttpGet	 
+] 
+public 
+ActionResult 
+Listar "
+(" #
+)# $
+{ 	
+if 
+( 
+session 
+. 
+EsAdministrativo (
+(( )
+)) *
+)* +
+return 
+View 
+( 
+servicio $
+.$ %
+GetCategoriasAsList% 8
+(8 9
+)9 :
+): ;
+;; <
+return 
+RedirectToAction #
+(# $
+$str$ +
+,+ ,
+$str, 3
+)3 4
+;4 5
+}   	
+["" 	
+HttpGet""	 
+]"" 
+public## 
+ActionResult## 
+Crear## !
+(##! "
+)##" #
+{$$ 	
+if%% 
+(%% 
+session%% 
+.%% 
+EsAdministrativo%% (
+(%%( )
+)%%) *
+)%%* +
+return&& 
+View&& 
+(&& 
+new&& 
+CategoriaView&&  -
+(&&- .
+)&&. /
+)&&/ 0
+;&&0 1
+return(( 
+RedirectToAction(( #
+(((# $
+$str(($ +
+,((+ ,
+$str((- 4
+)((4 5
+;((5 6
+})) 	
+[++ 	
+HttpPost++	 
+]++ 
+public,, 
+ActionResult,, 
+Crear,, !
+(,,! "
+CategoriaView,," /
+categoriaView,,0 =
+),,= >
+{-- 	
+if.. 
+(.. 
+session.. 
+... 
+EsAdministrativo.. (
+(..( )
+)..) *
+)..* +
+{// 
+ValidarCategoria00  
+(00  !
+categoriaView00! .
+)00. /
+;00/ 0
+if11 
+(11 
+!11 
 
-ModelState33 
-.33  
-IsValid33  '
-)33' (
-return44 
-View44 
-(44  
-categoriaView44  -
-)44- .
-;44. /
-if66 
-(66 
-servicio66 
-.66 
-ExisteCategoria66 ,
-(66, -
-categoriaView66- :
-.66: ;
-Nombre66; A
-)66A B
-)66B C
-{77 
-ViewBag88 
-.88 
-ExisteCategoria88 +
-=88, -
-$str88. X
-;88X Y
-return99 
-View99 
-(99  
-categoriaView99  -
-)99- .
-;99. /
-}:: 
-	Categoria<< 
-	categoria<< #
-=<<$ %
-servicio<<& .
-.<<. /$
-CategoriaViewToCategoria<</ G
-(<<G H
-categoriaView<<H U
-)<<U V
-;<<V W
-servicio== 
-.== 
-GuardarCategoria== )
-(==) *
-	categoria==* 3
-)==3 4
-;==4 5
-return?? 
-RedirectToAction?? '
-(??' (
-$str??( 0
-,??0 1
-$str??2 =
-)??= >
-;??> ?
-}@@ 
-returnBB 
-RedirectToActionBB #
-(BB# $
-$strBB$ +
-,BB+ ,
-$strBB- 4
-)BB4 5
-;BB5 6
-}CC 	
-[EE 	
-HttpGetEE	 
-]EE 
-publicFF 
-ActionResultFF 
-EditarFF "
-(FF" #
-intFF# &
-?FF& '
-IdCategoriaFF( 3
-)FF3 4
-{GG 	
-ifHH 
-(HH 
-sessionHH 
-.HH 
-EsAdministrativoHH (
-(HH( )
-)HH) *
-)HH* +
-{II 
-ifJJ 
-(JJ 
-IdCategoriaJJ 
-==JJ  "
-nullJJ# '
-)JJ' (
-returnKK 
-RedirectToActionKK +
-(KK+ ,
-$strKK, 3
-,KK3 4
-$strKK5 <
-)KK< =
-;KK= >
-	CategoriaMM 
-	categoriaMM #
-=MM$ %
-servicioMM& .
-.MM. /
-GetCategoriaByIdMM/ ?
-(MM? @
-IdCategoriaMM@ K
-)MMK L
-;MML M
-ifOO 
-(OO 
-	categoriaOO 
-==OO  
-nullOO! %
-)OO% &
-returnPP 
-RedirectToActionPP +
-(PP+ ,
-$strPP, 3
-,PP3 4
-$strPP5 <
-)PP< =
-;PP= >
-CategoriaViewRR 
-categoriaViewRR +
-=RR, -
-servicioRR. 6
-.RR6 7$
-CategoriaToCategoriaViewRR7 O
-(RRO P
-	categoriaRRP Y
-)RRY Z
-;RRZ [
-returnTT 
-ViewTT 
-(TT 
-categoriaViewTT )
-)TT) *
-;TT* +
-}UU 
-returnWW 
-RedirectToActionWW #
-(WW# $
-$strWW$ +
-,WW+ ,
-$strWW- 4
-)WW4 5
-;WW5 6
-}XX 	
-[ZZ 	
-HttpPostZZ	 
-]ZZ 
-public[[ 
-ActionResult[[ 
-Editar[[ "
-([[" #
-int[[# &
-?[[& '
-IdCategoria[[( 3
-,[[3 4
-CategoriaView[[5 B
-categoriaView[[C P
-)[[P Q
-{\\ 	
-if]] 
-(]] 
-session]] 
-.]] 
-EsAdministrativo]] (
-(]]( )
-)]]) *
-)]]* +
-{^^ 
-if__ 
-(__ 
-IdCategoria__ 
-==__  "
-null__# '
-)__' (
-return`` 
-RedirectToAction`` +
-(``+ ,
-$str``, 3
-,``3 4
-$str``5 <
-)``< =
-;``= >
-ValidarCategoriabb  
-(bb  !
-categoriaViewbb! .
-)bb. /
-;bb/ 0
-ifcc 
-(cc 
-!cc 
+ModelState11 
+.11  
+IsValid11  '
+)11' (
+return22 
+View22 
+(22  
+categoriaView22  -
+)22- .
+;22. /
+if44 
+(44 
+servicio44 
+.44 
+ExisteCategoria44 ,
+(44, -
+categoriaView44- :
+.44: ;
+Nombre44; A
+)44A B
+)44B C
+{55 
+ViewBag66 
+.66 
+ExisteCategoria66 +
+=66, -
+$str66. X
+;66X Y
+return77 
+View77 
+(77  
+categoriaView77  -
+)77- .
+;77. /
+}88 
+	Categoria:: 
+	categoria:: #
+=::$ %
+servicio::& .
+.::. /$
+CategoriaViewToCategoria::/ G
+(::G H
+categoriaView::H U
+)::U V
+;::V W
+servicio;; 
+.;; 
+GuardarCategoria;; )
+(;;) *
+	categoria;;* 3
+);;3 4
+;;;4 5
+return== 
+RedirectToAction== '
+(==' (
+$str==( 0
+,==0 1
+$str==2 =
+)=== >
+;==> ?
+}>> 
+return@@ 
+RedirectToAction@@ #
+(@@# $
+$str@@$ +
+,@@+ ,
+$str@@- 4
+)@@4 5
+;@@5 6
+}AA 	
+[CC 	
+HttpGetCC	 
+]CC 
+publicDD 
+ActionResultDD 
+EditarDD "
+(DD" #
+intDD# &
+?DD& '
+IdCategoriaDD( 3
+)DD3 4
+{EE 	
+ifFF 
+(FF 
+sessionFF 
+.FF 
+EsAdministrativoFF (
+(FF( )
+)FF) *
+)FF* +
+{GG 
+ifHH 
+(HH 
+IdCategoriaHH 
+==HH  "
+nullHH# '
+)HH' (
+returnII 
+RedirectToActionII +
+(II+ ,
+$strII, 3
+,II3 4
+$strII5 <
+)II< =
+;II= >
+	CategoriaKK 
+	categoriaKK #
+=KK$ %
+servicioKK& .
+.KK. /
+GetCategoriaByIdKK/ ?
+(KK? @
+IdCategoriaKK@ K
+)KKK L
+;KKL M
+ifMM 
+(MM 
+	categoriaMM 
+==MM  
+nullMM! %
+)MM% &
+returnNN 
+RedirectToActionNN +
+(NN+ ,
+$strNN, 3
+,NN3 4
+$strNN5 <
+)NN< =
+;NN= >
+CategoriaViewPP 
+categoriaViewPP +
+=PP, -
+servicioPP. 6
+.PP6 7$
+CategoriaToCategoriaViewPP7 O
+(PPO P
+	categoriaPPP Y
+)PPY Z
+;PPZ [
+returnRR 
+ViewRR 
+(RR 
+categoriaViewRR )
+)RR) *
+;RR* +
+}SS 
+returnUU 
+RedirectToActionUU #
+(UU# $
+$strUU$ +
+,UU+ ,
+$strUU- 4
+)UU4 5
+;UU5 6
+}VV 	
+[XX 	
+HttpPostXX	 
+]XX 
+publicYY 
+ActionResultYY 
+EditarYY "
+(YY" #
+intYY# &
+?YY& '
+IdCategoriaYY( 3
+,YY3 4
+CategoriaViewYY5 B
+categoriaViewYYC P
+)YYP Q
+{ZZ 	
+if[[ 
+([[ 
+session[[ 
+.[[ 
+EsAdministrativo[[ (
+([[( )
+)[[) *
+)[[* +
+{\\ 
+if]] 
+(]] 
+IdCategoria]] 
+==]]  "
+null]]# '
+)]]' (
+return^^ 
+RedirectToAction^^ +
+(^^+ ,
+$str^^, 3
+,^^3 4
+$str^^5 <
+)^^< =
+;^^= >
+ValidarCategoria``  
+(``  !
+categoriaView``! .
+)``. /
+;``/ 0
+ifaa 
+(aa 
+!aa 
 
-ModelStatecc 
-.cc  
-IsValidcc  '
-)cc' (
-returndd 
-Viewdd 
-(dd  
-categoriaViewdd  -
-)dd- .
-;dd. /
-ifff 
-(ff 
-servicioff 
-.ff 
-ExisteCategoriaff ,
-(ff, -
-categoriaViewff- :
-.ff: ;
-Nombreff; A
-)ffA B
-)ffB C
-{gg 
-ViewBaghh 
-.hh 
-ExisteCategoriahh +
-=hh, -
-$strhh. X
-;hhX Y
-returnii 
-Viewii 
-(ii  
-categoriaViewii  -
-)ii- .
-;ii. /
-}jj 
-	Categoriall 
-	categoriall #
-=ll$ %
-servicioll& .
-.ll. /$
-CategoriaViewToCategoriall/ G
-(llG H
-categoriaViewllH U
-)llU V
-;llV W
-serviciomm 
-.mm 
-EditarCategoriamm (
-(mm( )
-IdCategoriamm) 4
-,mm4 5
-	categoriamm6 ?
-)mm? @
-;mm@ A
-returnoo 
-RedirectToActionoo '
-(oo' (
-$stroo( 0
-,oo0 1
-$stroo2 =
-)oo= >
-;oo> ?
-}pp 
-returnrr 
-RedirectToActionrr #
-(rr# $
-$strrr$ +
-,rr+ ,
-$strrr- 4
-)rr4 5
-;rr5 6
-}ss 	
-[uu 	
-HttpGetuu	 
-]uu 
-publicvv 
-ActionResultvv 
-Eliminarvv $
-(vv$ %
-intvv% (
-?vv( )
-IdCategoriavv* 5
-)vv5 6
-{ww 	
-ifxx 
-(xx 
-sessionxx 
-.xx 
-EsAdministrativoxx (
-(xx( )
-)xx) *
-)xx* +
-{yy 
-ifzz 
-(zz 
-IdCategoriazz 
-==zz  "
-nullzz# '
-)zz' (
-return{{ 
-RedirectToAction{{ +
-({{+ ,
-$str{{, 3
-,{{3 4
-$str{{5 <
-){{< =
-;{{= >
-if}} 
-(}} 
-servicio}} 
-.}} "
-CategoriaTieneProducto}} 3
-(}}3 4
-IdCategoria}}4 ?
-)}}? @
-)}}@ A
-return~~ 
-RedirectToAction~~ +
-(~~+ ,
-$str~~, 4
-,~~4 5
-$str~~6 A
-)~~A B
-;~~B C
-servicio
-ÄÄ 
-.
-ÄÄ 
-EliminarCategoria
-ÄÄ *
-(
-ÄÄ* +
-IdCategoria
-ÄÄ+ 6
-)
-ÄÄ6 7
-;
-ÄÄ7 8
-return
-ÅÅ 
-RedirectToAction
-ÅÅ '
-(
-ÅÅ' (
-$str
-ÅÅ( 0
-,
-ÅÅ0 1
-$str
-ÅÅ2 =
-)
-ÅÅ= >
-;
-ÅÅ> ?
+ModelStateaa 
+.aa  
+IsValidaa  '
+)aa' (
+returnbb 
+Viewbb 
+(bb  
+categoriaViewbb  -
+)bb- .
+;bb. /
+ifdd 
+(dd 
+serviciodd 
+.dd 
+ExisteCategoriadd ,
+(dd, -
+categoriaViewdd- :
+.dd: ;
+Nombredd; A
+)ddA B
+)ddB C
+{ee 
+ViewBagff 
+.ff 
+ExisteCategoriaff +
+=ff, -
+$strff. X
+;ffX Y
+returngg 
+Viewgg 
+(gg  
+categoriaViewgg  -
+)gg- .
+;gg. /
+}hh 
+	Categoriajj 
+	categoriajj #
+=jj$ %
+serviciojj& .
+.jj. /$
+CategoriaViewToCategoriajj/ G
+(jjG H
+categoriaViewjjH U
+)jjU V
+;jjV W
+serviciokk 
+.kk 
+EditarCategoriakk (
+(kk( )
+IdCategoriakk) 4
+,kk4 5
+	categoriakk6 ?
+)kk? @
+;kk@ A
+returnmm 
+RedirectToActionmm '
+(mm' (
+$strmm( 0
+,mm0 1
+$strmm2 =
+)mm= >
+;mm> ?
+}nn 
+returnpp 
+RedirectToActionpp #
+(pp# $
+$strpp$ +
+,pp+ ,
+$strpp- 4
+)pp4 5
+;pp5 6
+}qq 	
+[ss 	
+HttpGetss	 
+]ss 
+publictt 
+ActionResulttt 
+Eliminartt $
+(tt$ %
+inttt% (
+?tt( )
+IdCategoriatt* 5
+)tt5 6
+{uu 	
+ifvv 
+(vv 
+sessionvv 
+.vv 
+EsAdministrativovv (
+(vv( )
+)vv) *
+)vv* +
+{ww 
+ifxx 
+(xx 
+IdCategoriaxx 
+==xx  "
+nullxx# '
+)xx' (
+returnyy 
+RedirectToActionyy +
+(yy+ ,
+$stryy, 3
+,yy3 4
+$stryy5 <
+)yy< =
+;yy= >
+if{{ 
+({{ 
+servicio{{ 
+.{{ "
+CategoriaTieneProducto{{ 3
+({{3 4
+IdCategoria{{4 ?
+){{? @
+){{@ A
+return|| 
+RedirectToAction|| +
+(||+ ,
+$str||, 4
+,||4 5
+$str||6 A
+)||A B
+;||B C
+servicio~~ 
+.~~ 
+EliminarCategoria~~ *
+(~~* +
+IdCategoria~~+ 6
+)~~6 7
+;~~7 8
+return 
+RedirectToAction '
+(' (
+$str( 0
+,0 1
+$str2 =
+)= >
+;> ?
 }
-ÇÇ 
+ÄÄ 
 return
-ÑÑ 
+ÇÇ 
 RedirectToAction
-ÑÑ #
+ÇÇ #
 (
-ÑÑ# $
+ÇÇ# $
 $str
-ÑÑ$ +
+ÇÇ$ +
 ,
-ÑÑ+ ,
+ÇÇ+ ,
 $str
-ÑÑ- 4
+ÇÇ- 4
 )
-ÑÑ4 5
+ÇÇ4 5
 ;
-ÑÑ5 6
+ÇÇ5 6
 }
-ÖÖ 	
+ÉÉ 	
 private
-áá 
+ÖÖ 
 void
-áá 
+ÖÖ 
 ValidarCategoria
-áá %
+ÖÖ %
 (
-áá% &
+ÖÖ% &
 CategoriaView
-áá& 3
+ÖÖ& 3
 categoriaView
-áá4 A
+ÖÖ4 A
 )
-ááA B
+ÖÖA B
 {
-àà 	
+ÜÜ 	
 string
-ââ 
+áá 
 LetrasRegex
-ââ 
+áá 
 =
-ââ  
+áá  
 $str
-ââ! 1
+áá! 1
 ;
-ââ1 2
+áá1 2
+if
+ââ 
+(
+ââ 
+string
+ââ 
+.
+ââ 
+IsNullOrEmpty
+ââ $
+(
+ââ$ %
+categoriaView
+ââ% 2
+.
+ââ2 3
+Nombre
+ââ3 9
+)
+ââ9 :
+)
+ââ: ;
+
+ModelState
+ää 
+.
+ää 
+AddModelError
+ää (
+(
+ää( )
+$str
+ää) 1
+,
+ää1 2
+$str
+ää3 F
+)
+ääF G
+;
+ääG H
 if
 ãã 
 (
@@ -1185,9 +1186,25 @@ ModelStatecc 
 Nombre
 ãã3 9
 )
-ãã9 :
+ãã9 :
+||
+ãã; =
+categoriaView
+ãã> K
+.
+ããK L
+Nombre
+ããL R
+.
+ããR S
+Length
+ããS Y
+<=
+ããZ \
+$num
+ãã] ^
 )
-ãã: ;
+ãã^ _
 
 ModelState
 åå 
@@ -1202,11 +1219,11 @@ ModelState
 ,
 åå1 2
 $str
-åå3 F
+åå3 Y
 )
-ååF G
+ååY Z
 ;
-ååG H
+ååZ [
 if
 çç 
 (
@@ -1238,13 +1255,13 @@ ModelState
 .
 ççR S
 Length
-ççS Y
-<=
-ççZ \
+ççS Y
+>
+ççZ [
 $num
-çç] ^
+çç\ _
 )
-çç^ _
+çç_ `
 
 ModelState
 éé 
@@ -1263,143 +1280,86 @@ ModelState
 )
 ééY Z
 ;
-ééZ [
-if
-èè 
-(
-èè 
-string
-èè 
-.
-èè 
-IsNullOrEmpty
-èè $
-(
-èè$ %
-categoriaView
-èè% 2
-.
-èè2 3
-Nombre
-èè3 9
-)
-èè9 :
-||
-èè; =
-categoriaView
-èè> K
-.
-èèK L
-Nombre
-èèL R
-.
-èèR S
-Length
-èèS Y
->
-èèZ [
-$num
-èè\ _
-)
-èè_ `
-
-ModelState
-êê 
-.
-êê 
-AddModelError
-êê (
-(
-êê( )
-$str
-êê) 1
-,
-êê1 2
-$str
-êê3 Y
-)
-êêY Z
-;
-êêZ [
+ééZ [
 bool
-ëë 
+èè 
 isNombreValid
-ëë 
+èè 
 =
-ëë  
+èè  
 string
-ëë! '
+èè! '
 .
-ëë' (
+èè' (
 IsNullOrEmpty
-ëë( 5
+èè( 5
 (
-ëë5 6
+èè5 6
 categoriaView
-ëë6 C
+èè6 C
 .
-ëëC D
+èèC D
 Nombre
-ëëD J
+èèD J
 )
-ëëJ K
+èèJ K
 ||
-ëëL N
+èèL N
 Regex
-ëëO T
+èèO T
 .
-ëëT U
+èèT U
 IsMatch
-ëëU \
+èèU \
 (
-ëë\ ]
+èè\ ]
 categoriaView
-ëë] j
+èè] j
 .
-ëëj k
+èèj k
 Nombre
-ëëk q
+èèk q
 ,
-ëëq r
+èèq r
 LetrasRegex
-ëës ~
+èès ~
 )
-ëë~ 
-;ëë Ä
+èè~ 
+;èè Ä
 if
-íí 
+êê 
 (
-íí 
+êê 
 !
-íí 
+êê 
 isNombreValid
-íí 
+êê 
 )
-íí 
+êê 
 
 ModelState
-ìì 
+ëë 
 .
-ìì 
+ëë 
 AddModelError
-ìì (
+ëë (
 (
-ìì( )
+ëë( )
 $str
-ìì) 1
+ëë) 1
 ,
-ìì1 2
+ëë1 2
 $str
-ìì3 K
+ëë3 K
 )
-ììK L
+ëëK L
 ;
-ììL M
+ëëL M
 }
-îî 	
+íí 	
 }
-ïï 
-}ññ Ä
+ìì 
+}îî Ä
 ~C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Controllers\ErrorController.cs
 	namespace 	
 ECOMMERCE_TRESB
@@ -1433,7 +1393,7 @@ Controller		# -
 ; 
 } 	
 } 
-} Ûù
+} ˚ù
 }C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Controllers\HomeController.cs
 	namespace 	
 ECOMMERCE_TRESB
@@ -1540,11 +1500,11 @@ Controller" ,
 )$$% &
 {%% 	
 ViewBag&& 
-.&& 
-Nosotros&& 
-=&& 
-$str&& )
-;&&) *
+.&& 
+AcercaDeNosotros&& $
+=&&% &
+$str&&' @
+;&&@ A
 ViewBag'' 
 .'' 
 ListaUsuarios'' !
@@ -5263,7 +5223,7 @@ ModelState
 èè 	
 }
 êê 
-}ëë °’
+}ëë ü’
 ÄC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Controllers\UsuarioController.cs
 	namespace 	
 ECOMMERCE_TRESB
@@ -5462,15 +5422,15 @@ ModelState88 
 );;> ?
 {<< 
 ViewBag== 
-.== 
-CorreoExistente== +
-===, -
-InfoAtributos==. ;
-.==; <
-Error==< A
-.==A B
-CORREO_REGISTRADO==B S
-;==S T
+.== 
+ExisteCorreo== (
+===) *
+InfoAtributos==+ 8
+.==8 9
+Error==9 >
+.==> ?
+CORREO_REGISTRADO==? P
+;==P Q
 ViewBag>> 
 .>> 
 ListaUsuarios>> )
@@ -5499,12 +5459,12 @@ ModelState88 
 )BBK L
 ;BBL M
 servicioCC 
-.CC 
-GuardarUsuarioCC '
-(CC' (
-usuarioCC( /
-)CC/ 0
-;CC0 1
+.CC 
+GuardarPersonalCC (
+(CC( )
+usuarioCC) 0
+)CC0 1
+;CC1 2
 returnEE 
 RedirectToActionEE '
 (EE' (
@@ -13040,7 +13000,7 @@ Interfaces $
 )@ A
 ;A B
 } 
-} ì
+} ô
 }C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IUsuarioService.cs
 	namespace		 	
 ECOMMERCE_TRESB		
@@ -13108,180 +13068,115 @@ Interfaces		 $
 Usuario #
 Usuario$ +
 )+ ,
-;, -
-Usuario &
-UsuarioEditarViewToUsuario *
-(* +
-UsuarioEditarView+ <
-UsuarioEditarView= N
-)N O
-;O P
-UsuarioEditarView &
-UsuarioToUsuarioEditarView 4
-(4 5
-Usuario5 <
-Usuario= D
-)D E
-;E F
-void 
-EditarUsuario 
-( 
-int 
-? 
-	IdUsuario  )
-,) *
-Usuario+ 2
-Usuario3 :
-): ;
-;; <
-void 
-EliminarUsuario 
-( 
-int  
-?  !
-	IdUsuario" +
-)+ ,
-;, -
-bool 
-ExisteElCorreo 
-( 
-string "
-email# (
-)( )
-;) *
-Usuario &
-GetUsuarioByCorreoAndClave *
-(* +
-string+ 1
-Correo2 8
-,8 9
-string: @
-ClaveA F
-)F G
-;G H
-Usuario *
-UsuarioPerfilEditViewToUsuario .
-(. /!
-UsuarioPerfilEditView/ D!
-UsuarioPerfilEditViewE Z
-)Z [
-;[ \!
-UsuarioPerfilEditView *
-UsuarioToUsuarioPerfilEditView <
-(< =
-Usuario= D
-UsuarioE L
-)L M
-;M N
-void 
-EditarPerfil 
-( 
-int 
-? 
-	IdUsuario (
-,( )
-Usuario* 1
-Usuario2 9
-)9 :
-;: ;
-void #
-AgregarDireccionUsuario $
-($ %
-Usuario% ,
-usuario- 4
-,4 5
-string6 <
-Calle= B
-,B C
-stringD J
-PaisK O
-,O P
-stringQ W
-RegionX ^
-,^ _
-string` f
-Ciudadg m
-,m n
-stringo u
-CodigoPostal	v Ç
+;, -
+void 
+GuardarPersonal 
+( 
+Usuario $
+Usuario% ,
+), -
+;- .
+Usuario &
+UsuarioEditarViewToUsuario *
+(* +
+UsuarioEditarView+ <
+UsuarioEditarView= N
+)N O
+;O P
+UsuarioEditarView &
+UsuarioToUsuarioEditarView 4
+(4 5
+Usuario5 <
+Usuario= D
+)D E
+;E F
+void 
+EditarUsuario 
+( 
+int 
+? 
+	IdUsuario  )
+,) *
+Usuario+ 2
+Usuario3 :
+): ;
+;; <
+void 
+EliminarUsuario 
+( 
+int  
+?  !
+	IdUsuario" +
+)+ ,
+;, -
+bool 
+ExisteElCorreo 
+( 
+string "
+email# (
+)( )
+;) *
+Usuario &
+GetUsuarioByCorreoAndClave *
+(* +
+string+ 1
+Correo2 8
+,8 9
+string: @
+ClaveA F
+)F G
+;G H
+Usuario *
+UsuarioPerfilEditViewToUsuario .
+(. /!
+UsuarioPerfilEditView/ D!
+UsuarioPerfilEditViewE Z
+)Z [
+;[ \!
+UsuarioPerfilEditView *
+UsuarioToUsuarioPerfilEditView <
+(< =
+Usuario= D
+UsuarioE L
+)L M
+;M N
+void 
+EditarPerfil 
+( 
+int 
+? 
+	IdUsuario (
+,( )
+Usuario* 1
+Usuario2 9
+)9 :
+;: ;
+void #
+AgregarDireccionUsuario $
+($ %
+Usuario% ,
+usuario- 4
+,4 5
+string6 <
+Calle= B
+,B C
+stringD J
+PaisK O
+,O P
+stringQ W
+RegionX ^
+,^ _
+string` f
+Ciudadg m
+,m n
+stringo u
+CodigoPostal	v Ç
 )
-Ç É
+Ç É
 ;
-É Ñ
-} 
-} •
-ÄC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IValidacionService.cs
-	namespace		 	
-ECOMMERCE_TRESB		
- 
-.		 
-
-Interfaces		 $
-{
-
- 
-public 
-
-	interface 
-IValidacionService '
-{ 
-void 
-	Categoria 
-( 
-CategoriaView $
-categoriaView% 2
-,2 3 
-ModelStateDictionary4 H
-
-ModelStateI S
-)S T
-;T U
-void 
-Usuario 
-( 
-UsuarioView  
-usuarioView! ,
-,, - 
-ModelStateDictionary. B
-
-ModelStateC M
-)M N
-;N O
-void 
-EditarUsuario 
-( 
-UsuarioEditarView ,
-usuarioEditarView- >
-,> ? 
-ModelStateDictionary@ T
-
-ModelStateU _
-)_ `
-;` a
-void 
-EditarPerfilUsuario  
-(  !!
-UsuarioPerfilEditView! 6!
-usuarioPerfilEditView7 L
-,L M 
-ModelStateDictionaryN b
-
-ModelStatec m
-)m n
-;n o
-void 
-Producto 
-( 
-ProductoView "
-productoView# /
-,/ 0 
-ModelStateDictionary1 E
-
-ModelStateF P
-)P Q
-;Q R
-} 
-} ´
+É Ñ
+} 
+}   ´
 {C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Interfaces\IVentaService.cs
 	namespace		 	
 ECOMMERCE_TRESB		
@@ -16653,7 +16548,7 @@ yC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB
 ;--- .
 }.. 	
 }// 
-}00 ˜w
+}00 Øw
 {C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\ProductoService.cs
 	namespace
 
@@ -16750,15 +16645,13 @@ DbConexion )
 &&] _
 o` a
 .a b
-IsActiveb j
-==k m
-truen r
+IsActiveb j
+)j k
+.k l
+Countl q
+(q r
 )r s
-.s t
-Countt y
-(y z
-)z {
-;{ |
+;s t
 } 	
 public 
 int 
@@ -17372,15 +17265,11 @@ IdProducto+ 5
 .
 ààg h
 IsActive
-ààh p
-==
-ààq s
-true
-ààt x
+ààh p
 )
-ààx y
+ààp q
 .
-àày z
+ààq r
 OrderBy
 ââ, 3
 (
@@ -17750,7 +17639,7 @@ productoBd
 ≤≤ 	
 }
 ≥≥ 
-}¥¥ ß>
+}¥¥ ◊=
 zC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\SessionService.cs
 	namespace 	
 ECOMMERCE_TRESB
@@ -17784,13 +17673,7 @@ zC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB
 readonly 
 UsuarioService '
 usuarioService( 6
-;6 7
-private 
-readonly 
-
-DbConexion #
-conexion$ ,
-;, -
+;6 7
 public 
 SessionService 
 ( 
@@ -17801,15 +17684,17 @@ DbConexion #
 HttpContext "
 ." #
 Current# *
-;* +
-conexion 
-= 
-new 
+;* +
 
-DbConexion %
-(% &
-)& '
-;' (
+DbConexion 
+conexion 
+=  !
+new" %
+
+DbConexion& 0
+(0 1
+)1 2
+;2 3
 usuarioService 
 = 
 new  
@@ -18198,7 +18083,7 @@ DbConexion %
 ;^^& '
 }`` 	
 }aa 
-}bb §î
+}bb çû
 zC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\UsuarioService.cs
 	namespace 	
 ECOMMERCE_TRESB
@@ -18616,723 +18501,753 @@ DbConexion (
 )``! "
 ;``" #
 }aa 	
-publiccc 
-Usuariocc &
-UsuarioEditarViewToUsuariocc 1
-(cc1 2
-UsuarioEditarViewcc2 C
-UsuarioEditarViewccD U
-)ccU V
-{dd 	
-returnee 
-newee 
-Usuarioee 
-{ff 
-Idgg 
-=gg 
-UsuarioEditarViewgg &
-.gg& '
-Idgg' )
-,gg) *
-Nombreshh 
-=hh 
-UsuarioEditarViewhh +
-.hh+ ,
-Nombreshh, 3
-,hh3 4
-	Apellidosii 
-=ii 
-UsuarioEditarViewii -
-.ii- .
-	Apellidosii. 7
-,ii7 8
-Sexojj 
-=jj 
-UsuarioEditarViewjj (
-.jj( )
-Sexojj) -
-,jj- .
-FechaNacimientokk 
-=kk  !
-UsuarioEditarViewkk" 3
-.kk3 4
-FechaNacimientokk4 C
-,kkC D
-Celularll 
-=ll 
-UsuarioEditarViewll +
-.ll+ ,
-Celularll, 3
-,ll3 4
-IsActivemm 
-=mm 
-UsuarioEditarViewmm ,
-.mm, -
-IsActivemm- 5
-,mm5 6
-TipoUsuarionn 
-=nn 
-UsuarioEditarViewnn /
-.nn/ 0
-TipoUsuarionn0 ;
-}oo 
-;oo 
-}pp 	
-publicrr 
-UsuarioEditarViewrr  &
-UsuarioToUsuarioEditarViewrr! ;
-(rr; <
-Usuariorr< C
-UsuariorrD K
-)rrK L
-{ss 	
-returntt 
-newtt 
-UsuarioEditarViewtt (
-{uu 
-Idvv 
-=vv 
-Usuariovv 
-.vv 
-Idvv 
-,vv  
-Nombresww 
-=ww 
-Usuarioww !
-.ww! "
-Nombresww" )
-,ww) *
-	Apellidosxx 
-=xx 
-Usuarioxx #
-.xx# $
-	Apellidosxx$ -
-,xx- .
-Sexoyy 
-=yy 
-Usuarioyy 
-.yy 
-Sexoyy #
-,yy# $
-FechaNacimientozz 
-=zz  !
-Usuariozz" )
-.zz) *
-FechaNacimientozz* 9
-,zz9 :
-Celular{{ 
-={{ 
-Usuario{{ !
-.{{! "
-Celular{{" )
-,{{) *
-IsActive|| 
-=|| 
-Usuario|| "
-.||" #
-IsActive||# +
-,||+ ,
-TipoUsuario}} 
-=}} 
-Usuario}} %
-.}}% &
-TipoUsuario}}& 1
-,}}1 2
-}~~ 
-;~~ 
-} 	
+publiccc 
+voidcc 
+GuardarPersonalcc #
+(cc# $
+Usuariocc$ +
+Usuariocc, 3
+)cc3 4
+{dd 	
+Usuarioee 
+.ee 
+FechaRegistroee !
+=ee" #
+DateTimeee$ ,
+.ee, -
+Nowee- 0
+;ee0 1
+ICryptoServiceff 
+cryptoServiceff (
+=ff) *
+newff+ .
+PBKDF2ff/ 5
+(ff5 6
+)ff6 7
+;ff7 8
+Usuariohh 
+.hh 
+Salthh 
+=hh 
+cryptoServicehh (
+.hh( )
+GenerateSalthh) 5
+(hh5 6
+)hh6 7
+;hh7 8
+Usuarioii 
+.ii 
+Claveii 
+=ii 
+cryptoServiceii )
+.ii) *
+Computeii* 1
+(ii1 2
+Usuarioii2 9
+.ii9 :
+Claveii: ?
+)ii? @
+;ii@ A
+conexionkk 
+.kk 
+Usuarioskk 
+.kk 
+Addkk !
+(kk! "
+Usuariokk" )
+)kk) *
+;kk* +
+conexionll 
+.ll 
+SaveChangesll  
+(ll  !
+)ll! "
+;ll" #
+}mm 	
+publicoo 
+Usuariooo &
+UsuarioEditarViewToUsuariooo 1
+(oo1 2
+UsuarioEditarViewoo2 C
+UsuarioEditarViewooD U
+)ooU V
+{pp 	
+returnqq 
+newqq 
+Usuarioqq 
+{rr 
+Idss 
+=ss 
+UsuarioEditarViewss &
+.ss& '
+Idss' )
+,ss) *
+Nombrestt 
+=tt 
+UsuarioEditarViewtt +
+.tt+ ,
+Nombrestt, 3
+,tt3 4
+	Apellidosuu 
+=uu 
+UsuarioEditarViewuu -
+.uu- .
+	Apellidosuu. 7
+,uu7 8
+Sexovv 
+=vv 
+UsuarioEditarViewvv (
+.vv( )
+Sexovv) -
+,vv- .
+FechaNacimientoww 
+=ww  !
+UsuarioEditarViewww" 3
+.ww3 4
+FechaNacimientoww4 C
+,wwC D
+Celularxx 
+=xx 
+UsuarioEditarViewxx +
+.xx+ ,
+Celularxx, 3
+,xx3 4
+IsActiveyy 
+=yy 
+UsuarioEditarViewyy ,
+.yy, -
+IsActiveyy- 5
+,yy5 6
+TipoUsuariozz 
+=zz 
+UsuarioEditarViewzz /
+.zz/ 0
+TipoUsuariozz0 ;
+}{{ 
+;{{ 
+}|| 	
+public~~ 
+UsuarioEditarView~~  &
+UsuarioToUsuarioEditarView~~! ;
+(~~; <
+Usuario~~< C
+Usuario~~D K
+)~~K L
+{ 	
+return
+ÄÄ 
+new
+ÄÄ 
+UsuarioEditarView
+ÄÄ (
+{
+ÅÅ 
+Id
+ÇÇ 
+=
+ÇÇ 
+Usuario
+ÇÇ 
+.
+ÇÇ 
+Id
+ÇÇ 
+,
+ÇÇ  
+Nombres
+ÉÉ 
+=
+ÉÉ 
+Usuario
+ÉÉ !
+.
+ÉÉ! "
+Nombres
+ÉÉ" )
+,
+ÉÉ) *
+	Apellidos
+ÑÑ 
+=
+ÑÑ 
+Usuario
+ÑÑ #
+.
+ÑÑ# $
+	Apellidos
+ÑÑ$ -
+,
+ÑÑ- .
+Sexo
+ÖÖ 
+=
+ÖÖ 
+Usuario
+ÖÖ 
+.
+ÖÖ 
+Sexo
+ÖÖ #
+,
+ÖÖ# $
+FechaNacimiento
+ÜÜ 
+=
+ÜÜ  !
+Usuario
+ÜÜ" )
+.
+ÜÜ) *
+FechaNacimiento
+ÜÜ* 9
+,
+ÜÜ9 :
+Celular
+áá 
+=
+áá 
+Usuario
+áá !
+.
+áá! "
+Celular
+áá" )
+,
+áá) *
+IsActive
+àà 
+=
+àà 
+Usuario
+àà "
+.
+àà" #
+IsActive
+àà# +
+,
+àà+ ,
+TipoUsuario
+ââ 
+=
+ââ 
+Usuario
+ââ %
+.
+ââ% &
+TipoUsuario
+ââ& 1
+,
+ââ1 2
+}
+ää 
+;
+ää 
+}
+ãã 	
 public
-ÅÅ 
+çç 
 void
-ÅÅ 
+çç 
 EditarUsuario
-ÅÅ !
+çç !
 (
-ÅÅ! "
+çç! "
 int
-ÅÅ" %
+çç" %
 ?
-ÅÅ% &
+çç% &
 	IdUsuario
-ÅÅ' 0
+çç' 0
 ,
-ÅÅ0 1
+çç0 1
 Usuario
-ÅÅ2 9
+çç2 9
 Usuario
-ÅÅ: A
+çç: A
 )
-ÅÅA B
+ççA B
 {
-ÇÇ 	
+éé 	
 var
-ÉÉ 
+èè 
 	UsuarioDB
-ÉÉ 
+èè 
 =
-ÉÉ 
+èè 
 GetUsuarioById
-ÉÉ *
+èè *
 (
-ÉÉ* +
+èè* +
 	IdUsuario
-ÉÉ+ 4
+èè+ 4
 )
-ÉÉ4 5
+èè4 5
 ;
-ÉÉ5 6
+èè5 6
 	UsuarioDB
-ÑÑ 
+êê 
 .
-ÑÑ 
+êê 
 Nombres
-ÑÑ 
+êê 
 =
-ÑÑ 
+êê 
 Usuario
-ÑÑ  '
+êê  '
 .
-ÑÑ' (
+êê' (
 Nombres
-ÑÑ( /
+êê( /
 ;
-ÑÑ/ 0
+êê/ 0
 	UsuarioDB
-ÖÖ 
+ëë 
 .
-ÖÖ 
+ëë 
 	Apellidos
-ÖÖ 
+ëë 
 =
-ÖÖ  !
+ëë  !
 Usuario
-ÖÖ" )
+ëë" )
 .
-ÖÖ) *
+ëë) *
 	Apellidos
-ÖÖ* 3
+ëë* 3
 ;
-ÖÖ3 4
+ëë3 4
 	UsuarioDB
-ÜÜ 
+íí 
 .
-ÜÜ 
+íí 
 Sexo
-ÜÜ 
+íí 
 =
-ÜÜ 
+íí 
 Usuario
-ÜÜ $
+íí $
 .
-ÜÜ$ %
+íí$ %
 Sexo
-ÜÜ% )
+íí% )
 ;
-ÜÜ) *
+íí) *
 	UsuarioDB
-áá 
+ìì 
 .
-áá 
+ìì 
 Celular
-áá 
+ìì 
 =
-áá 
+ìì 
 Usuario
-áá  '
+ìì  '
 .
-áá' (
+ìì' (
 Celular
-áá( /
+ìì( /
 ;
-áá/ 0
+ìì/ 0
 	UsuarioDB
-àà 
+îî 
 .
-àà 
+îî 
 IsActive
-àà 
+îî 
 =
-àà  
+îî  
 Usuario
-àà! (
+îî! (
 .
-àà( )
+îî( )
 IsActive
-àà) 1
+îî) 1
 ;
-àà1 2
+îî1 2
 conexion
-ââ 
+ïï 
 .
-ââ 
+ïï 
 SaveChanges
-ââ  
+ïï  
 (
-ââ  !
+ïï  !
 )
-ââ! "
+ïï! "
 ;
-ââ" #
+ïï" #
 }
-ää 	
+ññ 	
 public
-åå 
+òò 
 void
-åå 
+òò 
 EliminarUsuario
-åå #
+òò #
 (
-åå# $
+òò# $
 int
-åå$ '
+òò$ '
 ?
-åå' (
+òò' (
 	IdUsuario
-åå) 2
+òò) 2
 )
-åå2 3
+òò2 3
 {
-çç 	
+ôô 	
 var
-éé 
+öö 
 usuario
-éé 
+öö 
 =
-éé 
+öö 
 GetUsuarioById
-éé (
+öö (
 (
-éé( )
+öö( )
 	IdUsuario
-éé) 2
+öö) 2
 )
-éé2 3
+öö2 3
 ;
-éé3 4
+öö3 4
 conexion
-èè 
+õõ 
 .
-èè 
+õõ 
 Usuarios
-èè 
+õõ 
 .
-èè 
+õõ 
 Remove
-èè $
+õõ $
 (
-èè$ %
+õõ$ %
 usuario
-èè% ,
+õõ% ,
 )
-èè, -
+õõ, -
 ;
-èè- .
+õõ- .
 conexion
-êê 
+úú 
 .
-êê 
+úú 
 SaveChanges
-êê  
+úú  
 (
-êê  !
+úú  !
 )
-êê! "
+úú! "
 ;
-êê" #
+úú" #
 }
-ëë 	
+ùù 	
 public
-ìì 
+üü 
 bool
-ìì 
+üü 
 ExisteElCorreo
-ìì "
+üü "
 (
-ìì" #
+üü" #
 string
-ìì# )
+üü# )
 email
-ìì* /
+üü* /
 )
-ìì/ 0
+üü/ 0
 {
-îî 	
+†† 	
 if
-ïï 
+°° 
 (
-ïï 
+°° 
 conexion
-ïï 
+°° 
 .
-ïï 
+°° 
 Usuarios
-ïï !
+°° !
 .
-ïï! "
+°°! "
 Any
-ïï" %
+°°" %
 (
-ïï% &
+°°% &
 u
-ïï& '
+°°& '
 =>
-ïï( *
+°°( *
 u
-ïï+ ,
+°°+ ,
 .
-ïï, -
+°°, -
 Email
-ïï- 2
+°°- 2
 ==
-ïï3 5
+°°3 5
 email
-ïï6 ;
+°°6 ;
 )
-ïï; <
+°°; <
 )
-ïï< =
+°°< =
 return
-ññ 
+¢¢ 
 true
-ññ 
+¢¢ 
 ;
-ññ 
+¢¢ 
 return
-óó 
+££ 
 false
-óó 
+££ 
 ;
-óó 
+££ 
 }
-òò 	
+§§ 	
 public
-öö 
+¶¶ 
 Usuario
-öö (
+¶¶ (
 GetUsuarioByCorreoAndClave
-öö 1
+¶¶ 1
 (
-öö1 2
+¶¶1 2
 string
-öö2 8
+¶¶2 8
 Correo
-öö9 ?
+¶¶9 ?
 ,
-öö? @
+¶¶? @
 string
-ööA G
+¶¶A G
 Clave
-ööH M
+¶¶H M
 )
-ööM N
+¶¶M N
 {
-õõ 	
+ßß 	
 Usuario
-ùù 
+©© 
 usuario
-ùù 
+©© 
 =
-ùù 
+©© 
 conexion
-ùù &
+©© &
 .
-ùù& '
+©©& '
 Usuarios
-ùù' /
+©©' /
 .
-ùù/ 0
+©©/ 0
 Where
-ùù0 5
+©©0 5
 (
-ùù5 6
+©©5 6
 u
-ùù6 7
+©©6 7
 =>
-ùù8 :
+©©8 :
 u
-ùù; <
+©©; <
 .
-ùù< =
+©©< =
 Email
-ùù= B
+©©= B
 ==
-ùùC E
+©©C E
 Correo
-ùùF L
+©©F L
 )
-ùùL M
+©©L M
 .
-ùùM N
+©©M N
 FirstOrDefault
-ùùN \
+©©N \
 (
-ùù\ ]
+©©\ ]
 )
-ùù] ^
+©©] ^
 ;
-ùù^ _
+©©^ _
 if
-üü 
+´´ 
 (
-üü 
+´´ 
 usuario
-üü 
+´´ 
 ==
-üü 
+´´ 
 null
-üü 
+´´ 
 )
-üü  
+´´  
 return
-†† 
+¨¨ 
 null
-†† 
+¨¨ 
 ;
-†† 
+¨¨ 
 ICryptoService
-¢¢ 
+ÆÆ 
 cryptoService
-¢¢ (
+ÆÆ (
 =
-¢¢) *
+ÆÆ) *
 new
-¢¢+ .
+ÆÆ+ .
 PBKDF2
-¢¢/ 5
+ÆÆ/ 5
 (
-¢¢5 6
+ÆÆ5 6
 )
-¢¢6 7
+ÆÆ6 7
 ;
-¢¢7 8
+ÆÆ7 8
 if
-§§ 
+∞∞ 
 (
-§§ 
+∞∞ 
 cryptoService
-§§ 
+∞∞ 
 .
-§§ 
+∞∞ 
 Compare
-§§ %
+∞∞ %
 (
-§§% &
+∞∞% &
 cryptoService
-§§& 3
+∞∞& 3
 .
-§§3 4
+∞∞3 4
 Compute
-§§4 ;
+∞∞4 ;
 (
-§§; <
+∞∞; <
 Clave
-§§< A
+∞∞< A
 ,
-§§A B
+∞∞A B
 usuario
-§§C J
+∞∞C J
 .
-§§J K
+∞∞J K
 Salt
-§§K O
+∞∞K O
 )
-§§O P
+∞∞O P
 ,
-§§P Q
+∞∞P Q
 usuario
-§§R Y
+∞∞R Y
 .
-§§Y Z
+∞∞Y Z
 Clave
-§§Z _
+∞∞Z _
 )
-§§_ `
+∞∞_ `
 )
-§§` a
+∞∞` a
 return
-•• 
+±± 
 usuario
-•• 
+±± 
 ;
-•• 
+±± 
 return
-ßß 
+≥≥ 
 null
-ßß 
+≥≥ 
 ;
-ßß 
+≥≥ 
 }
-®® 	
+¥¥ 	
 public
-´´ 
+∑∑ 
 Usuario
-´´ ,
+∑∑ ,
 UsuarioPerfilEditViewToUsuario
-´´ 5
+∑∑ 5
 (
-´´5 6#
+∑∑5 6#
 UsuarioPerfilEditView
-´´6 K#
+∑∑6 K#
 UsuarioPerfilEditView
-´´L a
+∑∑L a
 )
-´´a b
-{
-¨¨ 	
-return
-≠≠ 
-new
-≠≠ 
-Usuario
-≠≠ 
-{
-ÆÆ 
-Id
-ØØ 
-=
-ØØ #
-UsuarioPerfilEditView
-ØØ *
-.
-ØØ* +
-Id
-ØØ+ -
-,
-ØØ- .
-Nombres
-∞∞ 
-=
-∞∞ #
-UsuarioPerfilEditView
-∞∞ /
-.
-∞∞/ 0
-Nombres
-∞∞0 7
-,
-∞∞7 8
-	Apellidos
-±± 
-=
-±± #
-UsuarioPerfilEditView
-±± 1
-.
-±±1 2
-	Apellidos
-±±2 ;
-,
-±±; <
-Sexo
-≤≤ 
-=
-≤≤ #
-UsuarioPerfilEditView
-≤≤ ,
-.
-≤≤, -
-Sexo
-≤≤- 1
-,
-≤≤1 2
-Celular
-≥≥ 
-=
-≥≥ #
-UsuarioPerfilEditView
-≥≥ /
-.
-≥≥/ 0
-Celular
-≥≥0 7
-}
-¥¥ 
-;
-¥¥ 
-}
-µµ 	
-public
-∑∑ #
-UsuarioPerfilEditView
-∑∑ $,
-UsuarioToUsuarioPerfilEditView
-∑∑% C
-(
-∑∑C D
-Usuario
-∑∑D K
-Usuario
-∑∑L S
-)
-∑∑S T
+∑∑a b
 {
 ∏∏ 	
 return
 ππ 
 new
-ππ #
-UsuarioPerfilEditView
-ππ ,
+ππ 
+Usuario
+ππ 
 {
 ∫∫ 
 Id
 ªª 
 =
-ªª 
-Usuario
-ªª 
+ªª #
+UsuarioPerfilEditView
+ªª *
 .
-ªª 
+ªª* +
 Id
-ªª 
+ªª+ -
 ,
-ªª  
+ªª- .
 Nombres
 ºº 
 =
-ºº 
-Usuario
-ºº !
+ºº #
+UsuarioPerfilEditView
+ºº /
 .
-ºº! "
+ºº/ 0
 Nombres
-ºº" )
+ºº0 7
 ,
-ºº) *
+ºº7 8
 	Apellidos
 ΩΩ 
 =
-ΩΩ 
-Usuario
-ΩΩ #
+ΩΩ #
+UsuarioPerfilEditView
+ΩΩ 1
 .
-ΩΩ# $
+ΩΩ1 2
 	Apellidos
-ΩΩ$ -
+ΩΩ2 ;
 ,
-ΩΩ- .
+ΩΩ; <
 Sexo
 ææ 
 =
-ææ 
-Usuario
-ææ 
+ææ #
+UsuarioPerfilEditView
+ææ ,
 .
-ææ 
+ææ, -
 Sexo
-ææ #
+ææ- 1
 ,
-ææ# $
+ææ1 2
 Celular
 øø 
 =
-øø 
-Usuario
-øø !
+øø #
+UsuarioPerfilEditView
+øø /
 .
-øø! "
+øø/ 0
 Celular
-øø" )
+øø0 7
 }
 ¿¿ 
 ;
@@ -19340,2651 +19255,356 @@ DbConexion (
 }
 ¡¡ 	
 public
-√√ 
-void
-√√ 
-EditarPerfil
-√√  
+√√ #
+UsuarioPerfilEditView
+√√ $,
+UsuarioToUsuarioPerfilEditView
+√√% C
 (
-√√  !
-int
-√√! $
-?
-√√$ %
-	IdUsuario
-√√& /
-,
-√√/ 0
+√√C D
 Usuario
-√√1 8
+√√D K
 Usuario
-√√9 @
+√√L S
 )
-√√@ A
+√√S T
 {
-ƒƒ 	
-var
-≈≈ 
-	UsuarioDB
-≈≈ 
-=
-≈≈ 
-GetUsuarioById
-≈≈ *
-(
-≈≈* +
-	IdUsuario
-≈≈+ 4
-)
-≈≈4 5
-;
-≈≈5 6
-	UsuarioDB
-∆∆ 
-.
-∆∆ 
-Nombres
-∆∆ 
-=
-∆∆ 
-Usuario
-∆∆  '
-.
-∆∆' (
-Nombres
-∆∆( /
-;
-∆∆/ 0
-	UsuarioDB
-«« 
-.
-«« 
-	Apellidos
-«« 
-=
-««  !
-Usuario
-««" )
-.
-««) *
-	Apellidos
-««* 3
-;
-««3 4
-	UsuarioDB
-»» 
-.
-»» 
-Sexo
-»» 
-=
-»» 
-Usuario
-»» $
-.
-»»$ %
-Sexo
-»»% )
-;
-»») *
-	UsuarioDB
-…… 
-.
-…… 
-Celular
-…… 
-=
-…… 
-Usuario
-……  '
-.
-……' (
-Celular
-……( /
-;
-……/ 0
-conexion
-   
-.
-   
-SaveChanges
-    
-(
-    !
-)
-  ! "
-;
-  " #
-}
-ÀÀ 	
-public
-ÕÕ 
-void
-ÕÕ %
-AgregarDireccionUsuario
-ÕÕ +
-(
-ÕÕ+ ,
-Usuario
-ÕÕ, 3
-usuario
-ÕÕ4 ;
-,
-ÕÕ; <
-string
-ÕÕ= C
-Calle
-ÕÕD I
-,
-ÕÕI J
-string
-ÕÕK Q
-Pais
-ÕÕR V
-,
-ÕÕV W
-string
-ÕÕX ^
-Region
-ÕÕ_ e
-,
-ÕÕe f
-string
-ÕÕg m
-Ciudad
-ÕÕn t
-,
-ÕÕt u
-string
-ÕÕv |
-CodigoPostalÕÕ} â
-)ÕÕâ ä
-{
-ŒŒ 	
-	Direccion
-œœ 
-NuevaDireccion
-œœ $
-=
-œœ% &
+ƒƒ 	
+return
+≈≈ 
 new
-œœ' *
-	Direccion
-œœ+ 4
+≈≈ #
+UsuarioPerfilEditView
+≈≈ ,
 {
-–– 
-Calle
-—— 
-=
-—— 
-Calle
-—— 
-,
-—— 
-Pais
-““ 
-=
-““ 
-Pais
-““ 
-,
-““ 
-Region
-”” 
-=
-”” 
-Region
-”” 
-,
-””  
-Ciudad
-‘‘ 
-=
-‘‘ 
-Ciudad
-‘‘ 
-,
-‘‘  
-CodigoPostal
-’’ 
-=
-’’ 
-CodigoPostal
-’’ +
-,
-’’+ ,
-	IdUsuario
-÷÷ 
-=
-÷÷ 
-usuario
-÷÷ #
-.
-÷÷# $
+∆∆ 
 Id
-÷÷$ &
-}
-◊◊ 
-;
-◊◊ 
-conexion
-ÿÿ 
-.
-ÿÿ 
-	Direccion
-ÿÿ 
-.
-ÿÿ 
-Add
-ÿÿ "
-(
-ÿÿ" #
-NuevaDireccion
-ÿÿ# 1
-)
-ÿÿ1 2
-;
-ÿÿ2 3
-conexion
-ŸŸ 
-.
-ŸŸ 
-SaveChanges
-ŸŸ  
-(
-ŸŸ  !
-)
-ŸŸ! "
-;
-ŸŸ" #
-}
-⁄⁄ 	
-}
-‹‹ 
-}›› ≥à
-}C:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\ValidacionService.cs
-	namespace
-
- 	
-ECOMMERCE_TRESB
-
-
- 
-.
-
- 
-Services
-
- "
-{ 
-public 
-
-class 
-ValidacionService "
-:# $
-IValidacionService% 7
-{ 
-readonly 
-string 
-LetrasRegex #
-=$ %
-$str& 6
-;6 7
-readonly 
-string 
-NumerosRegex $
-=% &
-$str' 8
-;8 9
-readonly 
-string 
-NumeroDecimalRegex *
-=+ ,
-$str- G
-;G H
-readonly 
-string 
-
-EmailRegex "
-=# $
-$str	% ∆
-;
-∆ «
-public 
-void 
-	Categoria 
-( 
-CategoriaView +
-categoriaView, 9
-,9 : 
-ModelStateDictionary; O
-
-ModelStateP Z
-)Z [
-{ 	
-if 
-( 
-string 
-. 
-IsNullOrEmpty $
-($ %
-categoriaView% 2
-.2 3
-Nombre3 9
-)9 :
-): ;
-
-ModelState 
-. 
-AddModelError (
-(( )
-$str) 1
-,1 2
-$str3 F
-)F G
-;G H
-if 
-( 
-string 
-. 
-IsNullOrEmpty $
-($ %
-categoriaView% 2
-.2 3
-Nombre3 9
-)9 :
-||; =
-categoriaView> K
-.K L
-NombreL R
-.R S
-LengthS Y
-<=Z \
-$num] ^
-)^ _
-
-ModelState 
-. 
-AddModelError (
-(( )
-$str) 1
-,1 2
-$str3 Y
-)Y Z
-;Z [
-if 
-( 
-string 
-. 
-IsNullOrEmpty $
-($ %
-categoriaView% 2
-.2 3
-Nombre3 9
-)9 :
-||; =
-categoriaView> K
-.K L
-NombreL R
-.R S
-LengthS Y
->Z [
-$num\ _
-)_ `
-
-ModelState 
-. 
-AddModelError (
-(( )
-$str) 1
-,1 2
-$str3 Y
-)Y Z
-;Z [
-bool 
-isNombreValid 
-=  
-string! '
-.' (
-IsNullOrEmpty( 5
-(5 6
-categoriaView6 C
-.C D
-NombreD J
-)J K
-||L N
-RegexO T
-.T U
-IsMatchU \
-(\ ]
-categoriaView] j
-.j k
-Nombrek q
-,q r
-LetrasRegexs ~
-)~ 
-;	 Ä
-if 
-( 
-! 
-isNombreValid 
-) 
-
-ModelState 
-. 
-AddModelError (
-(( )
-$str) 1
-,1 2
-$str3 K
-)K L
-;L M
-} 	
-public 
-void 
-Usuario 
-( 
-UsuarioView '
-usuarioView( 3
-,3 4 
-ModelStateDictionary5 I
-
-ModelStateJ T
-)T U
-{   	
-if!! 
-(!! 
-string!! 
-.!! 
-IsNullOrEmpty!! $
-(!!$ %
-usuarioView!!% 0
-.!!0 1
-Email!!1 6
-)!!6 7
-)!!7 8
-
-ModelState"" 
-."" 
-AddModelError"" (
-(""( )
-$str"") 0
-,""0 1
-$str""2 E
-)""E F
-;""F G
-if## 
-(## 
-string## 
-.## 
-IsNullOrEmpty## $
-(##$ %
-usuarioView##% 0
-.##0 1
-Email##1 6
-)##6 7
-||##8 :
-usuarioView##; F
-.##F G
-Email##G L
-.##L M
-Length##M S
-<=##T V
-$num##W X
-)##X Y
-
-ModelState$$ 
-.$$ 
-AddModelError$$ (
-($$( )
-$str$$) 0
-,$$0 1
-$str$$2 X
-)$$X Y
-;$$Y Z
-if%% 
-(%% 
-string%% 
-.%% 
-IsNullOrEmpty%% $
-(%%$ %
-usuarioView%%% 0
-.%%0 1
-Email%%1 6
-)%%6 7
-||%%8 :
-usuarioView%%; F
-.%%F G
-Email%%G L
-.%%L M
-Length%%M S
->%%T U
-$num%%V Y
-)%%Y Z
-
-ModelState&& 
-.&& 
-AddModelError&& (
-(&&( )
-$str&&) 0
-,&&0 1
-$str&&2 X
-)&&X Y
-;&&Y Z
-bool'' 
-isEmailValid'' 
-='' 
-string''  &
-.''& '
-IsNullOrEmpty''' 4
-(''4 5
-usuarioView''5 @
-.''@ A
-Email''A F
-)''F G
-||''H J
-Regex''K P
-.''P Q
-IsMatch''Q X
-(''X Y
-usuarioView''Y d
-.''d e
-Email''e j
-,''j k
-
-EmailRegex''l v
-)''v w
-;''w x
-if(( 
-((( 
-!(( 
-isEmailValid(( 
-)(( 
-
-ModelState)) 
-.)) 
-AddModelError)) (
-())( )
-$str))) 0
-,))0 1
-$str))2 M
-)))M N
-;))N O
-if++ 
-(++ 
-string++ 
-.++ 
-IsNullOrEmpty++ $
-(++$ %
-usuarioView++% 0
-.++0 1
-Clave++1 6
-)++6 7
-)++7 8
-
-ModelState,, 
-.,, 
-AddModelError,, (
-(,,( )
-$str,,) 0
-,,,0 1
-$str,,2 E
-),,E F
-;,,F G
-if.. 
-(.. 
-string.. 
-... 
-IsNullOrEmpty.. $
-(..$ %
-usuarioView..% 0
-...0 1
-Nombres..1 8
-)..8 9
-)..9 :
-
-ModelState// 
-.// 
-AddModelError// (
-(//( )
-$str//) 2
-,//2 3
-$str//4 G
-)//G H
-;//H I
-if00 
-(00 
-string00 
-.00 
-IsNullOrEmpty00 $
-(00$ %
-usuarioView00% 0
-.000 1
-Nombres001 8
-)008 9
-||00: <
-usuarioView00= H
-.00H I
-Nombres00I P
-.00P Q
-Length00Q W
-<=00X Z
-$num00[ \
-)00\ ]
-
-ModelState11 
-.11 
-AddModelError11 (
-(11( )
-$str11) 2
-,112 3
-$str114 Z
-)11Z [
-;11[ \
-if22 
-(22 
-string22 
-.22 
-IsNullOrEmpty22 $
-(22$ %
-usuarioView22% 0
-.220 1
-Nombres221 8
-)228 9
-||22: <
-usuarioView22= H
-.22H I
-Nombres22I P
-.22P Q
-Length22Q W
->22X Y
-$num22Z ]
-)22] ^
-
-ModelState33 
-.33 
-AddModelError33 (
-(33( )
-$str33) 2
-,332 3
-$str334 Z
-)33Z [
-;33[ \
-bool44 
-isNombreValid44 
-=44  
-string44! '
-.44' (
-IsNullOrEmpty44( 5
-(445 6
-usuarioView446 A
-.44A B
-Nombres44B I
-)44I J
-||44K M
-Regex44N S
-.44S T
-IsMatch44T [
-(44[ \
-usuarioView44\ g
-.44g h
-Nombres44h o
-,44o p
-LetrasRegex44q |
-)44| }
-;44} ~
-if55 
-(55 
-!55 
-isNombreValid55 
-)55 
-
-ModelState66 
-.66 
-AddModelError66 (
-(66( )
-$str66) 2
-,662 3
-$str664 L
-)66L M
-;66M N
-if88 
-(88 
-string88 
-.88 
-IsNullOrEmpty88 $
-(88$ %
-usuarioView88% 0
-.880 1
-	Apellidos881 :
-)88: ;
-)88; <
-
-ModelState99 
-.99 
-AddModelError99 (
-(99( )
-$str99) 4
-,994 5
-$str996 I
-)99I J
-;99J K
-if:: 
-(:: 
-string:: 
-.:: 
-IsNullOrEmpty:: $
-(::$ %
-usuarioView::% 0
-.::0 1
-	Apellidos::1 :
-)::: ;
-||::< >
-usuarioView::? J
-.::J K
-	Apellidos::K T
-.::T U
-Length::U [
-<=::\ ^
-$num::_ `
-)::` a
-
-ModelState;; 
-.;; 
-AddModelError;; (
-(;;( )
-$str;;) 4
-,;;4 5
-$str;;6 \
-);;\ ]
-;;;] ^
-if<< 
-(<< 
-string<< 
-.<< 
-IsNullOrEmpty<< $
-(<<$ %
-usuarioView<<% 0
-.<<0 1
-	Apellidos<<1 :
-)<<: ;
-||<<< >
-usuarioView<<? J
-.<<J K
-	Apellidos<<K T
-.<<T U
-Length<<U [
-><<\ ]
-$num<<^ a
-)<<a b
-
-ModelState== 
-.== 
-AddModelError== (
-(==( )
-$str==) 4
-,==4 5
-$str==6 \
-)==\ ]
-;==] ^
-bool>> 
-isApellidosValid>> !
-=>>" #
-string>>$ *
-.>>* +
-IsNullOrEmpty>>+ 8
-(>>8 9
-usuarioView>>9 D
-.>>D E
-	Apellidos>>E N
-)>>N O
-||>>P R
-Regex>>S X
-.>>X Y
-IsMatch>>Y `
-(>>` a
-usuarioView>>a l
-.>>l m
-	Apellidos>>m v
-,>>v w
-LetrasRegex	>>x É
-)
->>É Ñ
-;
->>Ñ Ö
-if?? 
-(?? 
-!?? 
-isApellidosValid?? !
-)??! "
-
-ModelState@@ 
-.@@ 
-AddModelError@@ (
-(@@( )
-$str@@) 4
-,@@4 5
-$str@@6 N
-)@@N O
-;@@O P
-ifBB 
-(BB 
-usuarioViewBB 
-.BB 
-FechaNacimientoBB +
-==BB, .
-nullBB/ 3
-)BB3 4
-
-ModelStateCC 
-.CC 
-AddModelErrorCC (
-(CC( )
-$strCC) :
-,CC: ;
-$strCC< O
-)CCO P
-;CCP Q
-ifEE 
-(EE 
-stringEE 
-.EE 
-IsNullOrEmptyEE $
-(EE$ %
-usuarioViewEE% 0
-.EE0 1
-CelularEE1 8
-)EE8 9
-)EE9 :
-
-ModelStateFF 
-.FF 
-AddModelErrorFF (
-(FF( )
-$strFF) 2
-,FF2 3
-$strFF4 G
-)FFG H
-;FFH I
-ifGG 
-(GG 
-stringGG 
-.GG 
-IsNullOrEmptyGG $
-(GG$ %
-usuarioViewGG% 0
-.GG0 1
-CelularGG1 8
-)GG8 9
-||GG: <
-usuarioViewGG= H
-.GGH I
-CelularGGI P
-.GGP Q
-LengthGGQ W
-<=GGX Z
-$numGG[ \
-)GG\ ]
-
-ModelStateHH 
-.HH 
-AddModelErrorHH (
-(HH( )
-$strHH) 2
-,HH2 3
-$strHH4 Z
-)HHZ [
-;HH[ \
-ifII 
-(II 
-stringII 
-.II 
-IsNullOrEmptyII $
-(II$ %
-usuarioViewII% 0
-.II0 1
-CelularII1 8
-)II8 9
-||II: <
-usuarioViewII= H
-.IIH I
-CelularIII P
-.IIP Q
-LengthIIQ W
->IIX Y
-$numIIZ \
-)II\ ]
-
-ModelStateJJ 
-.JJ 
-AddModelErrorJJ (
-(JJ( )
-$strJJ) 2
-,JJ2 3
-$strJJ4 Y
-)JJY Z
-;JJZ [
-boolKK 
-isCelularValidKK 
-=KK  !
-stringKK" (
-.KK( )
-IsNullOrEmptyKK) 6
-(KK6 7
-usuarioViewKK7 B
-.KKB C
-CelularKKC J
-)KKJ K
-||KKL N
-RegexKKO T
-.KKT U
-IsMatchKKU \
-(KK\ ]
-usuarioViewKK] h
-.KKh i
-CelularKKi p
-,KKp q
-NumerosRegexKKr ~
-)KK~ 
-;	KK Ä
-ifLL 
-(LL 
-!LL 
-isCelularValidLL 
-)LL  
-
-ModelStateMM 
-.MM 
-AddModelErrorMM (
-(MM( )
-$strMM) 2
-,MM2 3
-$strMM4 M
-)MMM N
-;MMN O
-}NN 	
-publicPP 
-voidPP 
-EditarUsuarioPP !
-(PP! "
-UsuarioEditarViewPP" 3
-usuarioEditarViewPP4 E
-,PPE F 
-ModelStateDictionaryPPG [
-
-ModelStatePP\ f
-)PPf g
-{QQ 	
-ifRR 
-(RR 
-stringRR 
-.RR 
-IsNullOrEmptyRR $
-(RR$ %
-usuarioEditarViewRR% 6
-.RR6 7
-NombresRR7 >
-)RR> ?
-)RR? @
-
-ModelStateSS 
-.SS 
-AddModelErrorSS (
-(SS( )
-$strSS) 2
-,SS2 3
-$strSS4 G
-)SSG H
-;SSH I
-ifTT 
-(TT 
-stringTT 
-.TT 
-IsNullOrEmptyTT $
-(TT$ %
-usuarioEditarViewTT% 6
-.TT6 7
-NombresTT7 >
-)TT> ?
-||TT@ B
-usuarioEditarViewTTC T
-.TTT U
-NombresTTU \
-.TT\ ]
-LengthTT] c
-<=TTd f
-$numTTg h
-)TTh i
-
-ModelStateUU 
-.UU 
-AddModelErrorUU (
-(UU( )
-$strUU) 2
-,UU2 3
-$strUU4 Z
-)UUZ [
-;UU[ \
-ifVV 
-(VV 
-stringVV 
-.VV 
-IsNullOrEmptyVV $
-(VV$ %
-usuarioEditarViewVV% 6
-.VV6 7
-NombresVV7 >
-)VV> ?
-||VV@ B
-usuarioEditarViewVVC T
-.VVT U
-NombresVVU \
-.VV\ ]
-LengthVV] c
->VVd e
-$numVVf i
-)VVi j
-
-ModelStateWW 
-.WW 
-AddModelErrorWW (
-(WW( )
-$strWW) 2
-,WW2 3
-$strWW4 Z
-)WWZ [
-;WW[ \
-boolXX 
-isNombreValidXX 
-=XX  
-stringXX! '
-.XX' (
-IsNullOrEmptyXX( 5
-(XX5 6
-usuarioEditarViewXX6 G
-.XXG H
-NombresXXH O
-)XXO P
-||XXQ S
-RegexXXT Y
-.XXY Z
-IsMatchXXZ a
-(XXa b
-usuarioEditarViewXXb s
-.XXs t
-NombresXXt {
-,XX{ |
-LetrasRegex	XX} à
-)
-XXà â
-;
-XXâ ä
-ifYY 
-(YY 
-!YY 
-isNombreValidYY 
-)YY 
-
-ModelStateZZ 
-.ZZ 
-AddModelErrorZZ (
-(ZZ( )
-$strZZ) 2
-,ZZ2 3
-$strZZ4 L
-)ZZL M
-;ZZM N
-if\\ 
-(\\ 
-string\\ 
-.\\ 
-IsNullOrEmpty\\ $
-(\\$ %
-usuarioEditarView\\% 6
-.\\6 7
-	Apellidos\\7 @
-)\\@ A
-)\\A B
-
-ModelState]] 
-.]] 
-AddModelError]] (
-(]]( )
-$str]]) 4
-,]]4 5
-$str]]6 I
-)]]I J
-;]]J K
-if^^ 
-(^^ 
-string^^ 
-.^^ 
-IsNullOrEmpty^^ $
-(^^$ %
-usuarioEditarView^^% 6
-.^^6 7
-	Apellidos^^7 @
-)^^@ A
-||^^B D
-usuarioEditarView^^E V
-.^^V W
-	Apellidos^^W `
-.^^` a
-Length^^a g
-<=^^h j
-$num^^k l
-)^^l m
-
-ModelState__ 
-.__ 
-AddModelError__ (
-(__( )
-$str__) 4
-,__4 5
-$str__6 \
-)__\ ]
-;__] ^
-if`` 
-(`` 
-string`` 
-.`` 
-IsNullOrEmpty`` $
-(``$ %
-usuarioEditarView``% 6
-.``6 7
-	Apellidos``7 @
-)``@ A
-||``B D
-usuarioEditarView``E V
-.``V W
-	Apellidos``W `
-.``` a
-Length``a g
->``h i
-$num``j m
-)``m n
-
-ModelStateaa 
-.aa 
-AddModelErroraa (
-(aa( )
-$straa) 4
-,aa4 5
-$straa6 \
-)aa\ ]
-;aa] ^
-boolbb 
-isApellidosValidbb !
-=bb" #
-stringbb$ *
-.bb* +
-IsNullOrEmptybb+ 8
-(bb8 9
-usuarioEditarViewbb9 J
-.bbJ K
-	ApellidosbbK T
-)bbT U
-||bbV X
-RegexbbY ^
-.bb^ _
-IsMatchbb_ f
-(bbf g
-usuarioEditarViewbbg x
-.bbx y
-	Apellidos	bby Ç
-,
-bbÇ É
-LetrasRegex
-bbÑ è
-)
-bbè ê
-;
-bbê ë
-ifcc 
-(cc 
-!cc 
-isApellidosValidcc !
-)cc! "
-
-ModelStatedd 
-.dd 
-AddModelErrordd (
-(dd( )
-$strdd) 4
-,dd4 5
-$strdd6 N
-)ddN O
-;ddO P
-ifff 
-(ff 
-usuarioEditarViewff !
-.ff! "
-FechaNacimientoff" 1
-==ff2 4
-nullff5 9
-)ff9 :
-
-ModelStategg 
-.gg 
-AddModelErrorgg (
-(gg( )
-$strgg) :
-,gg: ;
-$strgg< O
-)ggO P
-;ggP Q
-ifii 
-(ii 
-stringii 
-.ii 
-IsNullOrEmptyii $
-(ii$ %
-usuarioEditarViewii% 6
-.ii6 7
-Celularii7 >
-)ii> ?
-)ii? @
-
-ModelStatejj 
-.jj 
-AddModelErrorjj (
-(jj( )
-$strjj) 2
-,jj2 3
-$strjj4 G
-)jjG H
-;jjH I
-ifkk 
-(kk 
-stringkk 
-.kk 
-IsNullOrEmptykk $
-(kk$ %
-usuarioEditarViewkk% 6
-.kk6 7
-Celularkk7 >
-)kk> ?
-||kk@ B
-usuarioEditarViewkkC T
-.kkT U
-CelularkkU \
-.kk\ ]
-Lengthkk] c
-<=kkd f
-$numkkg h
-)kkh i
-
-ModelStatell 
-.ll 
-AddModelErrorll (
-(ll( )
-$strll) 2
-,ll2 3
-$strll4 Z
-)llZ [
-;ll[ \
-ifmm 
-(mm 
-stringmm 
-.mm 
-IsNullOrEmptymm $
-(mm$ %
-usuarioEditarViewmm% 6
-.mm6 7
-Celularmm7 >
-)mm> ?
-||mm@ B
-usuarioEditarViewmmC T
-.mmT U
-CelularmmU \
-.mm\ ]
-Lengthmm] c
->mmd e
-$nummmf h
-)mmh i
-
-ModelStatenn 
-.nn 
-AddModelErrornn (
-(nn( )
-$strnn) 2
-,nn2 3
-$strnn4 Y
-)nnY Z
-;nnZ [
-booloo 
-isCelularValidoo 
-=oo  !
-stringoo" (
-.oo( )
-IsNullOrEmptyoo) 6
-(oo6 7
-usuarioEditarViewoo7 H
-.ooH I
-CelularooI P
-)ooP Q
-||ooR T
-RegexooU Z
-.ooZ [
-IsMatchoo[ b
-(oob c
-usuarioEditarViewooc t
-.oot u
-Celularoou |
-,oo| }
-NumerosRegex	oo~ ä
-)
-ooä ã
-;
-ooã å
-ifpp 
-(pp 
-!pp 
-isCelularValidpp 
-)pp  
-
-ModelStateqq 
-.qq 
-AddModelErrorqq (
-(qq( )
-$strqq) 2
-,qq2 3
-$strqq4 M
-)qqM N
-;qqN O
-}rr 	
-publictt 
-voidtt 
-EditarPerfilUsuariott '
-(tt' (!
-UsuarioPerfilEditViewtt( =!
-usuarioPerfilEditViewtt> S
-,ttS T 
-ModelStateDictionaryttU i
-
-ModelStatettj t
-)ttt u
-{uu 	
-ifvv 
-(vv 
-stringvv 
-.vv 
-IsNullOrEmptyvv $
-(vv$ %!
-usuarioPerfilEditViewvv% :
-.vv: ;
-Nombresvv; B
-)vvB C
-)vvC D
-
-ModelStateww 
-.ww 
-AddModelErrorww (
-(ww( )
-$strww) 2
-,ww2 3
-$strww4 G
-)wwG H
-;wwH I
-ifxx 
-(xx 
-stringxx 
-.xx 
-IsNullOrEmptyxx $
-(xx$ %!
-usuarioPerfilEditViewxx% :
-.xx: ;
-Nombresxx; B
-)xxB C
-||xxD F!
-usuarioPerfilEditViewxxG \
-.xx\ ]
-Nombresxx] d
-.xxd e
-Lengthxxe k
-<=xxl n
-$numxxo p
-)xxp q
-
-ModelStateyy 
-.yy 
-AddModelErroryy (
-(yy( )
-$stryy) 2
-,yy2 3
-$stryy4 Z
-)yyZ [
-;yy[ \
-ifzz 
-(zz 
-stringzz 
-.zz 
-IsNullOrEmptyzz $
-(zz$ %!
-usuarioPerfilEditViewzz% :
-.zz: ;
-Nombreszz; B
-)zzB C
-||zzD F!
-usuarioPerfilEditViewzzG \
-.zz\ ]
-Nombreszz] d
-.zzd e
-Lengthzze k
->zzl m
-$numzzn q
-)zzq r
-
-ModelState{{ 
-.{{ 
-AddModelError{{ (
-({{( )
-$str{{) 2
-,{{2 3
-$str{{4 Z
-){{Z [
-;{{[ \
-bool|| 
-isNombreValid|| 
-=||  
-string||! '
-.||' (
-IsNullOrEmpty||( 5
-(||5 6!
-usuarioPerfilEditView||6 K
-.||K L
-Nombres||L S
-)||S T
-||||U W
-Regex||X ]
-.||] ^
-IsMatch||^ e
-(||e f!
-usuarioPerfilEditView||f {
-.||{ |
-Nombres	||| É
-,
-||É Ñ
-LetrasRegex
-||Ö ê
-)
-||ê ë
-;
-||ë í
-if}} 
-(}} 
-!}} 
-isNombreValid}} 
-)}} 
-
-ModelState~~ 
-.~~ 
-AddModelError~~ (
-(~~( )
-$str~~) 2
-,~~2 3
-$str~~4 L
-)~~L M
-;~~M N
-if
-ÄÄ 
-(
-ÄÄ 
-string
-ÄÄ 
-.
-ÄÄ 
-IsNullOrEmpty
-ÄÄ $
-(
-ÄÄ$ %#
-usuarioPerfilEditView
-ÄÄ% :
-.
-ÄÄ: ;
-	Apellidos
-ÄÄ; D
-)
-ÄÄD E
-)
-ÄÄE F
-
-ModelState
-ÅÅ 
-.
-ÅÅ 
-AddModelError
-ÅÅ (
-(
-ÅÅ( )
-$str
-ÅÅ) 4
-,
-ÅÅ4 5
-$str
-ÅÅ6 I
-)
-ÅÅI J
-;
-ÅÅJ K
-if
-ÇÇ 
-(
-ÇÇ 
-string
-ÇÇ 
-.
-ÇÇ 
-IsNullOrEmpty
-ÇÇ $
-(
-ÇÇ$ %#
-usuarioPerfilEditView
-ÇÇ% :
-.
-ÇÇ: ;
-	Apellidos
-ÇÇ; D
-)
-ÇÇD E
-||
-ÇÇF H#
-usuarioPerfilEditView
-ÇÇI ^
-.
-ÇÇ^ _
-	Apellidos
-ÇÇ_ h
-.
-ÇÇh i
-Length
-ÇÇi o
-<=
-ÇÇp r
-$num
-ÇÇs t
-)
-ÇÇt u
-
-ModelState
-ÉÉ 
-.
-ÉÉ 
-AddModelError
-ÉÉ (
-(
-ÉÉ( )
-$str
-ÉÉ) 4
-,
-ÉÉ4 5
-$str
-ÉÉ6 \
-)
-ÉÉ\ ]
-;
-ÉÉ] ^
-if
-ÑÑ 
-(
-ÑÑ 
-string
-ÑÑ 
-.
-ÑÑ 
-IsNullOrEmpty
-ÑÑ $
-(
-ÑÑ$ %#
-usuarioPerfilEditView
-ÑÑ% :
-.
-ÑÑ: ;
-	Apellidos
-ÑÑ; D
-)
-ÑÑD E
-||
-ÑÑF H#
-usuarioPerfilEditView
-ÑÑI ^
-.
-ÑÑ^ _
-	Apellidos
-ÑÑ_ h
-.
-ÑÑh i
-Length
-ÑÑi o
->
-ÑÑp q
-$num
-ÑÑr u
-)
-ÑÑu v
-
-ModelState
-ÖÖ 
-.
-ÖÖ 
-AddModelError
-ÖÖ (
-(
-ÖÖ( )
-$str
-ÖÖ) 4
-,
-ÖÖ4 5
-$str
-ÖÖ6 \
-)
-ÖÖ\ ]
-;
-ÖÖ] ^
-bool
-ÜÜ 
-isApellidosValid
-ÜÜ !
+«« 
 =
-ÜÜ" #
-string
-ÜÜ$ *
+«« 
+Usuario
+«« 
 .
-ÜÜ* +
-IsNullOrEmpty
-ÜÜ+ 8
-(
-ÜÜ8 9#
-usuarioPerfilEditView
-ÜÜ9 N
-.
-ÜÜN O
-	Apellidos
-ÜÜO X
-)
-ÜÜX Y
-||
-ÜÜZ \
-Regex
-ÜÜ] b
-.
-ÜÜb c
-IsMatch
-ÜÜc j
-(
-ÜÜj k$
-usuarioPerfilEditViewÜÜk Ä
-.ÜÜÄ Å
-	ApellidosÜÜÅ ä
-,ÜÜä ã
-LetrasRegexÜÜå ó
-)ÜÜó ò
-;ÜÜò ô
-if
-áá 
-(
-áá 
-!
-áá 
-isApellidosValid
-áá !
-)
-áá! "
-
-ModelState
-àà 
-.
-àà 
-AddModelError
-àà (
-(
-àà( )
-$str
-àà) 4
+«« 
+Id
+«« 
 ,
-àà4 5
-$str
-àà6 N
-)
-ààN O
-;
-ààO P
-if
-ää 
-(
-ää 
-string
-ää 
-.
-ää 
-IsNullOrEmpty
-ää $
-(
-ää$ %#
-usuarioPerfilEditView
-ää% :
-.
-ää: ;
-Celular
-ää; B
-)
-ääB C
-)
-ääC D
-
-ModelState
-ãã 
-.
-ãã 
-AddModelError
-ãã (
-(
-ãã( )
-$str
-ãã) 2
-,
-ãã2 3
-$str
-ãã4 G
-)
-ããG H
-;
-ããH I
-if
-åå 
-(
-åå 
-string
-åå 
-.
-åå 
-IsNullOrEmpty
-åå $
-(
-åå$ %#
-usuarioPerfilEditView
-åå% :
-.
-åå: ;
-Celular
-åå; B
-)
-ååB C
-||
-ååD F#
-usuarioPerfilEditView
-ååG \
-.
-åå\ ]
-Celular
-åå] d
-.
-ååd e
-Length
-ååe k
-<=
-åål n
-$num
-ååo p
-)
-ååp q
-
-ModelState
-çç 
-.
-çç 
-AddModelError
-çç (
-(
-çç( )
-$str
-çç) 2
-,
-çç2 3
-$str
-çç4 Z
-)
-ççZ [
-;
-çç[ \
-if
-éé 
-(
-éé 
-string
-éé 
-.
-éé 
-IsNullOrEmpty
-éé $
-(
-éé$ %#
-usuarioPerfilEditView
-éé% :
-.
-éé: ;
-Celular
-éé; B
-)
-ééB C
-||
-ééD F#
-usuarioPerfilEditView
-ééG \
-.
-éé\ ]
-Celular
-éé] d
-.
-ééd e
-Length
-éée k
->
-éél m
-$num
-één p
-)
-éép q
-
-ModelState
-èè 
-.
-èè 
-AddModelError
-èè (
-(
-èè( )
-$str
-èè) 2
-,
-èè2 3
-$str
-èè4 Y
-)
-èèY Z
-;
-èèZ [
-bool
-êê 
-isCelularValid
-êê 
+««  
+Nombres
+»» 
 =
-êê  !
-string
-êê" (
+»» 
+Usuario
+»» !
 .
-êê( )
-IsNullOrEmpty
-êê) 6
-(
-êê6 7#
-usuarioPerfilEditView
-êê7 L
-.
-êêL M
-Celular
-êêM T
-)
-êêT U
-||
-êêV X
-Regex
-êêY ^
-.
-êê^ _
-IsMatch
-êê_ f
-(
-êêf g#
-usuarioPerfilEditView
-êêg |
-.
-êê| }
-Celularêê} Ñ
-,êêÑ Ö
-NumerosRegexêêÜ í
-)êêí ì
-;êêì î
-if
-ëë 
-(
-ëë 
-!
-ëë 
-isCelularValid
-ëë 
-)
-ëë  
-
-ModelState
-íí 
-.
-íí 
-AddModelError
-íí (
-(
-íí( )
-$str
-íí) 2
+»»! "
+Nombres
+»»" )
 ,
-íí2 3
-$str
-íí4 M
-)
-ííM N
-;
-ííN O
+»») *
+	Apellidos
+…… 
+=
+…… 
+Usuario
+…… #
+.
+……# $
+	Apellidos
+……$ -
+,
+……- .
+Sexo
+   
+=
+   
+Usuario
+   
+.
+   
+Sexo
+   #
+,
+  # $
+Celular
+ÀÀ 
+=
+ÀÀ 
+Usuario
+ÀÀ !
+.
+ÀÀ! "
+Celular
+ÀÀ" )
 }
-ìì 	
+ÃÃ 
+;
+ÃÃ 
+}
+ÕÕ 	
 public
-ïï 
+œœ 
 void
-ïï 
-Producto
-ïï 
+œœ 
+EditarPerfil
+œœ  
 (
-ïï 
-ProductoView
-ïï )
-productoView
-ïï* 6
+œœ  !
+int
+œœ! $
+?
+œœ$ %
+	IdUsuario
+œœ& /
 ,
-ïï6 7"
-ModelStateDictionary
-ïï8 L
-
-ModelState
-ïïM W
+œœ/ 0
+Usuario
+œœ1 8
+Usuario
+œœ9 @
 )
-ïïW X
+œœ@ A
 {
-ññ 	
-if
-óó 
-(
-óó 
-string
-óó 
-.
-óó 
-IsNullOrEmpty
-óó $
-(
-óó$ %
-productoView
-óó% 1
-.
-óó1 2
-Nombre
-óó2 8
-)
-óó8 9
-)
-óó9 :
-
-ModelState
-òò 
-.
-òò 
-AddModelError
-òò (
-(
-òò( )
-$str
-òò) 1
-,
-òò1 2
-$str
-òò3 F
-)
-òòF G
-;
-òòG H
-if
-ôô 
-(
-ôô 
-string
-ôô 
-.
-ôô 
-IsNullOrEmpty
-ôô $
-(
-ôô$ %
-productoView
-ôô% 1
-.
-ôô1 2
-Nombre
-ôô2 8
-)
-ôô8 9
-||
-ôô: <
-productoView
-ôô= I
-.
-ôôI J
-Nombre
-ôôJ P
-.
-ôôP Q
-Length
-ôôQ W
-<=
-ôôX Z
-$num
-ôô[ \
-)
-ôô\ ]
-
-ModelState
-öö 
-.
-öö 
-AddModelError
-öö (
-(
-öö( )
-$str
-öö) 1
-,
-öö1 2
-$str
-öö3 Y
-)
-ööY Z
-;
-ööZ [
-if
-õõ 
-(
-õõ 
-string
-õõ 
-.
-õõ 
-IsNullOrEmpty
-õõ $
-(
-õõ$ %
-productoView
-õõ% 1
-.
-õõ1 2
-Nombre
-õõ2 8
-)
-õõ8 9
-||
-õõ: <
-productoView
-õõ= I
-.
-õõI J
-Nombre
-õõJ P
-.
-õõP Q
-Length
-õõQ W
->
-õõX Y
-$num
-õõZ ]
-)
-õõ] ^
-
-ModelState
-úú 
-.
-úú 
-AddModelError
-úú (
-(
-úú( )
-$str
-úú) 1
-,
-úú1 2
-$str
-úú3 Y
-)
-úúY Z
-;
-úúZ [
-bool
-ùù 
-isNombreValid
-ùù 
+–– 	
+var
+—— 
+	UsuarioDB
+—— 
 =
-ùù  
-string
-ùù! '
-.
-ùù' (
-IsNullOrEmpty
-ùù( 5
+—— 
+GetUsuarioById
+—— *
 (
-ùù5 6
-productoView
-ùù6 B
-.
-ùùB C
-Nombre
-ùùC I
+——* +
+	IdUsuario
+——+ 4
 )
-ùùI J
-||
-ùùK M
-Regex
-ùùN S
-.
-ùùS T
-IsMatch
-ùùT [
-(
-ùù[ \
-productoView
-ùù\ h
-.
-ùùh i
-Nombre
-ùùi o
-,
-ùùo p
-LetrasRegex
-ùùq |
-)
-ùù| }
+——4 5
 ;
-ùù} ~
-if
-ûû 
-(
-ûû 
-!
-ûû 
-isNombreValid
-ûû 
-)
-ûû 
-
-ModelState
-üü 
+——5 6
+	UsuarioDB
+““ 
 .
-üü 
-AddModelError
-üü (
-(
-üü( )
-$str
-üü) 1
-,
-üü1 2
-$str
-üü3 K
-)
-üüK L
-;
-üüL M
-if
-°° 
-(
-°° 
-string
-°° 
-.
-°° 
-IsNullOrEmpty
-°° $
-(
-°°$ %
-productoView
-°°% 1
-.
-°°1 2
-Descripcion
-°°2 =
-)
-°°= >
-)
-°°> ?
-
-ModelState
-¢¢ 
-.
-¢¢ 
-AddModelError
-¢¢ (
-(
-¢¢( )
-$str
-¢¢) 6
-,
-¢¢6 7
-$str
-¢¢8 K
-)
-¢¢K L
-;
-¢¢L M
-if
-££ 
-(
-££ 
-string
-££ 
-.
-££ 
-IsNullOrEmpty
-££ $
-(
-££$ %
-productoView
-££% 1
-.
-££1 2
-Descripcion
-££2 =
-)
-££= >
-||
-££? A
-productoView
-££B N
-.
-££N O
-Descripcion
-££O Z
-.
-££Z [
-Length
-££[ a
-<=
-££b d
-$num
-££e f
-)
-££f g
-
-ModelState
-§§ 
-.
-§§ 
-AddModelError
-§§ (
-(
-§§( )
-$str
-§§) 6
-,
-§§6 7
-$str
-§§8 ^
-)
-§§^ _
-;
-§§_ `
-if
-•• 
-(
-•• 
-string
-•• 
-.
-•• 
-IsNullOrEmpty
-•• $
-(
-••$ %
-productoView
-••% 1
-.
-••1 2
-Descripcion
-••2 =
-)
-••= >
-||
-••? A
-productoView
-••B N
-.
-••N O
-Descripcion
-••O Z
-.
-••Z [
-Length
-••[ a
->
-••b c
-$num
-••d h
-)
-••h i
-
-ModelState
-¶¶ 
-.
-¶¶ 
-AddModelError
-¶¶ (
-(
-¶¶( )
-$str
-¶¶) 6
-,
-¶¶6 7
-$str
-¶¶8 _
-)
-¶¶_ `
-;
-¶¶` a
-if
-®® 
-(
-®® 
-productoView
-®® 
-.
-®® 
-Stock
-®® "
-==
-®®# %
-$num
-®®& '
-||
-®®( *
-string
-®®+ 1
-.
-®®1 2
-IsNullOrEmpty
-®®2 ?
-(
-®®? @
-productoView
-®®@ L
-.
-®®L M
-Stock
-®®M R
-.
-®®R S
-ToString
-®®S [
-(
-®®[ \
-)
-®®\ ]
-)
-®®] ^
-)
-®®^ _
-
-ModelState
-©© 
-.
-©© 
-AddModelError
-©© (
-(
-©©( )
-$str
-©©) 0
-,
-©©0 1
-$str
-©©2 E
-)
-©©E F
-;
-©©F G
-bool
-™™ 
-isStockValid
-™™ 
+““ 
+Nombres
+““ 
 =
-™™ 
-productoView
-™™  ,
+““ 
+Usuario
+““  '
 .
-™™, -
-Stock
-™™- 2
-==
-™™3 5
-$num
-™™6 7
-||
-™™8 :
-string
-™™; A
-.
-™™A B
-IsNullOrEmpty
-™™B O
-(
-™™O P
-productoView
-™™P \
-.
-™™\ ]
-Stock
-™™] b
-.
-™™b c
-ToString
-™™c k
-(
-™™k l
-)
-™™l m
-)
-™™m n
-||
-™™o q
-Regex
-™™r w
-.
-™™w x
-IsMatch
-™™x 
-(™™ Ä
-productoView™™Ä å
-.™™å ç
-Stock™™ç í
-.™™í ì
-ToString™™ì õ
-(™™õ ú
-)™™ú ù
-,™™ù û
-NumerosRegex™™ü ´
-)™™´ ¨
-;™™¨ ≠
-if
-´´ 
-(
-´´ 
-!
-´´ 
-isStockValid
-´´ 
-)
-´´ 
-
-ModelState
-¨¨ 
-.
-¨¨ 
-AddModelError
-¨¨ (
-(
-¨¨( )
-$str
-¨¨) 0
-,
-¨¨0 1
-$str
-¨¨2 Y
-)
-¨¨Y Z
+““' (
+Nombres
+““( /
 ;
-¨¨Z [
-if
-ÆÆ 
-(
-ÆÆ 
-productoView
-ÆÆ 
+““/ 0
+	UsuarioDB
+”” 
 .
-ÆÆ 
-PrecioUnitario
-ÆÆ +
-==
-ÆÆ, .
-$num
-ÆÆ/ 0
-||
-ÆÆ1 3
-string
-ÆÆ4 :
-.
-ÆÆ: ;
-IsNullOrEmpty
-ÆÆ; H
-(
-ÆÆH I
-productoView
-ÆÆI U
-.
-ÆÆU V
-PrecioUnitario
-ÆÆV d
-.
-ÆÆd e
-ToString
-ÆÆe m
-(
-ÆÆm n
-)
-ÆÆn o
-)
-ÆÆo p
-)
-ÆÆp q
-
-ModelState
-ØØ 
-.
-ØØ 
-AddModelError
-ØØ (
-(
-ØØ( )
-$str
-ØØ) 9
-,
-ØØ9 :
-$str
-ØØ; N
-)
-ØØN O
-;
-ØØO P
-bool
-∞∞ #
-isPrecioUnitarioValid
-∞∞ &
+”” 
+	Apellidos
+”” 
 =
-∞∞' (
-productoView
-∞∞) 5
+””  !
+Usuario
+””" )
 .
-∞∞5 6
-PrecioUnitario
-∞∞6 D
-==
-∞∞E G
-$num
-∞∞H I
-||
-∞∞J L
-string
-∞∞M S
-.
-∞∞S T
-IsNullOrEmpty
-∞∞T a
-(
-∞∞a b
-productoView
-∞∞b n
-.
-∞∞n o
-PrecioUnitario
-∞∞o }
-.
-∞∞} ~
-ToString∞∞~ Ü
-(∞∞Ü á
-)∞∞á à
-)∞∞à â
-||∞∞ä å
-Regex∞∞ç í
-.∞∞í ì
-IsMatch∞∞ì ö
-(∞∞ö õ
-productoView∞∞õ ß
-.∞∞ß ®
-PrecioUnitario∞∞® ∂
-.∞∞∂ ∑
-ToString∞∞∑ ø
-(∞∞ø ¿
-)∞∞¿ ¡
-,∞∞¡ ¬"
-NumeroDecimalRegex∞∞√ ’
-)∞∞’ ÷
-;∞∞÷ ◊
-if
-±± 
-(
-±± 
-!
-±± #
-isPrecioUnitarioValid
-±± &
-)
-±±& '
-
-ModelState
-≤≤ 
-.
-≤≤ 
-AddModelError
-≤≤ (
-(
-≤≤( )
-$str
-≤≤) 9
-,
-≤≤9 :
-$str
-≤≤; U
-)
-≤≤U V
+””) *
+	Apellidos
+””* 3
 ;
-≤≤V W
+””3 4
+	UsuarioDB
+‘‘ 
+.
+‘‘ 
+Sexo
+‘‘ 
+=
+‘‘ 
+Usuario
+‘‘ $
+.
+‘‘$ %
+Sexo
+‘‘% )
+;
+‘‘) *
+	UsuarioDB
+’’ 
+.
+’’ 
+Celular
+’’ 
+=
+’’ 
+Usuario
+’’  '
+.
+’’' (
+Celular
+’’( /
+;
+’’/ 0
+conexion
+÷÷ 
+.
+÷÷ 
+SaveChanges
+÷÷  
+(
+÷÷  !
+)
+÷÷! "
+;
+÷÷" #
 }
-≥≥ 	
+◊◊ 	
+public
+ŸŸ 
+void
+ŸŸ %
+AgregarDireccionUsuario
+ŸŸ +
+(
+ŸŸ+ ,
+Usuario
+ŸŸ, 3
+usuario
+ŸŸ4 ;
+,
+ŸŸ; <
+string
+ŸŸ= C
+Calle
+ŸŸD I
+,
+ŸŸI J
+string
+ŸŸK Q
+Pais
+ŸŸR V
+,
+ŸŸV W
+string
+ŸŸX ^
+Region
+ŸŸ_ e
+,
+ŸŸe f
+string
+ŸŸg m
+Ciudad
+ŸŸn t
+,
+ŸŸt u
+string
+ŸŸv |
+CodigoPostalŸŸ} â
+)ŸŸâ ä
+{
+⁄⁄ 	
+	Direccion
+€€ 
+NuevaDireccion
+€€ $
+=
+€€% &
+new
+€€' *
+	Direccion
+€€+ 4
+{
+‹‹ 
+Calle
+›› 
+=
+›› 
+Calle
+›› 
+,
+›› 
+Pais
+ﬁﬁ 
+=
+ﬁﬁ 
+Pais
+ﬁﬁ 
+,
+ﬁﬁ 
+Region
+ﬂﬂ 
+=
+ﬂﬂ 
+Region
+ﬂﬂ 
+,
+ﬂﬂ  
+Ciudad
+‡‡ 
+=
+‡‡ 
+Ciudad
+‡‡ 
+,
+‡‡  
+CodigoPostal
+·· 
+=
+·· 
+CodigoPostal
+·· +
+,
+··+ ,
+	IdUsuario
+‚‚ 
+=
+‚‚ 
+usuario
+‚‚ #
+.
+‚‚# $
+Id
+‚‚$ &
 }
-¥¥ 
-}µµ ˘ä
+„„ 
+;
+„„ 
+conexion
+‰‰ 
+.
+‰‰ 
+	Direccion
+‰‰ 
+.
+‰‰ 
+Add
+‰‰ "
+(
+‰‰" #
+NuevaDireccion
+‰‰# 1
+)
+‰‰1 2
+;
+‰‰2 3
+conexion
+ÂÂ 
+.
+ÂÂ 
+SaveChanges
+ÂÂ  
+(
+ÂÂ  !
+)
+ÂÂ! "
+;
+ÂÂ" #
+}
+ÊÊ 	
+}
+ËË 
+}ÈÈ ˘ä
 xC:\Users\Dre\Documents\0Dre\0TrabajosFerUPN\8tavo Ciclo\Calidad\ECOMMERCE_TRESB\ECOMMERCE_TRESB\Services\VentaService.cs
 	namespace 	
 ECOMMERCE_TRESB

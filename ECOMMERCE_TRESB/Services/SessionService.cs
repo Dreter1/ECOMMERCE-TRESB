@@ -11,11 +11,11 @@ namespace ECOMMERCE_TRESB.Services
     {
         private readonly HttpContext contexto;
         private readonly UsuarioService usuarioService;
-        private readonly DbConexion conexion;
+
         public SessionService()
         {
             contexto = HttpContext.Current;
-            conexion = new DbConexion();
+            DbConexion conexion = new DbConexion();
             usuarioService = new UsuarioService(conexion);
         }
         public void GuardarSesion(Usuario Usuario)
