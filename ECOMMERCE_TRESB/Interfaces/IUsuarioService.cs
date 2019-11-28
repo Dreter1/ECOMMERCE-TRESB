@@ -17,6 +17,7 @@ namespace ECOMMERCE_TRESB.Interfaces
         Usuario UsuarioViewToUsuario(UsuarioView UsuarioView);
         UsuarioView UsuarioToUsuarioView(Usuario Usuario);
         void GuardarUsuario(Usuario Usuario);
+        void GuardarPersonal(Usuario Usuario);
         Usuario UsuarioEditarViewToUsuario(UsuarioEditarView UsuarioEditarView);
         UsuarioEditarView UsuarioToUsuarioEditarView(Usuario Usuario);
         void EditarUsuario(int? IdUsuario, Usuario Usuario);

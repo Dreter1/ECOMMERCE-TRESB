@@ -64,7 +64,7 @@ namespace ECOMMERCE_TRESB.Controllers
                 }
 
                 Usuario usuario = servicio.UsuarioViewToUsuario(UsuarioView);
-                servicio.GuardarUsuario(usuario);
+                servicio.GuardarPersonal(usuario);
 
                 return RedirectToAction("Listar", "Usuario");
             }

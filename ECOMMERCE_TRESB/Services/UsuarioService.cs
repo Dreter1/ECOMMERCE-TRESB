@@ -96,6 +96,18 @@ namespace ECOMMERCE_TRESB.Services
             conexion.SaveChanges();
         }
 
+        public void GuardarPersonal(Usuario Usuario)
+        {
+            Usuario.FechaRegistro = DateTime.Now;
+            ICryptoService cryptoService = new PBKDF2();
+
+            Usuario.Salt = cryptoService.GenerateSalt();
+            Usuario.Clave = cryptoService.Compute(Usuario.Clave);
+
+            conexion.Usuarios.Add(Usuario);
+            conexion.SaveChanges();
+        }
+
         public Usuario UsuarioEditarViewToUsuario(UsuarioEditarView UsuarioEditarView)
         {
             return new Usuario
